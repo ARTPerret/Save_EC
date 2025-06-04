@@ -1,0 +1,10 @@
+label book1
+if SaveManager.getElement("Quests", "Q_francoisresponsabledelarestaurationducrous") == null
+	Gaspard: Je me demande ce qu'on mange.
+elif SaveManager.getElement("Quests", "Q_gaspard") == true:
+	Gaspard: C'est pas une question de mauvaise volonté, mais je n'ai pas beaucoup d'appétit.
+else:
+	Gaspard: Le gaspillage au crous? J'avoue que je jette souvent des choses.
+	Gaspard: Mais j'ai jamais demandé à manger tout ça moi, c'est juste qu'il y a souvent trop dans l'assiette pour moi.
+	do SaveManager.setElement("Quests", {"Q_gaspard": true})
+[end_timeline]

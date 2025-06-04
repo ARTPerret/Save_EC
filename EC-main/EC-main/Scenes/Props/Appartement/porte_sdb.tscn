@@ -1,0 +1,118 @@
+[gd_scene load_steps=15 format=3 uid="uid://cx1fol84qh5hv"]
+
+[ext_resource type="Script" uid="uid://bfkgy11ob2lse" path="res://Scripts/Props/Types/prop_door.gd" id="1_0eo08"]
+[ext_resource type="Shader" uid="uid://c2ug5tlxurkwa" path="res://Shaders/outline.gdshader" id="2_577e1"]
+[ext_resource type="AudioStream" uid="uid://bng27oilms6jo" path="res://Audio/SFX/Temp/FB_Tap.wav" id="2_hm2ch"]
+[ext_resource type="Texture2D" uid="uid://ckmjnv4tcdhkt" path="res://Graphics/Props/AppartementAnimated.png" id="2_vac3v"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gpq78"]
+shader = ExtResource("2_577e1")
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/width = 0.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qavbl"]
+atlas = ExtResource("2_vac3v")
+region = Rect2(32, 176, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b1hgf"]
+atlas = ExtResource("2_vac3v")
+region = Rect2(64, 176, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s7wqq"]
+atlas = ExtResource("2_vac3v")
+region = Rect2(96, 176, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8poww"]
+atlas = ExtResource("2_vac3v")
+region = Rect2(128, 176, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8jqf5"]
+atlas = ExtResource("2_vac3v")
+region = Rect2(0, 176, 32, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2th5d"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qavbl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b1hgf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s7wqq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8poww")
+}],
+"loop": false,
+"name": &"close_open",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s7wqq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b1hgf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qavbl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8jqf5")
+}],
+"loop": false,
+"name": &"open_close",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rxyj1"]
+size = Vector2(22, 38)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_abqwm"]
+size = Vector2(16, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bd6ge"]
+size = Vector2(16, 8)
+
+[node name="PorteSDB" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_0eo08")
+sfx_door = ExtResource("2_hm2ch")
+
+[node name="PropSprite" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_gpq78")
+position = Vector2(-16, 0)
+sprite_frames = SubResource("SpriteFrames_2th5d")
+animation = &"open_close"
+frame = 3
+centered = false
+offset = Vector2(0, -35)
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(0, -5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 3)
+shape = SubResource("RectangleShape2D_rxyj1")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 7)
+shape = SubResource("RectangleShape2D_abqwm")
+debug_color = Color(1, 0, 0, 0.419608)
+
+[node name="CheckCollision" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CheckCollision"]
+position = Vector2(0, 7)
+shape = SubResource("RectangleShape2D_bd6ge")
+debug_color = Color(0.572126, 0.555229, 1.92523e-07, 0.42)
+
+[connection signal="animation_finished" from="PropSprite" to="." method="_on_prop_sprite_animation_finished"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="CheckCollision" to="." method="_check_collision_enter"]
+[connection signal="body_exited" from="CheckCollision" to="." method="_check_collision_exit"]

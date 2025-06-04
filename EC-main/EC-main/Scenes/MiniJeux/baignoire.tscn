@@ -1,0 +1,457 @@
+[gd_scene load_steps=50 format=3 uid="uid://dgpu4hmb3vlfw"]
+
+[ext_resource type="Script" uid="uid://dia0ley3to101" path="res://Scripts/MiniJeux/minigame_setup.gd" id="1_7gsmj"]
+[ext_resource type="Texture2D" uid="uid://ckmjnv4tcdhkt" path="res://Graphics/Props/AppartementAnimated.png" id="2_3ua7n"]
+[ext_resource type="Script" uid="uid://bvia05yei278y" path="res://Scripts/MiniJeux/Jeux/Baignoire/baignoire.gd" id="2_3w5rc"]
+[ext_resource type="AudioStream" uid="uid://bng27oilms6jo" path="res://Audio/SFX/Temp/FB_Tap.wav" id="3_jv3uq"]
+[ext_resource type="Texture2D" uid="uid://sm0i5714jmm7" path="res://Graphics/TEMP/TEMP_Trash.png" id="4_0rf1o"]
+[ext_resource type="Texture2D" uid="uid://ckiiq8ncbx4uo" path="res://Graphics/Other/bg_baign.png" id="4_dj4r4"]
+[ext_resource type="Texture2D" uid="uid://drn703q5tni2a" path="res://Graphics/Props/AppartementSolo.png" id="5_1kvi7"]
+[ext_resource type="Script" uid="uid://bu6mobch8a4to" path="res://Scripts/MiniJeux/Jeux/Baignoire/hover.gd" id="6_ot1v4"]
+[ext_resource type="Shader" uid="uid://c2ug5tlxurkwa" path="res://Shaders/outline.gdshader" id="7_6m5wv"]
+[ext_resource type="Texture2D" uid="uid://c2ykvd3x4lh6a" path="res://Graphics/UI/water_drop.png" id="9_6m5wv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dj4r4"]
+atlas = ExtResource("2_3ua7n")
+region = Rect2(288, 64, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xpohm"]
+atlas = ExtResource("2_3ua7n")
+region = Rect2(320, 64, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mhseq"]
+atlas = ExtResource("2_3ua7n")
+region = Rect2(352, 64, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bdoom"]
+atlas = ExtResource("2_3ua7n")
+region = Rect2(384, 64, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x2hqp"]
+atlas = ExtResource("2_3ua7n")
+region = Rect2(416, 64, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kx15v"]
+atlas = ExtResource("2_3ua7n")
+region = Rect2(448, 64, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rf0ba"]
+atlas = ExtResource("2_3ua7n")
+region = Rect2(480, 64, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hunq1"]
+atlas = ExtResource("2_3ua7n")
+region = Rect2(0, 64, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oemrb"]
+atlas = ExtResource("2_3ua7n")
+region = Rect2(32, 64, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dabde"]
+atlas = ExtResource("2_3ua7n")
+region = Rect2(64, 64, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ddhfh"]
+atlas = ExtResource("2_3ua7n")
+region = Rect2(96, 64, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_carrn"]
+atlas = ExtResource("2_3ua7n")
+region = Rect2(128, 64, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lq03p"]
+atlas = ExtResource("2_3ua7n")
+region = Rect2(160, 64, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jtbv0"]
+atlas = ExtResource("2_3ua7n")
+region = Rect2(192, 64, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_km573"]
+atlas = ExtResource("2_3ua7n")
+region = Rect2(224, 64, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dokue"]
+atlas = ExtResource("2_3ua7n")
+region = Rect2(256, 64, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jovkp"]
+atlas = ExtResource("2_3ua7n")
+region = Rect2(0, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yt6nc"]
+atlas = ExtResource("2_3ua7n")
+region = Rect2(160, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cs0xg"]
+atlas = ExtResource("2_3ua7n")
+region = Rect2(192, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wl87t"]
+atlas = ExtResource("2_3ua7n")
+region = Rect2(224, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mk7ai"]
+atlas = ExtResource("2_3ua7n")
+region = Rect2(256, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3eqj6"]
+atlas = ExtResource("2_3ua7n")
+region = Rect2(128, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6gdru"]
+atlas = ExtResource("2_3ua7n")
+region = Rect2(96, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_71dt1"]
+atlas = ExtResource("2_3ua7n")
+region = Rect2(64, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8nql1"]
+atlas = ExtResource("2_3ua7n")
+region = Rect2(32, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h10qr"]
+atlas = ExtResource("2_3ua7n")
+region = Rect2(0, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rskdj"]
+atlas = ExtResource("2_3ua7n")
+region = Rect2(32, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vreev"]
+atlas = ExtResource("2_3ua7n")
+region = Rect2(64, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ourj"]
+atlas = ExtResource("2_3ua7n")
+region = Rect2(96, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cuqrw"]
+atlas = ExtResource("2_3ua7n")
+region = Rect2(128, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nfq1y"]
+atlas = ExtResource("2_3ua7n")
+region = Rect2(160, 0, 32, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mbos1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dj4r4")
+}],
+"loop": true,
+"name": &"bath",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xpohm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mhseq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bdoom")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x2hqp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kx15v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rf0ba")
+}],
+"loop": false,
+"name": &"bath_end",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hunq1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oemrb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dabde")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ddhfh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_carrn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lq03p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jtbv0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_carrn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lq03p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jtbv0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_carrn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lq03p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jtbv0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_carrn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lq03p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jtbv0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_km573")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dokue")
+}],
+"loop": false,
+"name": &"bath_start",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jovkp")
+}],
+"loop": false,
+"name": &"off_default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yt6nc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cs0xg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wl87t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mk7ai")
+}],
+"loop": true,
+"name": &"shower",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3eqj6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6gdru")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_71dt1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8nql1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h10qr")
+}],
+"loop": false,
+"name": &"shower_end",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rskdj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vreev")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0ourj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cuqrw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nfq1y")
+}],
+"loop": false,
+"name": &"shower_start",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h6tp1"]
+atlas = ExtResource("2_3ua7n")
+region = Rect2(7, 21, 4, 4)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ot1v4"]
+shader = ExtResource("7_6m5wv")
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/width = 0.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mns28"]
+atlas = ExtResource("5_1kvi7")
+region = Rect2(173, 53, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6m5wv"]
+atlas = SubResource("AtlasTexture_mns28")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dj4r4"]
+shader = ExtResource("7_6m5wv")
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/width = 0.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1kvi7"]
+atlas = ExtResource("4_0rf1o")
+region = Rect2(51, 0, 10, 10)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1kvi7"]
+bg_color = Color(0.275113, 0.630969, 0.890769, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="Baignoire" type="Node2D"]
+script = ExtResource("1_7gsmj")
+end_timeline = "Baignoire"
+bookmark = 2
+
+[node name="WindowSize" type="Control" parent="." node_paths=PackedStringArray("pos_bouch", "pos_debouch")]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 800.0
+offset_bottom = 650.0
+script = ExtResource("2_3w5rc")
+sfx_valve = ExtResource("3_jv3uq")
+pos_bouch = NodePath("BouchonElements/PosBoucher")
+pos_debouch = NodePath("BouchonElements/PosDeboucher")
+
+[node name="TextureRect" type="TextureRect" parent="WindowSize"]
+modulate = Color(0.490196, 0.490196, 0.490196, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_dj4r4")
+
+[node name="SpriteBaignoire" type="AnimatedSprite2D" parent="WindowSize"]
+position = Vector2(400, 325)
+scale = Vector2(8, 8)
+sprite_frames = SubResource("SpriteFrames_mbos1")
+animation = &"bath_start"
+autoplay = "off_default"
+frame = 17
+frame_progress = 1.0
+
+[node name="ValveGauche" type="Sprite2D" parent="WindowSize/SpriteBaignoire"]
+modulate = Color(0.294118, 0.294118, 0.294118, 0.72549)
+position = Vector2(-7, -9)
+texture = SubResource("AtlasTexture_h6tp1")
+
+[node name="ValveDroite" type="Button" parent="WindowSize/SpriteBaignoire"]
+offset_left = 5.0
+offset_top = -11.0
+offset_right = 13.0
+offset_bottom = -3.0
+scale = Vector2(0.5, 0.499)
+focus_mode = 0
+flat = true
+script = ExtResource("6_ot1v4")
+
+[node name="Sprite2D" type="Sprite2D" parent="WindowSize/SpriteBaignoire/ValveDroite"]
+material = SubResource("ShaderMaterial_ot1v4")
+position = Vector2(4, 4.00801)
+scale = Vector2(2, 2.00401)
+texture = SubResource("AtlasTexture_6m5wv")
+
+[node name="Timer" type="Timer" parent="WindowSize"]
+
+[node name="BouchonElements" type="Node2D" parent="WindowSize"]
+
+[node name="Bouchon" type="Button" parent="WindowSize/BouchonElements"]
+offset_left = 323.0
+offset_top = 355.0
+offset_right = 373.0
+offset_bottom = 383.0
+focus_mode = 0
+theme_override_colors/icon_hover_pressed_color = Color(1, 1, 1, 0)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 0)
+theme_override_font_sizes/font_size = 8
+toggle_mode = true
+flat = true
+script = ExtResource("6_ot1v4")
+
+[node name="Sprite2D" type="Sprite2D" parent="WindowSize/BouchonElements/Bouchon"]
+material = SubResource("ShaderMaterial_dj4r4")
+position = Vector2(1, -4)
+scale = Vector2(5.55, 5.55)
+texture = SubResource("AtlasTexture_1kvi7")
+centered = false
+
+[node name="PosBoucher" type="Marker2D" parent="WindowSize/BouchonElements"]
+position = Vector2(375, 371)
+
+[node name="PosDeboucher" type="Marker2D" parent="WindowSize/BouchonElements"]
+position = Vector2(323, 355)
+
+[node name="ProgressBar" type="ProgressBar" parent="WindowSize"]
+layout_mode = 0
+offset_left = 633.0
+offset_top = 152.0
+offset_right = 655.0
+offset_bottom = 543.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_1kvi7")
+max_value = 18.0
+value = 18.0
+fill_mode = 3
+show_percentage = false
+
+[node name="HSeparator" type="HSeparator" parent="WindowSize/ProgressBar"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 127.0
+offset_right = 21.0
+offset_bottom = 131.0
+theme_override_constants/separation = 0
+
+[node name="HSeparator2" type="HSeparator" parent="WindowSize/ProgressBar"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 258.0
+offset_right = 21.0
+offset_bottom = 262.0
+
+[node name="TextureRect" type="TextureRect" parent="WindowSize/ProgressBar"]
+layout_mode = 0
+offset_left = -10.0
+offset_top = -49.0
+offset_right = 502.0
+offset_bottom = 463.0
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("9_6m5wv")
+
+[connection signal="mouse_entered" from="WindowSize/SpriteBaignoire/ValveDroite" to="WindowSize/SpriteBaignoire/ValveDroite" method="_on_mouse_hover" binds= [0.75]]
+[connection signal="mouse_exited" from="WindowSize/SpriteBaignoire/ValveDroite" to="WindowSize/SpriteBaignoire/ValveDroite" method="_on_mouse_hover" binds= [0.0]]
+[connection signal="pressed" from="WindowSize/SpriteBaignoire/ValveDroite" to="WindowSize" method="_on_button_pressed"]
+[connection signal="timeout" from="WindowSize/Timer" to="WindowSize" method="shower"]
+[connection signal="mouse_entered" from="WindowSize/BouchonElements/Bouchon" to="WindowSize/BouchonElements/Bouchon" method="_on_mouse_hover" binds= [1.0]]
+[connection signal="mouse_exited" from="WindowSize/BouchonElements/Bouchon" to="WindowSize/BouchonElements/Bouchon" method="_on_mouse_hover" binds= [0.0]]
+[connection signal="toggled" from="WindowSize/BouchonElements/Bouchon" to="WindowSize" method="_on_bouchon_pressed"]

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dlrxvdefv1m7r"]
+
+[ext_resource type="TileSet" uid="uid://cdbp3041niwnl" path="res://Graphics/Usabletilsets/interior.tres" id="1_ob43q"]
+
+[node name="Laboratoire" type="Node2D"]
+
+[node name="TileMapLayer2" type="TileMapLayer" parent="."]
+tile_set = ExtResource("1_ob43q")

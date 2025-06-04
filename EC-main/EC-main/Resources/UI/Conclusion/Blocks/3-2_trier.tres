@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="GradeBlockVariables" load_steps=2 format=3 uid="uid://bwotjxbutiovs"]
+
+[ext_resource type="Script" uid="uid://d3dcgs02tcqyt" path="res://Scripts/UI/Conclusion/Ressource/grade_block_variables.gd" id="1_pxrrg"]
+
+[resource]
+script = ExtResource("1_pxrrg")
+title = "Trier les déchets"
+category = "Déchets"
+description = "Un français moyen produit environ 1 kg de déchets par jour. Trier ses déchets est un geste simple et à la portée de tous, qui évite l'incinération de déchets, pouvant alors avoir une seconde vie. Les règles sont différentes en fonction des communes mais, depuis 2023, en France, TOUS les emballages en métal, plastique, carton et papiers vont dans la poubelle jaune.
+ville, généralement verts."
+description_scientifique = "[color=#6d6d6d]Source :[/color] [color=#007dff][url=https://www.fnh.org/tri-selectif-un-geste-individuel-des-benefices-collectifs/]Fondation pour la Nature et l'Homme[/url][/color]
+"
+mission_key_1 = "Quests"
+mission_key_2 = "3-2_trier"
+point_key_1 = "Points"
+point_key_2 = "3-2_trier"
+metadata/_custom_type_script = "uid://d3dcgs02tcqyt"

@@ -1,0 +1,7 @@
+label book1
+Veux-tu jouer au mini-jeu du tri des déchets ?
+- Oui
+	Ok, le voilà !
+	do EventBus.emit_signal("setup_minigame", "tridechet")
+- Non
+[end_timeline]

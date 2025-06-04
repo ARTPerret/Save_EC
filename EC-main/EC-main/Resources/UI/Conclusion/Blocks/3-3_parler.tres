@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="GradeBlockVariables" load_steps=2 format=3 uid="uid://bue0qem4uij6m"]
+
+[ext_resource type="Script" uid="uid://d3dcgs02tcqyt" path="res://Scripts/UI/Conclusion/Ressource/grade_block_variables.gd" id="1_uw5fl"]
+
+[resource]
+script = ExtResource("1_uw5fl")
+title = "Eboueur - Tri des déchets"
+category = "Followers"
+description = "Comme mentionné plus haut, le tri des déchets diffère en fonction des communes. Par exemple, certaines communes utilisent la poubelle bleue pour le tri des déchets carton et papier. Les règles sont cependant généralement les mêmes : les bouteilles en verre doivent être jetés dans des bacs dédiés en ville, généralement verts.
+"
+description_scientifique = "[color=#6d6d6d]Source :[/color] [color=#007dff][url=https://www.ecologie.gouv.fr/politiques-publiques/tri-dechets]Ecologie.gouv[/url][/color]
+"
+mission_key_1 = "Quests"
+mission_key_2 = "3-3_parler"
+point_key_1 = "Points"
+point_key_2 = "3-3_parler"
+metadata/_custom_type_script = "uid://d3dcgs02tcqyt"

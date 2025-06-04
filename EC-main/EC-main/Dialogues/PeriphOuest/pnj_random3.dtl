@@ -1,0 +1,8 @@
+label book1
+FDB: Cette ligne de bus fait le lien entre le périphérique ouest et le centre-ville. Pratique pour faire ses courses !
+if SaveManager.getElement("Quests", "3_eboueur") == true:
+	FDB: Pourquoi je suis toujours là ? Parce que j'aime bien observer les bus passer !
+	[end_timeline]
+else:
+	FDB: Mais bon, ça fait un moment la dernière fois que j'en ais vu un passer. J'ai cru comprendre que la route pour le centre-ville est bloquée ?
+	[end_timeline]

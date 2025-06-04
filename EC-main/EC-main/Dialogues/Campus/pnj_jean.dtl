@@ -1,0 +1,24 @@
+label book1
+if SaveManager.getElement("Quests", "Q_jean") == null
+	Jean: Oh, bonjour jeune homme, désolé, je suis un peu occupé là.
+	- Est-ce que je peux aider?
+		Jean: Hum, je suis pas sûr. Je dois trouver un isolant pour le nouveau bâtiment et je ne sais pas où le trouver.
+		Jean: Ouate de cellulose, polyuréthane, laine de chanvre, laine de bois. Je prendrais tout à ce niveau là.
+		do SaveManager.setElement("Quests", {"Q_jean": false})
+		do EventBus.emit_signal("add_quest", "jean_quest")
+	- Okay, bonne chance alors
+elif SaveManager.getElement("Quests", "Q_jean") == false:
+	Jean: Ouate de cellulose, polyuréthane, laine de chanvre, laine de bois. Je prendrais tout à ce niveau là.
+	if {SaveManager.getElement("Player", "inventory").has("Chanvre")} == true
+		- J'ai trouvé le chanvre pour l'isolation.
+			Jean: Oulah, je suis pas sûr que ce soit légal ça.
+			Jean: La [b]LAINE[/b] de chanvre est un excellent isolant écologique, mais un grand nombre de feuille doivent être traité pour faire de la laine, c'est pourquoi la solution coûte cher malgré la qualité de l'isolant.
+			Jean: Bon, passe moi ça, je peux pas te laisser te balader avec ça. Mais tu pensais à bien, je vais demander à ce que l'isolation du bâtiment soit en laine de chanvre, de toute façon on nous avait demandé d'essayer de faire le plus écologique possible.
+			do EventBus.emit_signal("remove_item", "Chanvre")
+			do EventBus.emit_signal("set_quest_state", "jean_quest")
+			do EventBus.emit_signal("add_follower", 1)
+			do EventBus.emit_signal("set_empreinte", -1.5)
+			do SaveManager.setElement("Quests", {"Q_jean": true})
+else:
+	Jean: Merci d'avoir essayé d'aider, mais évite de te balader avec ce genre de choses dans la campus la prochaine fois.
+[end_timeline]

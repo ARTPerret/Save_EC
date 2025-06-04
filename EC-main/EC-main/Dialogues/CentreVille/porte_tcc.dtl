@@ -1,0 +1,25 @@
+if {SaveManager.getElement("Player", "inventory").has("Carte")} == false:
+	Employé: Bonjour, bienvenue dans l'agence TCC ! En quoi puis-je vous aider ?
+	- Récupérer mon titre de transport
+		Employé: Oh, vous souhaitez vous abonner et obtenir votre titre de transport pour le métro ? Très bien.
+		Employé: Dans ce cas là, il va nous falloir remlir quelques documents concernant votre type d'abbonnement et vos information personnelles... Cela ne prendra pas plus de 5 minutes, cela ne vous dérange pas ?
+		- Pas de problème
+			do FadeManager.trigger_fade(1,1.5,1)
+			Employé: Parfait ![pause=1] Donc, j'ai quelques question à vous poser...
+			do EventBus.emit_signal("change_time", -300)
+			do FadeManager.trigger_fade(0,1.5,1)
+			Employé: ... Et voilà, pas plus de [b]5 minutes[/b] comme promis !
+			Employé: Voici votre titre de transport : Avec celui-ci, vous avez donc maintenant accès à notre ligne de métro.
+			do EventBus.emit_signal("add_item", "Carte")
+			Employé: Voilà pour vous ! N'hésitez pas à repasser au moindre problème !
+		- Euh...
+			Employé: Ah, vous êtes si pressé que ça ? Je suis navré mais nous ne pouvons pas griller les étapes.
+			Employé: N'hésitez pas à revenir si vous trouvez plus de temps !
+	- Rien du tout
+		Employé: D'accord ! Et bien, n'hésitez pas à revenir si vous avez besoin de nos services !
+	[end_timeline]
+else:
+	Employé: Bonjour, bienvenue dans l'agence TCC !
+	Employé: Oh, re-bonjour ! Vous avez déjà récupéré votre titre de transport : c'est tout bon de notre coté !
+	Employé: N'hésitez pas à repasser au moindre problème !
+	[end_timeline]

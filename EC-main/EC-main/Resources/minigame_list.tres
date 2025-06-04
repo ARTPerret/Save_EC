@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="MinigameList" load_steps=2 format=3 uid="uid://bkhn78x1ls0qp"]
+
+[ext_resource type="Script" uid="uid://b01l5d86200q0" path="res://Scripts/MiniJeux/Ressource/minigame_list.gd" id="1_yfh3e"]
+
+[resource]
+script = ExtResource("1_yfh3e")
+dictionnary_minigame = Dictionary[String, String]({
+"baignoire": "uid://dgpu4hmb3vlfw",
+"television": "uid://bsnubr52gfqvq",
+"tridechet": "uid://cp4xg7covqurw",
+"tridechet3PB": "uid://3fypm3dg8d42",
+"velo": "uid://cysq8n807qxk6"
+})

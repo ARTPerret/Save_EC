@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="MapList" load_steps=2 format=3 uid="uid://byrvrkqe18ml0"]
+
+[ext_resource type="Script" uid="uid://buyy1tg5hdpsf" path="res://Scripts/Maps/Resources/map_list.gd" id="1_thahi"]
+
+[resource]
+script = ExtResource("1_thahi")
+locations = Dictionary[String, String]({
+"Amphithéatre": "uid://dorlc68hwfoy4",
+"Appartement": "uid://6eecifybnu8r",
+"Campus": "uid://bmewuwjqy5urp",
+"CentreVille": "uid://cp1m5aulw3omg",
+"ConclusionScreen": "uid://cug2nd2hq41jk",
+"Debug": "uid://bv7jahf4uj8v0",
+"Debug2": "uid://qmadlfp31trp",
+"Journalistes": "uid://c8tg6jq4nrmeh",
+"PeriphOuest": "uid://dlgvxdfciokt4",
+"Residence_interior_bas": "uid://c4vdvo6fwouoc",
+"Residence_interior_haut": "uid://0ko12whjgeh"
+})

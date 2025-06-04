@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cug2nd2hq41jk"]
+
+[ext_resource type="Script" uid="uid://myqodwccwpuh" path="res://Scripts/Maps/Misc/conclusion_setup.gd" id="1_gtoqd"]
+[ext_resource type="PackedScene" uid="uid://c8ttmemewih6u" path="res://Scenes/UI/Conclusion/conclusion_panel.tscn" id="2_wukxg"]
+
+[node name="ConclusionScreen" type="Node2D" node_paths=PackedStringArray("conclusion_panel")]
+script = ExtResource("1_gtoqd")
+conclusion_panel = NodePath("CanvasLayer/ConclusionPanel")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ConclusionPanel" parent="CanvasLayer" instance=ExtResource("2_wukxg")]
+offset_left = -480.0
+offset_top = -500.0
+offset_right = 480.0
+offset_bottom = 500.0

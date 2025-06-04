@@ -1,0 +1,17 @@
+if SaveManager.getElement("Quests", "0_tutoriel") == false and SaveManager.getElement("Quests", "0-4_baignoire") == null:
+	Il est trop tôt pour se laver !
+	[end_timeline]
+label book1
+if SaveManager.getElement("Quests", "1-2_shower") == false:
+	Il est l'heure de se laver ! Est-ce que ça sera un bain ou une douche ?
+	do EventBus.emit_signal("setup_minigame", "baignoire")
+	if SaveManager.getElement("Quests", "0_tutoriel") == false:
+		jump intro_appart/book7
+else:
+	Vous vous êtes déjà lavé.
+[end_timeline]
+label book2
+Vous êtes tout propre !
+if SaveManager.getElement("Quests", "1-1_breakfast") == true:
+	jump intro_appart/book2
+[end_timeline]

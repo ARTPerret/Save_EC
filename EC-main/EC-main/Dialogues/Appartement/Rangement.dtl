@@ -1,0 +1,7 @@
+Votre armoire, ainsi que quelques rangements. Voulez-vous récupérer quelque chose ?
+- Manteau
+	La canicule arrive, inutile de se couvrir d'avantage !
+- Casque de vélo | [if {SaveManager.getElement("Player", "inventory").has("Casque")} == false] [else="disable"]
+	Vous récupérez votre casque de vélo.
+	do EventBus.emit_signal("add_item", "Casque")
+- Rien pour le moment

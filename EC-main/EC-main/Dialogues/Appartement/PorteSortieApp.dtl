@@ -1,0 +1,7 @@
+if SaveManager.getElement("Quests", "1_appart") == true :
+	Voulez-vous sortir de votre appartement ?
+	- Oui
+		do ThreadLoad.load_scene("PeriphOuest", 0)
+	- Non
+else :
+	Vous n'êtes pas prêt ! Il faut encore vous préparer !

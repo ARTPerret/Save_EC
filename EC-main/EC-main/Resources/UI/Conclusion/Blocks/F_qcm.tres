@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="GradeBlockVariables" load_steps=2 format=3 uid="uid://brtmp4mqaorao"]
+
+[ext_resource type="Script" uid="uid://d3dcgs02tcqyt" path="res://Scripts/UI/Conclusion/Ressource/grade_block_variables.gd" id="1_y0q2m"]
+
+[resource]
+script = ExtResource("1_y0q2m")
+title = "Magasin - Fruits de saison"
+category = "Followers"
+description = "Il est toujours bon de préférer acheter des fruits de saison. Ceux-ci sont généralement issus de producteurs locaux, ce qui favorise le commerce local mais aussi limite les coûts de transport."
+description_scientifique = "[color=#6d6d6d]Source :[/color] [color=#007dff][url=https://agriculture.gouv.fr/panier-de-saison-les-produits-de-lete]Agriculture.gouv[/url][/color]
+"
+mission_key_1 = "Quests"
+mission_key_2 = "F_qcm"
+point_key_1 = "Points"
+point_key_2 = "F_qcm"
+metadata/_custom_type_script = "uid://d3dcgs02tcqyt"

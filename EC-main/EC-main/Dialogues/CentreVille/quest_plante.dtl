@@ -1,0 +1,15 @@
+label book1
+Un petit panneau planté dans le sol.
+[end_timeline]
+label book2
+L'arbuste se porte bien !
+[end_timeline]
+label book3
+Vous plantez l'arbre !
+do EventBus.emit_signal("set_empreinte", -0.1)
+[end_timeline]
+label book4
+do EventBus.emit_signal("remove_item", "Arbre")
+Vous avez planté tous les arbres ! Dans quelques années, les gens pourront mieux respirer !
+do SaveManager.setElement("Quests", {"S_jardinier": true})
+[end_timeline]

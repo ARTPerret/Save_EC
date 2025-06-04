@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Quest" load_steps=2 format=3 uid="uid://djoavc7u3i0yy"]
+
+[ext_resource type="Script" uid="uid://b33ppoek3j2kg" path="res://Scripts/UI/QuestElements/Resources/quest_variables.gd" id="1_6kue6"]
+
+[resource]
+script = ExtResource("1_6kue6")
+type = 0
+name = "Se rendre au Campus"
+desc = ""
+metadata/_custom_type_script = "uid://b33ppoek3j2kg"

@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://bs46uyyaptk6s"]
+
+[ext_resource type="Script" uid="uid://bvkup4ufl180s" path="res://Scripts/Autoload/fade_manager.gd" id="1_qos5w"]
+
+[node name="FadeManager" type="CanvasLayer"]
+script = ExtResource("1_qos5w")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)

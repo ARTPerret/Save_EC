@@ -1,0 +1,9 @@
+label book1
+if SaveManager.getElement("Quests", "Q_francoisresponsabledelarestaurationducrous") == null
+	Lilian: J'ai la dalle moi ce midi
+elif SaveManager.getElement("Quests", "Q_lilian") == true:
+	Lilian: Ouais, je sais que je devrais manger le soir mais honnêtement, je ne peux pas me le permettre.
+else:
+	Lilian: Tu veux connaitre mais habitudes au crous? C'est mon seul vrai repas de la journée, j'ai pas assez d'argent pour manger le soir donc je mange autant que je peux quand je suis là.
+	do SaveManager.setElement("Quests", {"Q_lilian": true})
+[end_timeline]

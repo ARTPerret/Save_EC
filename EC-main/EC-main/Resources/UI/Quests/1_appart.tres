@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Quest" load_steps=2 format=3 uid="uid://yt4xycg3kvnl"]
+
+[ext_resource type="Script" uid="uid://b33ppoek3j2kg" path="res://Scripts/UI/QuestElements/Resources/quest_variables.gd" id="1_nq7hj"]
+
+[resource]
+script = ExtResource("1_nq7hj")
+type = 0
+name = "Se préparer à sortir"
+desc = "Je sais pas"

@@ -1,0 +1,6 @@
+set {Toilet} = range(1,10).pick_random()
+if {Toilet} == 1:
+	[i]Bop bop dob yes yes![/i]
+else:
+	Vos toilettes.
+

@@ -1,0 +1,347 @@
+[gd_scene load_steps=19 format=3 uid="uid://3fypm3dg8d42"]
+
+[ext_resource type="Script" uid="uid://dia0ley3to101" path="res://Scripts/MiniJeux/minigame_setup.gd" id="1_7mlrj"]
+[ext_resource type="Script" uid="uid://ddcdbgy7hgrmh" path="res://Scripts/MiniJeux/Jeux/TriDechet/tridechet.gd" id="2_h3ye7"]
+[ext_resource type="PackedScene" uid="uid://e2fy0gl10th8" path="res://Scenes/MiniJeux/TriDechet/DechetTypes/ref.tscn" id="3_bi8gk"]
+[ext_resource type="PackedScene" uid="uid://rf4a4v7hbyi7" path="res://Scenes/MiniJeux/TriDechet/DechetTypes/ref_nonrec.tscn" id="4_nw36i"]
+[ext_resource type="AudioStream" uid="uid://bng27oilms6jo" path="res://Audio/SFX/Temp/FB_Tap.wav" id="5_76lt3"]
+[ext_resource type="PackedScene" uid="uid://q7300yqgpl64" path="res://Scenes/MiniJeux/TriDechet/DechetTypes/ref_verre.tscn" id="5_h3ye7"]
+[ext_resource type="PackedScene" uid="uid://c4ibps4ddsx3q" path="res://Scenes/MiniJeux/TriDechet/PoubelleTypes/ref.tscn" id="6_ff1f2"]
+[ext_resource type="Texture2D" uid="uid://dxnvxj2oia83o" path="res://Graphics/Other/bg_poub2.png" id="7_bi8gk"]
+[ext_resource type="Shader" uid="uid://c2ug5tlxurkwa" path="res://Shaders/outline.gdshader" id="7_q7g7p"]
+[ext_resource type="Texture2D" uid="uid://sm0i5714jmm7" path="res://Graphics/TEMP/TEMP_Trash.png" id="8_kxl63"]
+[ext_resource type="Texture2D" uid="uid://d111wqta8chq3" path="res://Graphics/UI/hand_cursor.svg" id="9_6jsu8"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7mlrj"]
+resource_local_to_scene = true
+shader = ExtResource("7_q7g7p")
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/width = 0.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h3ye7"]
+atlas = ExtResource("8_kxl63")
+region = Rect2(17, 0, 17, 20)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bi8gk"]
+resource_local_to_scene = true
+shader = ExtResource("7_q7g7p")
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/width = 0.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nw36i"]
+atlas = ExtResource("8_kxl63")
+region = Rect2(34, 0, 17, 20)
+
+[sub_resource type="Animation" id="Animation_7vvsc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FlechePBDroite:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FlechePBDroite2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("FlechePBDroite3:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("FlechePBDroite4:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_om02x"]
+resource_name = "intro"
+length = 4.5
+step = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FlechePBDroite:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [true, false, true, false, true, false, true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FlechePBDroite2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [true, false, true, false, true, false, true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("FlechePBDroite3:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [true, false, true, false, true, false, true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("FlechePBDroite4:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [true, false, true, false, true, false, true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("FlechePBDroite5:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [true, false, true, false, true, false, true, false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("FlechePBDroite6:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [true, false, true, false, true, false, true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3bl67"]
+_data = {
+&"RESET": SubResource("Animation_7vvsc"),
+&"intro": SubResource("Animation_om02x")
+}
+
+[node name="Tridechet" type="Node2D"]
+script = ExtResource("1_7mlrj")
+end_timeline = "quest_poubellesplage"
+bookmark = 2
+
+[node name="WindowSize" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1200.0
+offset_bottom = 750.0
+script = ExtResource("2_h3ye7")
+quest_comp = "S_plage2"
+items = Array[PackedScene]([ExtResource("3_bi8gk"), ExtResource("4_nw36i"), ExtResource("5_h3ye7")])
+max_trash_items = 8
+item_fall_speed = 250.0
+sfx_trash = ExtResource("5_76lt3")
+
+[node name="TextureRect" type="TextureRect" parent="WindowSize"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_bi8gk")
+
+[node name="Timer" type="Timer" parent="WindowSize"]
+wait_time = 3.0
+
+[node name="Poubelle" parent="WindowSize" instance=ExtResource("6_ff1f2")]
+layout_mode = 0
+offset_left = 115.0
+offset_top = 550.0
+offset_right = 284.0
+offset_bottom = 758.0
+select_offset = 15
+
+[node name="Poubelle2" parent="WindowSize" instance=ExtResource("6_ff1f2")]
+layout_mode = 0
+offset_left = 510.0
+offset_top = 550.0
+offset_right = 679.0
+offset_bottom = 758.0
+type = 1
+select_offset = 15
+
+[node name="SpritePoubelle" parent="WindowSize/Poubelle2" index="2"]
+material = SubResource("ShaderMaterial_7mlrj")
+texture = SubResource("AtlasTexture_h3ye7")
+
+[node name="Poubelle3" parent="WindowSize" instance=ExtResource("6_ff1f2")]
+layout_mode = 0
+offset_left = 895.0
+offset_top = 550.0
+offset_right = 1064.0
+offset_bottom = 758.0
+type = 2
+select_offset = 15
+
+[node name="SpritePoubelle" parent="WindowSize/Poubelle3" index="2"]
+material = SubResource("ShaderMaterial_bi8gk")
+texture = SubResource("AtlasTexture_nw36i")
+
+[node name="Fleches" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="FlechePBDroite" type="TextureRect" parent="Fleches"]
+z_index = 100
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 1176.0
+offset_top = 560.0
+offset_right = 1288.0
+offset_bottom = 672.0
+grow_vertical = 2
+rotation = 1.5708
+mouse_filter = 2
+texture = ExtResource("9_6jsu8")
+expand_mode = 1
+
+[node name="FlechePBDroite2" type="TextureRect" parent="Fleches"]
+z_index = 100
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 782.0
+offset_top = 672.0
+offset_right = 894.0
+offset_bottom = 784.0
+grow_vertical = 2
+rotation = -1.5708
+mouse_filter = 2
+texture = ExtResource("9_6jsu8")
+expand_mode = 1
+flip_h = true
+
+[node name="FlechePBDroite3" type="TextureRect" parent="Fleches"]
+z_index = 100
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 395.0
+offset_top = 560.0
+offset_right = 507.0
+offset_bottom = 672.0
+grow_vertical = 2
+rotation = 1.5708
+mouse_filter = 2
+texture = ExtResource("9_6jsu8")
+expand_mode = 1
+
+[node name="FlechePBDroite4" type="TextureRect" parent="Fleches"]
+z_index = 100
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 1.0
+offset_top = 672.0
+offset_right = 113.0
+offset_bottom = 784.0
+grow_vertical = 2
+rotation = -1.5708
+mouse_filter = 2
+texture = ExtResource("9_6jsu8")
+expand_mode = 1
+flip_h = true
+
+[node name="FlechePBDroite5" type="TextureRect" parent="Fleches"]
+z_index = 100
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 790.0
+offset_top = 560.0
+offset_right = 902.0
+offset_bottom = 672.0
+grow_vertical = 2
+rotation = 1.5708
+mouse_filter = 2
+texture = ExtResource("9_6jsu8")
+expand_mode = 1
+
+[node name="FlechePBDroite6" type="TextureRect" parent="Fleches"]
+z_index = 100
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 395.0
+offset_top = 672.0
+offset_right = 507.0
+offset_bottom = 784.0
+grow_vertical = 2
+rotation = -1.5708
+mouse_filter = 2
+texture = ExtResource("9_6jsu8")
+expand_mode = 1
+flip_h = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Fleches"]
+libraries = {
+&"": SubResource("AnimationLibrary_3bl67")
+}
+autoplay = "intro"
+
+[connection signal="timeout" from="WindowSize/Timer" to="WindowSize" method="_on_timer_timeout"]
+[connection signal="animation_finished" from="Fleches/AnimationPlayer" to="WindowSize" method="_on_animation_player_animation_finished"]
+
+[editable path="WindowSize/Poubelle2"]
+[editable path="WindowSize/Poubelle3"]

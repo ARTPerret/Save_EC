@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://bguj43xutdndd"]
+
+[ext_resource type="Script" uid="uid://duwcsohrvr46l" path="res://Scenes/Maps/Campus/Residences/elevator.gd" id="1_q0te7"]
+[ext_resource type="Shader" uid="uid://c2ug5tlxurkwa" path="res://Shaders/outline.gdshader" id="2_ia1dl"]
+[ext_resource type="Texture2D" uid="uid://qsy7af1535if" path="res://Graphics/Props/Porte.png" id="2_jvlrh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mira6"]
+size = Vector2(48, 36)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_e3mpy"]
+shader = ExtResource("2_ia1dl")
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/width = 0.0
+
+[node name="Elevator" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_q0te7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(24, 18)
+shape = SubResource("RectangleShape2D_mira6")
+
+[node name="SpriteElevator" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_e3mpy")
+position = Vector2(24, 16)
+scale = Vector2(0.0625815, 0.0626223)
+texture = ExtResource("2_jvlrh")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="GradeBlockVariables" load_steps=2 format=3 uid="uid://c26u6t814r24q"]
+
+[ext_resource type="Script" uid="uid://d3dcgs02tcqyt" path="res://Scripts/UI/Conclusion/Ressource/grade_block_variables.gd" id="1_55stx"]
+
+[resource]
+script = ExtResource("1_55stx")
+title = "Se rendre à la fac"
+category = "Transports"
+description = "Pour un Français moyen, les transports représentent presque 2 tonnes d'émissions de CO2 par an. La voiture représente en elle-même 1,6 tonnes, il s'agit de loin du mode de transport le plus polluant. Les transports en communs représentent à eux réunis le reste. Si le temps nous est favorable, la marche à pied est la meilleure option, le vélo offrant une alternative plus rapide.
+"
+description_scientifique = "[color=#6d6d6d]Source :[/color] [color=#007dff][url=https://impactco2.fr/outils/transport]Impact CO2[/url][/color]"
+mission_key_1 = "Quests"
+mission_key_2 = "2_transport"
+point_key_1 = "Points"
+point_key_2 = "2_transport"
+metadata/_custom_type_script = "uid://d3dcgs02tcqyt"

@@ -1,0 +1,107 @@
+[gd_scene load_steps=10 format=3 uid="uid://bs16bs1oatfng"]
+
+[ext_resource type="Script" uid="uid://8msweorkqf61" path="res://Scripts/Inputs/Types/inputs_mobile.gd" id="1_6k15q"]
+[ext_resource type="Texture2D" uid="uid://cidwa0ftsbyx7" path="res://Graphics/Other/joystick_bg.svg" id="2_untfi"]
+[ext_resource type="Texture2D" uid="uid://daqr0kn5cboth" path="res://Graphics/Other/joystick.svg" id="3_abxnb"]
+[ext_resource type="Texture2D" uid="uid://2d7rauh77nxq" path="res://Graphics/Other/joy1.png" id="3_c7m3c"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_re68d"]
+radius = 120.0
+
+[sub_resource type="FontVariation" id="FontVariation_sib2i"]
+variation_embolden = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sib2i"]
+bg_color = Color(0, 0, 0, 0.784314)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jhl6l"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bm6oq"]
+bg_color = Color(0, 0, 0, 0.784314)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[node name="MobileElements" type="Control"]
+layout_mode = 3
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -500.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+script = ExtResource("1_6k15q")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_right = 250.0
+grow_vertical = 2
+theme_override_constants/margin_left = 250
+
+[node name="Control" type="Control" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Joystick" type="TouchScreenButton" parent="MarginContainer/Control"]
+position = Vector2(-135, -135)
+texture_normal = ExtResource("2_untfi")
+shape = SubResource("CircleShape2D_re68d")
+
+[node name="Knob" type="Sprite2D" parent="MarginContainer/Control/Joystick"]
+position = Vector2(135, 135)
+texture = ExtResource("3_abxnb")
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -150.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_constants/margin_right = 250
+
+[node name="Control" type="Control" parent="MarginContainer2"]
+layout_mode = 2
+
+[node name="InteractButton" type="TouchScreenButton" parent="MarginContainer2/Control"]
+position = Vector2(-75, -75)
+scale = Vector2(1.5, 1.5)
+texture_normal = ExtResource("3_c7m3c")
+
+[node name="Button" type="Button" parent="."]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 1
+offset_left = 50.0
+offset_top = -530.0
+offset_right = 150.0
+offset_bottom = -430.0
+focus_mode = 0
+theme_override_fonts/font = SubResource("FontVariation_sib2i")
+theme_override_font_sizes/font_size = 42
+theme_override_styles/hover = SubResource("StyleBoxFlat_sib2i")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_jhl6l")
+theme_override_styles/normal = SubResource("StyleBoxFlat_bm6oq")
+text = "||"
+text_overrun_behavior = 1
+
+[connection signal="pressed" from="MarginContainer/Control/Joystick" to="." method="_on_joystick_pressed"]
+[connection signal="released" from="MarginContainer/Control/Joystick" to="." method="_on_joystick_released"]
+[connection signal="pressed" from="MarginContainer2/Control/InteractButton" to="." method="_on_interact_button_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

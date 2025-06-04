@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Quest" load_steps=2 format=3 uid="uid://h2o1rkl5yd5x"]
+
+[ext_resource type="Script" uid="uid://b33ppoek3j2kg" path="res://Scripts/UI/QuestElements/Resources/quest_variables.gd" id="1_1u5hd"]
+
+[resource]
+script = ExtResource("1_1u5hd")
+type = 0
+name = "Tutoriel Éco-Campus"
+desc = ""
+metadata/_custom_type_script = "uid://b33ppoek3j2kg"

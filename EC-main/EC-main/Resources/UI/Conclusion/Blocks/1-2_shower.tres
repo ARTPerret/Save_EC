@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="GradeBlockVariables" load_steps=2 format=3 uid="uid://8ws8nny3lhik"]
+
+[ext_resource type="Script" uid="uid://d3dcgs02tcqyt" path="res://Scripts/UI/Conclusion/Ressource/grade_block_variables.gd" id="1_m747i"]
+
+[resource]
+script = ExtResource("1_m747i")
+title = "Se laver"
+category = "Divers"
+description = "Contrairement à ce que l'on pourrait croire, l'eau domestique n'a pas d'impact considérable sur la consommation d'eau. Après dépollution, l'eau est restituée et est rendue au cours d'eau du territoire. Ne pas prendre de bain ou trop de temps sous la douche reste cependant un bon réflexe à avoir, non seulement pour éviter de trop tirer sur le réseau d'eau en temps de sécheresse mais aussi pour la facture !"
+description_scientifique = "[color=#6d6d6d]Source :[/color] [color=#007dff][url=https://nosgestesclimat.fr/fin?theme=eau]Nos Gestes Climat[/url][/color]"
+mission_key_1 = "Quests"
+mission_key_2 = "1-2_shower"
+point_key_1 = "Points"
+point_key_2 = "1-2_shower"
+metadata/_custom_type_script = "uid://d3dcgs02tcqyt"

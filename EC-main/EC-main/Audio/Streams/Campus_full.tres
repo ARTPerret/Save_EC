@@ -1,0 +1,14 @@
+[gd_resource type="AudioStreamSynchronized" load_steps=4 format=3 uid="uid://dtpf1o6owrl73"]
+
+[ext_resource type="AudioStream" uid="uid://brihcet4r0cdw" path="res://Audio/Music/Campus/Loop_Campus2.ogg" id="1_mnet6"]
+[ext_resource type="AudioStream" uid="uid://cjab535l3onab" path="res://Audio/Music/Campus/Loop_Campus1.ogg" id="2_duiem"]
+[ext_resource type="AudioStream" uid="uid://dl6mxuhkumbxj" path="res://Audio/Music/Campus/Loop_Campus0.ogg" id="3_8gibd"]
+
+[resource]
+stream_count = 3
+stream_0/stream = ExtResource("3_8gibd")
+stream_0/volume = 0.0
+stream_1/stream = ExtResource("2_duiem")
+stream_1/volume = 0.0
+stream_2/stream = ExtResource("1_mnet6")
+stream_2/volume = 0.0

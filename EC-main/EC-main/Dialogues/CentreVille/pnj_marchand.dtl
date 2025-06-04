@@ -1,0 +1,13 @@
+if SaveManager.getElement("Quests", "S_vélo1") == false:
+	Marchand: Bonjour ! Oh, tu es là pour un colis en point Relais ? Donne-moi un instant, je vais le chercher.
+	do FadeManager.trigger_fade(1,1.5,1)
+	.[pause=0.5].[pause=0.5].[pause=0.5]
+	do FadeManager.trigger_fade(0,1,1)
+	Marchand: Et voilà !
+	do EventBus.emit_signal("add_item", "Pieces")
+	do SaveManager.setElement("Quests", {"S_vélo1": true})
+	Marchand: Passe une bonne journée, n'hésite pas à revenir si tu as besoin d'autre chose !
+	[end_timeline]
+else
+	Marchand: Il fait super beau aujourd'hui ! Ça veut dire que les gens sortent, et viennent faire des achats !
+	[end_timeline]

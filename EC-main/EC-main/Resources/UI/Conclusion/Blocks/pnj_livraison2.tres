@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="GradeBlockVariables" load_steps=2 format=3 uid="uid://dx6xfikng7dcw"]
+
+[ext_resource type="Script" uid="uid://d3dcgs02tcqyt" path="res://Scripts/UI/Conclusion/Ressource/grade_block_variables.gd" id="1_0m7km"]
+
+[resource]
+script = ExtResource("1_0m7km")
+title = "Livraison - Retour vêtements"
+category = "Followers"
+description = "Les retours gratuits sont devenus un standard dans l’industrie de la mode en ligne. Cependant, chaque retour génère des trajets supplémentaires, des déchets inutiles et parfois même la destruction de produits retournés.
+"
+description_scientifique = "[color=#6d6d6d]Source :[/color] [color=#007dff][url=https://www.nature-environnement.fr/fast-fashion-retours-gratuits-impact-environnemental/]Nature Environnement[/url][/color]
+"
+mission_key_1 = "Quests"
+mission_key_2 = "pnj_livraison2"
+point_key_1 = "Points"
+point_key_2 = "pnj_livraison2"
+metadata/_custom_type_script = "uid://d3dcgs02tcqyt"

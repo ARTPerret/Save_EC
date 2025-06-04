@@ -1,0 +1,47 @@
+[gd_scene load_steps=4 format=3 uid="uid://b1gqn6grydsaf"]
+
+[ext_resource type="Script" uid="uid://dt4gjstj4xldd" path="res://Scripts/UI/PauseElements/key_rebind.gd" id="1_06ptx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ym3tv"]
+bg_color = Color(0.0588235, 0.0588235, 0.0588235, 0.784314)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6uxt2"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="RebindPanel" type="PanelContainer"]
+theme_override_styles/panel = SubResource("StyleBoxFlat_ym3tv")
+script = ExtResource("1_06ptx")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Action"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VSeparator2" type="VSeparator" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="ButtonPanel" type="PanelContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_6uxt2")
+
+[node name="Button" type="Button" parent="HBoxContainer/ButtonPanel"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+focus_mode = 0
+toggle_mode = true
+text = "Action_key"
+
+[connection signal="toggled" from="HBoxContainer/ButtonPanel/Button" to="." method="_on_button_toggled"]

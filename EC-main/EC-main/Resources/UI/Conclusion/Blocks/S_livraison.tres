@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="GradeBlockVariables" load_steps=2 format=3 uid="uid://dnadj8v0ylmtd"]
+
+[ext_resource type="Script" uid="uid://d3dcgs02tcqyt" path="res://Scripts/UI/Conclusion/Ressource/grade_block_variables.gd" id="1_s2m6j"]
+
+[resource]
+script = ExtResource("1_s2m6j")
+title = "Livraison colis"
+category = "Transports"
+description = "La tournée de livraison à domicile typique d'un coursier est de 80 km en camion. La livraison à domicile n'est en soi pas significativement plus polluante que d'aller acheter son produit soi-même en magasin, mais les retours des colis représente cependant un grand gaspillage de ressources et une surconsommation d'énergie lors du transport."
+description_scientifique = "[color=#6d6d6d]Source :[/color] [color=#007dff][url=https://agirpourlatransition.ademe.fr/particuliers/calculateur-impact-livraison-colis]Agir pour la Transition[/url][/color]"
+mission_key_1 = "Quests"
+mission_key_2 = "S_livraison1"
+point_key_1 = "Points"
+point_key_2 = "S_livraison"
+metadata/_custom_type_script = "uid://d3dcgs02tcqyt"

@@ -1,0 +1,51 @@
+[gd_scene load_steps=4 format=3 uid="uid://c6kvwb2oslbg1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pmuwj"]
+bg_color = Color(0.0588235, 0.0588235, 0.0588235, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_anjhv"]
+bg_color = Color(0.0980392, 0.0980392, 0.0980392, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="LabelSettings" id="LabelSettings_d3cha"]
+font_color = Color(0.427493, 0.427493, 0.427493, 1)
+
+[node name="CategoryPanel" type="PanelContainer"]
+custom_minimum_size = Vector2(0, 60)
+theme_override_styles/panel = SubResource("StyleBoxFlat_pmuwj")
+metadata/topic_path = NodePath("Margin/InfoPannel/MarginContainer/TopicLabel")
+metadata/desc_path = NodePath("")
+metadata/source_path = NodePath("")
+metadata/score_path = NodePath("")
+
+[node name="Margin" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="InfoPannel" type="PanelContainer" parent="Margin"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_anjhv")
+
+[node name="MarginContainer" type="MarginContainer" parent="Margin/InfoPannel"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 0
+
+[node name="TopicLabel" type="Label" parent="Margin/InfoPannel/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "(Rien : explorez d'avantage le jeu pour découvrir ce que vous pouvez faire !)"
+label_settings = SubResource("LabelSettings_d3cha")
+vertical_alignment = 1

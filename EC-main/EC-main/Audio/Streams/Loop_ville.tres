@@ -1,0 +1,14 @@
+[gd_resource type="AudioStreamSynchronized" load_steps=4 format=3 uid="uid://cpn32hail8dmj"]
+
+[ext_resource type="AudioStream" uid="uid://rk0e0e0o0dpc" path="res://Audio/Music/Ville/Loop_Ville.ogg" id="1_w6myu"]
+[ext_resource type="AudioStream" uid="uid://crf8qd5l0qgin" path="res://Audio/Music/Ville/Loop_Ville2.ogg" id="2_rfa1h"]
+[ext_resource type="AudioStream" uid="uid://c32qtmbise2ym" path="res://Audio/Music/Ville/Loop_Ville3.ogg" id="3_7rlfi"]
+
+[resource]
+stream_count = 3
+stream_0/stream = ExtResource("1_w6myu")
+stream_0/volume = 0.0
+stream_1/stream = ExtResource("2_rfa1h")
+stream_1/volume = 0.0
+stream_2/stream = ExtResource("3_7rlfi")
+stream_2/volume = 0.0

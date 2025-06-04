@@ -1,0 +1,14 @@
+label book1
+if SaveManager.getElement("Quests", "Q_antoine") == null
+	Antoine: Eh, toi, fais gaffe à ce que tu jettes par terre.
+	Antoine: Oh, pardon, tu n'es pas un des élèves qui habitent ici.
+	Antoine: Ils sont en train de me pousser à bout, on a un système de tri au point de la technologie mais ils continuent de jeter leurs déchets par terre.
+	Antoine: Si tu trouve des déchets, hésite pas à les récuperer, ça me rendrait un grand service
+	do SaveManager.setElement("Quests", {"Q_antoine": false})
+	do EventBus.emit_signal("add_quest", "antoine_quest")
+elif SaveManager.getElement("Quests", "Q_antoine") == false:
+	Antoine: Je nettoie aussi vite que je peux mais ils salissent plus vite que je peux nettoyer, j'en peux plus.
+elif SaveManager.getElement("Quests", "Q_antoine") == true:
+	Antoine: Oh woaw, c'est toi qui as tout nettoyé? Merci beaucoup, j'espère que tu n'as pas eu trop de mal avec le tri, mais je te remercie en tout cas.
+	do EventBus.emit_signal("add_follower", 1)
+[end_timeline]

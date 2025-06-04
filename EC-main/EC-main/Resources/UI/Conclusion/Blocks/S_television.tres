@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="GradeBlockVariables" load_steps=2 format=3 uid="uid://c1ireytxohkao"]
+
+[ext_resource type="Script" uid="uid://d3dcgs02tcqyt" path="res://Scripts/UI/Conclusion/Ressource/grade_block_variables.gd" id="1_fjw3f"]
+
+[resource]
+script = ExtResource("1_fjw3f")
+title = "Éteindre la télévision"
+category = "Logement"
+description = "Avant les années 2000, les téléviseurs pouvaient consommer jusqu'à 30 watts en veille. Aujourd'hui, la plupart des télévisions en veille ne consomment plus que 1 à 3 watts, ce qui représente au cumulée sur l'année un petit budget. Il est donc bon de prendre l'habitude de débrancher sa télévision afin d'éviter de dépenser de l'énergie et de l'argent inutilement."
+description_scientifique = "[color=#6d6d6d]Source :[/color] [color=#007dff][url=https://www.totalenergies.fr/particuliers/parlons-energie/dossiers-energie/economie-d-energie/quelle-est-la-consommation-d-une-tv-en-veille]Total Énergies[/url][/color]
+"
+mission_key_1 = "Quests"
+mission_key_2 = "S_television"
+point_key_1 = "Points"
+point_key_2 = "S_television"
+metadata/_custom_type_script = "uid://d3dcgs02tcqyt"

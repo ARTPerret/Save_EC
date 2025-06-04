@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="GradeBlockVariables" load_steps=2 format=3 uid="uid://cswda4yvu71xm"]
+
+[ext_resource type="Script" uid="uid://d3dcgs02tcqyt" path="res://Scripts/UI/Conclusion/Ressource/grade_block_variables.gd" id="1_taaw2"]
+
+[resource]
+script = ExtResource("1_taaw2")
+title = "Prendre le petit déjeuner"
+category = "Alimentation"
+description = "Le petit-déjeuner représente environ 10% de notre empreinte carbone en terme d'alimentation en général. En règle générale, les petits-déjeuners à base de viande et de produits animaux possèdent une empreinte carbone beaucoup plus importante que les aliments végétariens. Les céréales avec lait d'avoine est l'option la plus écologique, avec une valeur de 0,31 kg CO2 par repas."
+description_scientifique = "[color=#6d6d6d]Source :[/color] [color=#007dff][url=https://nosgestesclimat.fr/documentation/alimentation/petit-d%C3%A9jeuner]Nos Gestes Climat[/url][/color]"
+mission_key_1 = "Quests"
+mission_key_2 = "1-1_breakfast"
+point_key_1 = "Points"
+point_key_2 = "1-1_breakfast_dej"
+metadata/_custom_type_script = "uid://d3dcgs02tcqyt"

@@ -1,0 +1,19 @@
+label book1
+if SaveManager.getElement("Quests", "F_julieqcm") == true or SaveManager.getElement("Quests", "F_julieqcm") == false:
+	Julie: J'adore les livres au cas où ça ne serait pas évident, plus de gens devrais leur donner une chance.
+	if SaveManager.getElement("Quests", "F_julieqcm") == true:
+		Julie: Mais avoir conscience qu'ils sont une solution peu polluante est déjà un bon début.
+else:
+	Julie: Hey hey et toi là ! Est-ce que tu sais c'est quoi le moyen le plus écologique de faire une recherche?
+	do SaveManager.setElement("Quests", {"F_julieqcm": false})
+	- Chatgpt
+		Julie: Et non ! Chatgpt est un très bonne outil pour les recherches complexes et permet de gagner du temps. Cependant, cela a un coût et chatgpt consomme énormemment d'eau et d'électricité. 
+		Julie: Faire des recherches avec des livres ne possède aucun coût écologique en dehors de sa création. En plus, il est prouvé qu'on se souvient bien mieux d'une solution trouvé dans un livre.
+	- Wikipédia
+		Julie: Et non ! Wikipédia possède une quantité impressionante d'information mais les recherches informatique ont toutes un coût écologique.
+		Julie: Faire des recherches avec des livres ne possède aucun coût écologique en dehors de sa création. En plus, il est prouvé qu'on se souvient bien mieux d'une solution trouvé dans un livre.
+	- Livre
+		Julie: Et oui ! Faire des recherches avec des livres ne possède aucun coût écologique en dehors de sa création ! C'est la solution la plus écologique ! En plus, il est prouvé qu'on se souvient bien mieux d'une solution trouvé dans un livre.
+		do SaveManager.setElement("Quests", {"F_julieqcm": true})
+		do EventBus.emit_signal("add_follower", 1)
+[end_timeline]

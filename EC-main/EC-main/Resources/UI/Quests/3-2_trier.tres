@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Quest" load_steps=2 format=3 uid="uid://bi41jp5nckjht"]
+
+[ext_resource type="Script" uid="uid://b33ppoek3j2kg" path="res://Scripts/UI/QuestElements/Resources/quest_variables.gd" id="1_17mqc"]
+
+[resource]
+script = ExtResource("1_17mqc")
+type = 1
+name = "•    Trier les déchets"
+desc = ""
+metadata/_custom_type_script = "uid://b33ppoek3j2kg"

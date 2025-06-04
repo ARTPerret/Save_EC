@@ -1,0 +1,47 @@
+label book1
+if SaveManager.getElement("Quests", "F_qcm3") == true or SaveManager.getElement("Quests", "F_qcm3") == false:
+	Habitant: C'est cool le pouvoir trâiner à la plage pendant les fortes chaleurs de l'été !
+else:
+	Habitant: Elle est magnifique cette plage mais je me demandais... Qu-est-ce qu’on ne devrait pas faire sur une plage pour la préserver ? Je pense ma question est peut-être difficile, tu n'es pas obligé d'y répondre...
+	- Promener son chien
+		do SaveManager.setElement("Quests", {"F_qcm3": false})
+		Habitant: Ah, effectivement, je crois que c'est interdit de promener son chien en zone surveillée. Surement c'est pour préserver la plage ?
+		Habitant: Merci, je vais suivre ton conseil ! La plage sera libre de crottes de chien !
+		[end_timeline]
+	- Faire voler un cerf-volant
+		do SaveManager.setElement("Quests", {"F_qcm3": false})
+		Habitant: Ah, il me semble bien que c'est interdit de faire voler un cerf-volant en zone surveillée. Surement pour éviter de le perdre ou de l'emmeler quelque part ?
+		Habitant: Merci, je vais suivre ton conseil ! Le ciel de la plage sera libre de cerf-volants !
+		[end_timeline]
+	- Pêcher à la ligne
+		do SaveManager.setElement("Quests", {"F_qcm3": false})
+		Habitant: C'est sur, ça serait dangeureux de pêcher là où il y a des baigneurs ! Euh, surement ça doit aussi aider à la préservation de la vie marine ?
+		Habitant: Merci ! Je préviendrai les pêcheurs d'aller ailleurs- si un jour j'en vois un ici !
+		[end_timeline]
+	- Ramasser des coquillages
+		Habitant: Oh, vraiment... ? Mais, comment ça se fait ? En quoi ça aide à préserver la plage ?
+		- Pour éviter l'érosion
+			do SaveManager.setElement("Quests", {"F_qcm3": true})
+			do SaveManager.setElement("Points", {"F_qcm3": 1})
+			do EventBus.emit_signal("add_follower", 1)
+			Habitant: Parce qu'avec le temps les coquillages se transforment en sable... ? Je crois que je comprends ce que tu veux dire !
+			Habitant: Ok, tu m'as convaincu ! Je vais dans ce cas faire attention aux coquillage de la plage, pour que celle-ci puisse rester magnifique ! Merci de ton bon conseil !
+			[end_timeline]
+		- Ça attire les mouettes
+			do SaveManager.setElement("Quests", {"F_qcm3": false})
+			Habitant: Les mouettes ? Tu es en train de dire que les mouettes ont peur des coquillages sur la plage ?
+			Habitant: Désolé, je suis pas vraiment convaincu... Je pense que je vais faire autre chose pour préserver la plage, mais je ne sais pas quoi.
+			[end_timeline]
+		- Maison pour les bernard-l'hermite
+			do SaveManager.setElement("Quests", {"F_qcm3": false})
+			Habitant: C'est vrai... Mais est-ce que c'est vraiment lié à la préservation de la plage... ?
+			Habitant: Désolé, je suis pas vraiment convaincu... Je pense que je vais faire autre chose pour préserver la plage, mais je ne sais pas quoi.
+			[end_timeline]
+		- Ça détruit les œufs de tortue
+			do SaveManager.setElement("Quests", {"F_qcm3": false})
+			Habitant: Quoi... ? Comment ça marcherai ? Je suis pas sur de comprendre en quoi les deux sont liés...
+			Habitant: Désolé, je suis pas vraiment convaincu... Je pense que je vais faire autre chose pour préserver la plage, mais je ne sais pas quoi.
+			[end_timeline]
+	- (répondre plus tard)
+	[end_timeline]
+[end_timeline]

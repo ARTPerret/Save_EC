@@ -1,0 +1,5 @@
+label book1
+Sonia: Alors, est-ce que t'as été écolo aujourd'hui ?
+Sonia: On va voir ça !
+do ThreadLoad.load_scene("ConclusionScreen")
+[end_timeline]

@@ -1,0 +1,10 @@
+label book1
+if SaveManager.getElement("Quests", "Q_greg") == null
+	Léon: Salut, belle matinée pas vrai?
+	Léon: J'ai entendu un bruit dans les buissons au dessus de moi, il y a pas moyen que je bouge, mais tu peux aller voir si tu veux.
+elif SaveManager.getElement("Quests", "Q_greg") == false:
+	Léon: Tu as besoin de chercher un truc dans la rivière. Tu peux utiliser ma barque si tu veux, j'ai mis un aimant pour voir ce que je trouvais au fond de la rivière.
+	Léon: Si tu t'en sers bien tu réussira peux-être à trouver ce que tu cherche
+elif SaveManager.getElement("Quests", "Q_greg") == true:
+	Léon: Tu as trouvé ce que tu cherchais? C'est cool, tu peux continuer à te servir de ma barque si tu veux, c'est toujours bien de nettoyer notre lieu de travail.
+[end_timeline]

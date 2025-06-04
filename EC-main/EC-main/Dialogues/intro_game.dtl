@@ -1,0 +1,26 @@
+label book1
+do EventBus.emit_signal("set_ui_visibility", false)
+do FadeManager.trigger_fade(1,0,1)
+[aa=6][b]BREAKING NEWS : un été sans précédent arrive sur Campus-Ville ![/b]
+do FadeManager.trigger_fade(0,1,1)
+[wait time="1.5"]
+Claire: [aa=4]Bonjour à vous, chers téléspectateurs ! Je suis [b]Claire[/b], journaliste indépendante de Campus-Ville Network !
+Denis: [aa=4]Et je suis [b]Denis[/b], journaliste indépendant de Campus-Ville Network.
+Claire: [aa=4]Sortez les maillots de bain : le printemps touche à sa fin, et l'été arrive !
+Claire: [aa=4]Cependant, les météorologues annoncent que celui-ci atteindra des températures inédites, le seuil symbolique des 40 °C étant largement dépassé !
+Denis: [aa=4]En effet, Claire, bien que le printemps ait déjà battu des records de températures, [b]le prochain été s'annonce caniculaire[/b].
+Denis: [aa=4]Les scientifiques du laboratoire de météorologie prévoient des températures plus hautes, [b]allant jusqu'à +2,7 °C[/b], dignes des pires prédictions concernant le réchauffement climatique !
+Denis: [aa=4]Des températures jamais vues auparavant, qui pourraient déjà entraîner un choc sur l'écosystème, sans parler des conséquences en matière de fonte des glaces.
+Claire: [aa=4]Des températures qui donnent le tournis, et des conséquences terribles pour notre environnement !
+Claire: [aa=4]C'est pour cela que nous devons faire de notre mieux pour être prêts pour cet été !...
+Claire: [aa=4]... Mais dites-moi Denis, y a-t-il quelque chose que nous pouvons faire pour remédier à cette situation alarmante ?
+Denis: [aa=4]À cette question, les scientifiques ont une réponse : cela n'est qu'une théorie, mais [color=green]si toute la population de notre ville adoptait les bons gestes écologiques[/color],
+Denis: [aa=4]alors non seulement la canicule prévue cet été n'aurait certainement pas lieu, mais en plus [b]le réchauffement climatique serait à la baisse[/b] !
+Claire: [aa=4]Il tient donc à nous d'adopter les bons gestes avant l'été, afin de préserver notre écosystème !
+do FadeManager.trigger_fade(1,5,1)
+Claire: [aa=4]... Mais au fait, Denis, combien de personnes regardent notre émission...?
+Denis: [aa=4]... En espérant que les bonnes personnes écoutent, qui sauront mieux sensibiliser que nous !
+[aa=6][pause=1].[pause=0.5].[pause=0.5].[pause=2.5] Il est temps de sensibiliser Campus-Ville !
+[wait time="2"]
+do ThreadLoad.load_scene("Appartement", 0)
+[end_timeline]

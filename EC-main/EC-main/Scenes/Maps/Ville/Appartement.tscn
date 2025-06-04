@@ -1,0 +1,479 @@
+[gd_scene load_steps=56 format=4 uid="uid://6eecifybnu8r"]
+
+[ext_resource type="Script" uid="uid://cf8lmues6tq0y" path="res://Scripts/Maps/map_setup.gd" id="1_8h08n"]
+[ext_resource type="TileSet" uid="uid://k2cs28yqpjqg" path="res://Graphics/Tilesets/Tileset_Appartement.tres" id="2_2g8ls"]
+[ext_resource type="AudioStream" uid="uid://cr30twokork7q" path="res://Audio/Streams/Loop_maison.tres" id="2_7f2nx"]
+[ext_resource type="PackedScene" uid="uid://b1vb7txwbkq24" path="res://Scenes/Props/Appartement/baignoire.tscn" id="3_hb0ix"]
+[ext_resource type="PackedScene" uid="uid://0ji1ktwqxaxa" path="res://Scenes/Props/Appartement/meuble_sdb.tscn" id="4_swjjx"]
+[ext_resource type="PackedScene" uid="uid://buv610vd4bdfb" path="res://Scenes/Props/Appartement/lit.tscn" id="6_clj8j"]
+[ext_resource type="Texture2D" uid="uid://drn703q5tni2a" path="res://Graphics/Props/AppartementSolo.png" id="6_dxfoh"]
+[ext_resource type="PackedScene" uid="uid://c651srsug8m05" path="res://Scenes/Props/Appartement/television.tscn" id="7_qu1vg"]
+[ext_resource type="PackedScene" uid="uid://xaecaqya5vhf" path="res://Scenes/Props/Appartement/refrigerateur.tscn" id="8_1kehp"]
+[ext_resource type="PackedScene" uid="uid://v3gbf6c5eubg" path="res://Scenes/Props/Appartement/livre.tscn" id="10_5ip7c"]
+[ext_resource type="PackedScene" uid="uid://ehxdlgrurvmw" path="res://Scenes/Props/Appartement/bibliotheque.tscn" id="11_4b6mu"]
+[ext_resource type="PackedScene" uid="uid://cx1fol84qh5hv" path="res://Scenes/Props/Appartement/porte_sdb.tscn" id="12_l8hgc"]
+[ext_resource type="PackedScene" uid="uid://cyqoe56afno1e" path="res://Scenes/Props/Appartement/rangement.tscn" id="12_vo2jj"]
+[ext_resource type="PackedScene" uid="uid://cnusf4j8q8ps6" path="res://Scenes/Props/Appartement/chaise_bureau.tscn" id="13_hvk87"]
+[ext_resource type="PackedScene" uid="uid://63sg83rysf7b" path="res://Scenes/Props/Appartement/porte_sortie_app.tscn" id="14_kt3ce"]
+[ext_resource type="Script" uid="uid://bb0bkalml0vnx" path="res://Scripts/Events/Appart/appart_save_checks.gd" id="15_01gxp"]
+[ext_resource type="Script" uid="uid://dkabrshrgo5vt" path="res://Scripts/Events/Appart/move_mission_check.gd" id="16_7f2nx"]
+[ext_resource type="PackedScene" uid="uid://0koboi4igpxo" path="res://Scenes/Props/Appartement/toilettes.tscn" id="16_rwpnd"]
+[ext_resource type="Script" uid="uid://b4yoqkl1ue1uh" path="res://Scripts/Events/Appart/mission_chair_check.gd" id="17_0hnt7"]
+[ext_resource type="Script" uid="uid://37faje2org61" path="res://Scripts/Events/Appart/mission_tele_check.gd" id="19_mxecm"]
+[ext_resource type="Script" uid="uid://blsvncors5gad" path="res://Scripts/Events/cutscenes.gd" id="21_kqdyn"]
+[ext_resource type="AudioStream" uid="uid://bw06al8pi8pco" path="res://Audio/SFX/cell_phone.wav" id="22_uagkx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jggg6"]
+atlas = ExtResource("6_dxfoh")
+region = Rect2(56, 105, 20, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jgkqb"]
+atlas = ExtResource("6_dxfoh")
+region = Rect2(213, 0, 32, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pceon"]
+size = Vector2(30, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lmbv8"]
+atlas = ExtResource("6_dxfoh")
+region = Rect2(214, 16, 13, 31)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8iyhl"]
+size = Vector2(8, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u7ule"]
+atlas = ExtResource("6_dxfoh")
+region = Rect2(160, 19, 16, 17)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_db8x8"]
+size = Vector2(15, 9.75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1djca"]
+atlas = ExtResource("6_dxfoh")
+region = Rect2(184, 38, 30, 19)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jv2it"]
+atlas = ExtResource("6_dxfoh")
+region = Rect2(169, 38, 15, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_grhrw"]
+atlas = ExtResource("6_dxfoh")
+region = Rect2(95, 0, 18, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_os225"]
+size = Vector2(14, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_agr87"]
+atlas = ExtResource("6_dxfoh")
+region = Rect2(36, 0, 39, 29)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7wsxd"]
+atlas = ExtResource("6_dxfoh")
+region = Rect2(155, 53, 18, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_36p0q"]
+atlas = ExtResource("6_dxfoh")
+region = Rect2(0, 39, 29, 21)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_liw7l"]
+size = Vector2(25, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n4hdr"]
+atlas = ExtResource("6_dxfoh")
+region = Rect2(113, 0, 47, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ew1tg"]
+atlas = ExtResource("6_dxfoh")
+region = Rect2(76, 42, 19, 23)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fm46s"]
+size = Vector2(10, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1h0dr"]
+atlas = ExtResource("6_dxfoh")
+region = Rect2(89, 69, 52, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0h1ng"]
+atlas = ExtResource("6_dxfoh")
+region = Rect2(32, 47, 36, 27)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hrsgg"]
+size = Vector2(32, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xubt4"]
+atlas = ExtResource("6_dxfoh")
+region = Rect2(20, 74, 28, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6s2bq"]
+size = Vector2(22, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vixhj"]
+atlas = ExtResource("6_dxfoh")
+region = Rect2(48, 74, 20, 29)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yo6nu"]
+size = Vector2(16, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jooey"]
+atlas = ExtResource("6_dxfoh")
+region = Rect2(68, 65, 20, 25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cihg3"]
+size = Vector2(16, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e7agy"]
+atlas = ExtResource("6_dxfoh")
+region = Rect2(0, 98, 19, 47)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4w4wj"]
+size = Vector2(16, 49)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7uow5"]
+atlas = ExtResource("6_dxfoh")
+region = Rect2(227, 16, 15, 18)
+
+[sub_resource type="Animation" id="Animation_uagkx"]
+resource_name = "phone_end"
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": ["PhoneEnd"],
+"method": &"change_player_state"
+}, {
+"args": ["intro_appart", 13],
+"method": &"cutscene_dialogue"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_kqdyn"]
+resource_name = "phone_start"
+length = 2.0
+step = 0.5
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [ExtResource("22_uagkx"), 0.0],
+"method": &"play_audio"
+}, {
+"args": ["PhoneStart"],
+"method": &"change_player_state"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8qifx"]
+_data = {
+&"phone_end": SubResource("Animation_uagkx"),
+&"phone_start": SubResource("Animation_kqdyn")
+}
+
+[node name="Appartement" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_8h08n")
+background_color = Color(0.227451, 0.227451, 0.313726, 1)
+camera_zoom = 6
+limit_left = -144
+limit_right = 384
+limit_top = -80
+limit_bottom = 256
+music = ExtResource("2_7f2nx")
+music_volume = -5.0
+
+[node name="StartPoints" type="Node2D" parent="."]
+
+[node name="0_Lit" type="Marker2D" parent="StartPoints"]
+z_index = 50
+position = Vector2(56, 47)
+gizmo_extents = 30.0
+
+[node name="1_Sortie" type="Marker2D" parent="StartPoints"]
+position = Vector2(217, 152)
+
+[node name="TileMaps" type="Node2D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="TileMapLayer_-1" type="TileMapLayer" parent="TileMaps"]
+z_index = -1
+tile_map_data = PackedByteArray("AAAAAAAAAAAAAAQAAAAAAAEAAAAAAAUAAAABAAIAAAAAAAAAAAACAAIAAAABAAAAAAADAAIAAAABAAAAAAAEAAIAAAABAAAAAAAFAAIAAAABAAAAAAAGAAIAAAABAAAAAAAGAAMAAAABAAEAAAAGAAQAAAABAAEAAAAGAAUAAAABAAEAAAAGAAYAAAABAAEAAAAGAAcAAAABAAEAAAAGAAgAAAABAAEAAAAGAAkAAAABAAEAAAAFAAMAAAABAAEAAAAFAAQAAAABAAEAAAAFAAUAAAABAAEAAAAFAAYAAAABAAEAAAAFAAcAAAABAAEAAAAFAAgAAAABAAEAAAAFAAkAAAABAAEAAAAEAAMAAAABAAEAAAAEAAQAAAABAAEAAAAEAAUAAAABAAEAAAAEAAYAAAABAAEAAAAEAAcAAAABAAEAAAAEAAgAAAABAAEAAAAEAAkAAAABAAEAAAADAAkAAAABAAEAAAADAAgAAAABAAEAAAADAAcAAAABAAEAAAADAAYAAAABAAEAAAADAAUAAAABAAEAAAADAAQAAAABAAEAAAACAAMAAAABAAEAAAADAAMAAAABAAEAAAACAAQAAAABAAEAAAACAAUAAAABAAEAAAACAAYAAAABAAEAAAACAAcAAAABAAEAAAACAAgAAAABAAEAAAACAAkAAAABAAEAAAABAAkAAAAAAAEAAAABAAgAAAAAAAEAAAABAAcAAAAAAAEAAAABAAYAAAAAAAEAAAABAAUAAAAAAAEAAAABAAQAAAAAAAEAAAABAAMAAAAAAAEAAAABAAAAAAAEAAAAAAABAAEAAAAEAAEAAAACAAAAAAAEAAAAAAACAAEAAAAEAAEAAAADAAAAAAAEAAAAAAADAAEAAAAEAAEAAAAEAAAAAAAEAAAAAAAEAAEAAAAEAAEAAAAFAAAAAAAEAAAAAAAFAAEAAAAEAAEAAAAGAAAAAAAEAAAAAAAGAAEAAAAEAAEAAAAJAAAAAAAEAAIAAAAJAAEAAAAEAAMAAAAKAAAAAAAEAAIAAAAKAAEAAAAEAAMAAAALAAAAAAAEAAIAAAALAAEAAAAEAAMAAAAMAAAAAAAEAAIAAAAMAAEAAAAEAAMAAAANAAAAAAAEAAIAAAANAAEAAAAEAAMAAAAOAAAAAAACAAQAAAAOAAEAAAACAAUAAAAIAAAAAAAAAAQAAAAIAAEAAAAAAAUAAAAHAAAAAAACAAQAAAAHAAEAAAACAAUAAAAIAAIAAAAAAAUAAAAIAAMAAAAAAAUAAAAIAAQAAAAAAAUAAAAOAAIAAAACAAUAAAAOAAMAAAACAAUAAAAOAAQAAAACAAUAAAAJAAIAAAAAAAIAAAAKAAIAAAABAAIAAAALAAIAAAABAAIAAAAMAAIAAAABAAIAAAANAAIAAAABAAIAAAAJAAMAAAAAAAMAAAAJAAQAAAAAAAMAAAAKAAQAAAABAAMAAAALAAQAAAABAAMAAAAMAAQAAAABAAMAAAANAAQAAAABAAMAAAANAAMAAAABAAMAAAAMAAMAAAABAAMAAAALAAMAAAABAAMAAAAKAAMAAAABAAMAAAAHAAYAAAADAAAAAAAHAAcAAAADAAEAAAAIAAYAAAAEAAAAAAAIAAcAAAAEAAEAAAAJAAYAAAAFAAAAAAAJAAcAAAAFAAEAAAALAAYAAAADAAAAAAALAAcAAAADAAEAAAAMAAYAAAAEAAAAAAAMAAcAAAAEAAEAAAANAAYAAAAEAAAAAAANAAcAAAAEAAEAAAAOAAYAAAACAAQAAAAOAAcAAAABAAUAAAAOAAgAAAABAAUAAAAOAAkAAAACAAUAAAAAAAkAAAAAAAUAAAAAAAgAAAAAAAUAAAAAAAcAAAAAAAUAAAAAAAYAAAAAAAUAAAAAAAUAAAAAAAUAAAAAAAQAAAAAAAUAAAAAAAMAAAAAAAUAAAAAAAIAAAAAAAUAAAAHAAUAAAACAAUAAAAHAAQAAAACAAUAAAAHAAMAAAACAAUAAAAHAAIAAAACAAUAAAAHAAkAAAABAAEAAAAIAAkAAAABAAEAAAAJAAkAAAABAAEAAAAKAAkAAAABAAEAAAALAAkAAAABAAEAAAAMAAkAAAABAAEAAAANAAkAAAABAAEAAAANAAgAAAABAAEAAAAMAAgAAAABAAEAAAALAAgAAAABAAEAAAAKAAgAAAABAAEAAAAJAAgAAAABAAEAAAAIAAgAAAABAAEAAAAHAAgAAAABAAEAAAAKAAcAAAABAAYAAAAKAAYAAAACAAMAAAAKAAUAAAABAAMAAAAOAAsAAAABAAUAAAANAAsAAAABAAUAAAAMAAsAAAABAAUAAAALAAsAAAABAAUAAAAKAAsAAAABAAUAAAAJAAsAAAABAAUAAAAIAAsAAAABAAUAAAAHAAsAAAABAAUAAAAGAAsAAAABAAUAAAAFAAsAAAABAAUAAAAEAAsAAAABAAUAAAADAAsAAAABAAUAAAACAAsAAAABAAUAAAABAAsAAAABAAUAAAAAAAsAAAABAAUAAAA=")
+tile_set = ExtResource("2_2g8ls")
+metadata/_edit_lock_ = true
+
+[node name="TileMapLayer_1" type="TileMapLayer" parent="TileMaps"]
+z_index = 1
+tile_map_data = PackedByteArray("AAAJAAUAAAADAAYAAAALAAUAAAAEAAYAAAAMAAUAAAABAAQAAAANAAUAAAABAAQAAAAOAAUAAAACAAYAAAAIAAUAAAAAAAYAAAAAAAoAAAAAAAYAAAAOAAoAAAACAAYAAAANAAoAAAABAAQAAAAMAAoAAAABAAQAAAALAAoAAAABAAQAAAAKAAoAAAABAAQAAAAJAAoAAAABAAQAAAAIAAoAAAABAAQAAAAHAAoAAAABAAQAAAAGAAoAAAABAAQAAAAFAAoAAAABAAQAAAAEAAoAAAABAAQAAAADAAoAAAABAAQAAAACAAoAAAABAAQAAAABAAoAAAABAAQAAAAOAAcAAAAFAAQAAAAOAAgAAAAFAAUAAAAAAAsAAAABAAUAAAABAAsAAAABAAUAAAACAAsAAAABAAUAAAADAAsAAAABAAUAAAAEAAsAAAABAAUAAAAFAAsAAAABAAUAAAAGAAsAAAABAAUAAAAHAAsAAAABAAUAAAAIAAsAAAABAAUAAAAJAAsAAAABAAUAAAAKAAsAAAABAAUAAAALAAsAAAABAAUAAAAMAAsAAAABAAUAAAANAAsAAAABAAUAAAAOAAsAAAABAAUAAAAOAAkAAAACAAUAAAA=")
+tile_set = ExtResource("2_2g8ls")
+metadata/_edit_lock_ = true
+
+[node name="Props" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="Generic" type="Node2D" parent="Props"]
+y_sort_enabled = true
+
+[node name="Couverture" type="Sprite2D" parent="Props/Generic"]
+position = Vector2(24, 43)
+texture = SubResource("AtlasTexture_jggg6")
+
+[node name="Etagere1" type="Sprite2D" parent="Props/Generic"]
+position = Vector2(191, 80)
+texture = SubResource("AtlasTexture_jgkqb")
+offset = Vector2(0, -6)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Props/Generic/Etagere1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Props/Generic/Etagere1/StaticBody2D"]
+position = Vector2(0, 8.5)
+shape = SubResource("RectangleShape2D_pceon")
+debug_color = Color(1, 0, 0, 0.419608)
+
+[node name="Etagere2" type="Sprite2D" parent="Props/Generic"]
+position = Vector2(142, 80)
+texture = SubResource("AtlasTexture_lmbv8")
+centered = false
+offset = Vector2(0, -29)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Props/Generic/Etagere2"]
+position = Vector2(5, -1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Props/Generic/Etagere2/StaticBody2D"]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_8iyhl")
+debug_color = Color(1, 0, 0, 0.419608)
+
+[node name="Poubelle" type="Sprite2D" parent="Props/Generic"]
+position = Vector2(143, 28)
+texture = SubResource("AtlasTexture_u7ule")
+centered = false
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Props/Generic/Poubelle"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Props/Generic/Poubelle/StaticBody2D"]
+position = Vector2(8.5, 10)
+shape = SubResource("RectangleShape2D_db8x8")
+debug_color = Color(1, 0, 0, 0.419608)
+
+[node name="Tapis2" type="Sprite2D" parent="Props/Generic"]
+z_index = -1
+position = Vector2(158, 46)
+texture = SubResource("AtlasTexture_1djca")
+centered = false
+
+[node name="Ventilation" type="Sprite2D" parent="Props/Generic"]
+position = Vector2(143, 5)
+texture = SubResource("AtlasTexture_jv2it")
+centered = false
+
+[node name="Chevet" type="Sprite2D" parent="Props/Generic"]
+position = Vector2(31, 14)
+texture = SubResource("AtlasTexture_grhrw")
+centered = false
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Props/Generic/Chevet"]
+position = Vector2(9, 15)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Props/Generic/Chevet/StaticBody2D"]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_os225")
+debug_color = Color(1, 0, 0, 0.419608)
+
+[node name="Fenetre" type="Sprite2D" parent="Props/Generic"]
+position = Vector2(44, 3)
+texture = SubResource("AtlasTexture_agr87")
+centered = false
+
+[node name="Serviettes" type="Sprite2D" parent="Props/Generic"]
+position = Vector2(187, 19)
+texture = SubResource("AtlasTexture_7wsxd")
+centered = false
+
+[node name="MeubleTV" type="Sprite2D" parent="Props/Generic"]
+z_index = -1
+position = Vector2(81, 21)
+texture = SubResource("AtlasTexture_36p0q")
+centered = false
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Props/Generic/MeubleTV"]
+position = Vector2(14, 10)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Props/Generic/MeubleTV/StaticBody2D"]
+position = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_liw7l")
+debug_color = Color(1, 0, 0, 0.419608)
+
+[node name="Tapis1" type="Sprite2D" parent="Props/Generic"]
+z_index = -1
+position = Vector2(66, 39)
+texture = SubResource("AtlasTexture_n4hdr")
+centered = false
+
+[node name="Plante" type="Sprite2D" parent="Props/Generic"]
+position = Vector2(63, 19)
+texture = SubResource("AtlasTexture_ew1tg")
+centered = false
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Props/Generic/Plante"]
+position = Vector2(9, 11)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Props/Generic/Plante/StaticBody2D"]
+position = Vector2(1, 5)
+shape = SubResource("RectangleShape2D_fm46s")
+debug_color = Color(1, 0, 0, 0.419608)
+
+[node name="MeublesCuisine" type="Sprite2D" parent="Props/Generic"]
+position = Vector2(41, 108)
+texture = SubResource("AtlasTexture_1h0dr")
+offset = Vector2(0, 15)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Props/Generic/MeublesCuisine"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Props/Generic/MeublesCuisine/StaticBody2D"]
+position = Vector2(-1, 0)
+polygon = PackedVector2Array(-24, 43, -24, -4, 14, -4, 14, 11, -9, 11, -9, 43)
+
+[node name="Canape" type="Sprite2D" parent="Props/Generic"]
+position = Vector2(75, 60)
+texture = SubResource("AtlasTexture_0h1ng")
+centered = false
+offset = Vector2(0, -6)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Props/Generic/Canape"]
+position = Vector2(18, 7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Props/Generic/Canape/StaticBody2D"]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_hrsgg")
+debug_color = Color(1, 0, 0, 0.419608)
+
+[node name="Table" type="Sprite2D" parent="Props/Generic"]
+position = Vector2(83, 94)
+texture = SubResource("AtlasTexture_xubt4")
+centered = false
+offset = Vector2(0, -8)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Props/Generic/Table"]
+position = Vector2(14, 3)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Props/Generic/Table/StaticBody2D"]
+position = Vector2(0, 2.5)
+shape = SubResource("RectangleShape2D_6s2bq")
+debug_color = Color(1, 0, 0, 0.419608)
+
+[node name="Chaise1" type="Sprite2D" parent="Props/Generic"]
+position = Vector2(87, 75)
+texture = SubResource("AtlasTexture_vixhj")
+centered = false
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Props/Generic/Chaise1"]
+position = Vector2(10, 6)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Props/Generic/Chaise1/StaticBody2D"]
+position = Vector2(0, 5.5)
+shape = SubResource("RectangleShape2D_yo6nu")
+debug_color = Color(1, 0, 0, 0.419608)
+
+[node name="Chaise2" type="Sprite2D" parent="Props/Generic"]
+position = Vector2(87, 97)
+texture = SubResource("AtlasTexture_jooey")
+centered = false
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Props/Generic/Chaise2"]
+position = Vector2(10, 8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Props/Generic/Chaise2/StaticBody2D"]
+position = Vector2(0, 3.5)
+shape = SubResource("RectangleShape2D_cihg3")
+debug_color = Color(1, 0, 0, 0.419608)
+
+[node name="Bureau" type="Sprite2D" parent="Props/Generic"]
+position = Vector2(14, 55)
+texture = SubResource("AtlasTexture_e7agy")
+centered = false
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Props/Generic/Bureau"]
+position = Vector2(10, 23)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Props/Generic/Bureau/StaticBody2D"]
+position = Vector2(0, 1.5)
+shape = SubResource("RectangleShape2D_4w4wj")
+debug_color = Color(1, 0, 0, 0.419608)
+
+[node name="TapisSortie" type="Sprite2D" parent="Props/Generic"]
+z_index = -1
+position = Vector2(210, 143)
+texture = SubResource("AtlasTexture_7uow5")
+centered = false
+
+[node name="Baignoire" parent="Props" instance=ExtResource("3_hb0ix")]
+position = Vector2(213, 30)
+
+[node name="MeubleSDB" parent="Props" instance=ExtResource("4_swjjx")]
+position = Vector2(173, 28)
+
+[node name="Lit" parent="Props" instance=ExtResource("6_clj8j")]
+position = Vector2(24, 36)
+
+[node name="Television" parent="Props" instance=ExtResource("7_qu1vg")]
+position = Vector2(95, 20)
+
+[node name="Refrigerateur" parent="Props" instance=ExtResource("8_1kehp")]
+position = Vector2(12, 160)
+
+[node name="Livre" parent="Props" instance=ExtResource("10_5ip7c")]
+z_index = 1
+position = Vector2(24, 78)
+
+[node name="Bibliotheque" parent="Props" instance=ExtResource("11_4b6mu")]
+position = Vector2(136, 120)
+
+[node name="PorteSDB" parent="Props" instance=ExtResource("12_l8hgc")]
+position = Vector2(168, 117)
+
+[node name="Rangement" parent="Props" instance=ExtResource("12_vo2jj")]
+position = Vector2(202, 118)
+
+[node name="ChaiseBureau" parent="Props" instance=ExtResource("13_hvk87")]
+position = Vector2(37, 80)
+
+[node name="PorteSortie" parent="Props" instance=ExtResource("14_kt3ce")]
+position = Vector2(227, 138)
+
+[node name="Toilettes" parent="Props" instance=ExtResource("16_rwpnd")]
+position = Vector2(206, 68)
+
+[node name="SceneSaveChecks" type="Node2D" parent="."]
+script = ExtResource("15_01gxp")
+timeline = "intro_appart"
+
+[node name="MissionMoveCheck" type="Node2D" parent="SceneSaveChecks"]
+script = ExtResource("16_7f2nx")
+
+[node name="MissionChairCheck" type="Node2D" parent="SceneSaveChecks" node_paths=PackedStringArray("chair_obj")]
+script = ExtResource("17_0hnt7")
+chair_obj = NodePath("../../Props/ChaiseBureau")
+
+[node name="MissionTeleCheck" type="Node2D" parent="SceneSaveChecks" node_paths=PackedStringArray("tele_node")]
+script = ExtResource("19_mxecm")
+tele_node = NodePath("../../Props/Television")
+
+[node name="Cutscenes" type="Node2D" parent="."]
+script = ExtResource("21_kqdyn")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Cutscenes"]
+libraries = {
+&"": SubResource("AnimationLibrary_8qifx")
+}
+
+[connection signal="animation_finished" from="Cutscenes/AnimationPlayer" to="Cutscenes" method="cutscene_end"]

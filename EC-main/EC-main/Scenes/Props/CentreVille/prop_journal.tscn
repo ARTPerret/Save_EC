@@ -1,0 +1,38 @@
+[gd_scene load_steps=7 format=3 uid="uid://c8wwxq1asi36s"]
+
+[ext_resource type="Script" uid="uid://2pg4i3168q1p" path="res://Scripts/Props/Types/prop_talk.gd" id="1_6bsog"]
+[ext_resource type="Shader" uid="uid://c2ug5tlxurkwa" path="res://Shaders/outline.gdshader" id="2_dcjck"]
+[ext_resource type="Texture2D" uid="uid://bdukdhad5h1tn" path="res://Graphics/Props/VilleSolo.png" id="3_m7swi"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_aomuj"]
+shader = ExtResource("2_dcjck")
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/width = 0.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6fwgu"]
+atlas = ExtResource("3_m7swi")
+region = Rect2(46, 146, 17, 13)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rxyj1"]
+size = Vector2(32, 33)
+
+[node name="Journal" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_6bsog")
+timeline = "prop_journal"
+
+[node name="PropSprite" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_aomuj")
+texture = SubResource("AtlasTexture_6fwgu")
+centered = false
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(8, 7.5)
+shape = SubResource("RectangleShape2D_rxyj1")
+
+[node name="FacingDirection" type="Marker2D" parent="."]
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

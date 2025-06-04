@@ -1,0 +1,41 @@
+if SaveManager.getElement("Quests", "F_childqcm") == true or SaveManager.getElement("Quests", "F_childqcm") == false:
+	Enfant: J'adore les oiseaux ! Les canards au parc aussi ils sont super mignons !
+	if SaveManager.getElement("Quests", "F_childqcm") == true:
+		Enfant: Peut être qu'à eux aussi je devrai pas leur donner à manger du coup !
+	[end_timeline]
+else:
+	Enfant: J'adore courir sur la place derrière les pigeons ! Après pour faire la paix, je leur donne à manger, ils adorent !
+	Enfant: Dis, toi tu penses c'est quoi leur nourriture préféré au pigeons ?
+	- Le pain
+		do SaveManager.setElement("Quests", {"F_childqcm": false})
+		Enfant: Hihi, j'aime bien comment il mange les miettes de pain ! J'ai déjà vu un manger un morceau gros comme ça !
+		Enfant: Je vais continuer de leur donner à manger sinon ils vont avoir faim !
+	- Les frites
+		do SaveManager.setElement("Quests", {"F_childqcm": false})
+		Enfant: Hihi, moi aussi j'adore les frites ! Est-ce qui aiment avec ou sans le sel ? Moi j'aime bien avec du ketchup !
+		Enfant: Je vais continuer de leur donner à manger sinon ils vont avoir faim !
+	- Les graines
+		do SaveManager.setElement("Quests", {"F_childqcm": false})
+		Enfant: Beurk, moi j'aime pas les graines, mais j'aime bien les lentilles ! Est-ce que les pigeons aiment les lentilles ?
+		Enfant: Je vais continuer de leur donner à manger sinon ils vont avoir faim !
+	- Il faut pas nourrir les pigeons
+		Enfant: Ah bon ? Mais pourquoi il faut pas donner à manger au pigeon ? Il vont avoir faim !
+		- Parce que ça les rend gros
+			do SaveManager.setElement("Quests", {"F_childqcm": false})
+			Enfant: Hahaha ! Les gros pigeons ! Moi aussi après que je mange j'ai le ventre gonflé !
+			Enfant: T'es rigolo ! Je vais continuer de leur donner à manger sinon ils vont avoir faim !
+		- Parce que tu feras des jaloux
+			do SaveManager.setElement("Quests", {"F_childqcm": false})
+			Enfant: Maiiis non, je donne à manger à tous les pigeons moi, y'a pas de jaloux !
+			Enfant: T'es rigolo ! Je vais continuer de leur donner à manger sinon ils vont avoir faim !
+		- parce qu'ils préfèrent un repas entier
+			do SaveManager.setElement("Quests", {"F_childqcm": false})
+			Enfant: Hahaha, ils ont très faim les pigeons alors ! Moi aussi quand c'est le goûter j'en veux plein !
+			Enfant: T'es rigolo ! Je vais continuer de leur donner à manger sinon ils vont avoir faim !
+		- parce que ça peut les rendre malade
+			do SaveManager.setElement("Quests", {"F_childqcm": true})
+			do SaveManager.setElement("Points", {"F_childqcm": 1})
+			do EventBus.emit_signal("add_follower", 1)
+			Enfant: Ah bon, ça les rend malade ? Après aussi si ils viennent tous le temps me voir pour manger, ils pourront plus manger tout seul !
+			Enfant: T'as raison ! Je vais les laisser tranquille ! Ça veut dire aussi que je dois aussi arrêter de courir derrière eux ?
+	[end_timeline]

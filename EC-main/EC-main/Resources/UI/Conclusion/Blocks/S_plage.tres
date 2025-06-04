@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="GradeBlockVariables" load_steps=2 format=3 uid="uid://wy2oueo3q1ri"]
+
+[ext_resource type="Script" uid="uid://d3dcgs02tcqyt" path="res://Scripts/UI/Conclusion/Ressource/grade_block_variables.gd" id="1_tujjd"]
+
+[resource]
+script = ExtResource("1_tujjd")
+title = "Déchets maritimes"
+category = "Déchets"
+description = "La quantité totale de macrodéchets rejetée chaque année dans l’environnement marin est estimée à 10 millions de tonnes. 80% de ses déchets proviennent de la terre, et pendant que 15% d'entre eux s'échouent sur les plages, le reste coule et se dépose sur les fonds marins, ce qui a des conséquences catastrophiques sur la faune. La meilleure pratique est donc de bien jeter ses déchets dans les poubelles, où qu'on soit !
+"
+description_scientifique = "[color=#6d6d6d]Source :[/color] [color=#007dff][url=https://www.notre-environnement.gouv.fr/themes/biodiversite/les-milieux-littoraux-et-marins-ressources/article/les-dechets-solides-en-mer-et-sur-le-littoral]Notre-Environnement[/url][/color]
+"
+mission_key_1 = "Quests"
+mission_key_2 = "S_plage2"
+point_key_1 = "Points"
+point_key_2 = "S_plage2"
+metadata/_custom_type_script = "uid://d3dcgs02tcqyt"

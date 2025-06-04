@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://c568qfvjhr3hp"]
+
+[sub_resource type="FontVariation" id="FontVariation_oeip8"]
+variation_embolden = 0.5
+
+[sub_resource type="LabelSettings" id="LabelSettings_xe308"]
+font = SubResource("FontVariation_oeip8")
+font_size = 32
+
+[node name="TitleLabel" type="Label"]
+text = "     Alimentation"
+label_settings = SubResource("LabelSettings_xe308")

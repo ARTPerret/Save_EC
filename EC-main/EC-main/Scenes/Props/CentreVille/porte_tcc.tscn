@@ -1,0 +1,39 @@
+[gd_scene load_steps=7 format=3 uid="uid://dlpedsflmqs68"]
+
+[ext_resource type="Script" uid="uid://buytnavax2atl" path="res://Scripts/Props/Types/prop_porte_tcc.gd" id="1_ahwrj"]
+[ext_resource type="Shader" uid="uid://c2ug5tlxurkwa" path="res://Shaders/outline.gdshader" id="2_rxnfy"]
+[ext_resource type="Texture2D" uid="uid://bdukdhad5h1tn" path="res://Graphics/Props/VilleSolo.png" id="3_ac8ei"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_aomuj"]
+shader = ExtResource("2_rxnfy")
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/width = 0.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mhy33"]
+atlas = ExtResource("3_ac8ei")
+region = Rect2(81, 82, 27, 33)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rxyj1"]
+size = Vector2(29, 11)
+
+[node name="PorteTCC" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_ahwrj")
+timeline = "porte_tcc"
+
+[node name="PropSprite" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_aomuj")
+texture = SubResource("AtlasTexture_mhy33")
+centered = false
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(13.5, 36)
+shape = SubResource("RectangleShape2D_rxyj1")
+
+[node name="FacingDirection" type="Marker2D" parent="."]
+position = Vector2(14, 7)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

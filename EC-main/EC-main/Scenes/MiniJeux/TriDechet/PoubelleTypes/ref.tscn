@@ -1,0 +1,74 @@
+[gd_scene load_steps=8 format=3 uid="uid://c4ibps4ddsx3q"]
+
+[ext_resource type="Script" uid="uid://b5s8ctsqrgef5" path="res://Scripts/MiniJeux/Jeux/TriDechet/trashbin_move.gd" id="1_f4ki8"]
+[ext_resource type="Shader" uid="uid://c2ug5tlxurkwa" path="res://Shaders/outline.gdshader" id="2_0v8tn"]
+[ext_resource type="Texture2D" uid="uid://sm0i5714jmm7" path="res://Graphics/TEMP/TEMP_Trash.png" id="2_gbcub"]
+
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aeplx"]
+size = Vector2(168, 208)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7cc60"]
+size = Vector2(168, 13)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fsei3"]
+resource_local_to_scene = true
+shader = ExtResource("2_0v8tn")
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/width = 0.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0v8tn"]
+atlas = ExtResource("2_gbcub")
+region = Rect2(0, 0, 17, 20)
+
+[node name="Poubelle" type="Button"]
+offset_right = 169.0
+offset_bottom = 208.0
+focus_mode = 0
+text = "Recyclé :)"
+flat = true
+script = ExtResource("1_f4ki8")
+
+[node name="PushBackArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PushBackArea"]
+position = Vector2(84, 104)
+shape = SubResource("RectangleShape2D_aeplx")
+
+[node name="Hole" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hole"]
+position = Vector2(84, 6.5)
+shape = SubResource("RectangleShape2D_7cc60")
+debug_color = Color(1, 0, 0, 0.419608)
+
+[node name="SpritePoubelle" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_fsei3")
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -9.5
+offset_top = -4.0
+offset_right = 7.5
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(13, 13)
+pivot_offset = Vector2(8.5, 10)
+texture = SubResource("AtlasTexture_0v8tn")
+expand_mode = 1
+stretch_mode = 3
+
+[connection signal="button_down" from="." to="." method="_on_interact"]
+[connection signal="button_up" from="." to="." method="_on_interact"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_hover_toogled" binds= [0.7]]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_hover_toogled" binds= [0.0]]
+[connection signal="area_entered" from="PushBackArea" to="." method="_on_collision_other" binds= [true]]
+[connection signal="area_exited" from="PushBackArea" to="." method="_on_collision_other" binds= [false]]
+[connection signal="area_entered" from="Hole" to="." method="_on_trash_enter"]

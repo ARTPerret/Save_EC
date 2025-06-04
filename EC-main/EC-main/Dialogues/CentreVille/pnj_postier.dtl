@@ -1,0 +1,37 @@
+if SaveManager.getElement("Quests", "S_livraison2") == true:
+	Postier: J'imagine que tu as livré le deuxième colis : un grand merci pour le coup de main !
+	Postier: Quelle bouffée d'air frais que de ne pas devoir dépendre du camion !
+	[end_timeline]
+if SaveManager.getElement("Quests", "S_livraison2") == false:
+	Postier: Le client t'attend dans la Périphérie Ouest de la ville !
+	Postier: Il devrait être dans la direction Sud depuis la direction Centre-Ville.
+	[end_timeline]
+if SaveManager.getElement("Quests", "S_livraison1") == true:
+	Postier: Le colis est-il livré ?
+	Postier: Parfait, merci du coup de main, c'est chouette de ne pas avoir à dépendre du camion !
+	Postier: Si ça te dérange pas, j'en ai un deuxième à te confier !
+	do EventBus.emit_signal("add_item", "Colis2")
+	Postier: Celui-ci doit être livré dans la Périphérie Ouest de la Ville.
+	Postier: Le client devrait être dans la direction Sud depuis la direction Centre-Ville !
+	do SaveManager.setElement("Quests", {"S_livraison2": false})
+	[end_timeline]
+if SaveManager.getElement("Quests", "S_livraison1") == false:
+	Postier: Le client t'attend à l'Est du Centre-Ville !
+	Postier: C'est dans la direction du Campus, la personne devrait t'attendre devant chez elle !
+	[end_timeline]
+if SaveManager.getElement("Quests", "S_livraison1") == null:
+	Postier: Bienvenue au centre-ville gamin !
+	Postier: Dis, tu pourrais me filer un coup de main ?
+	Postier: Je dois livrer des colis en ville, mais mon camion de livraison est en panne...
+	Postier: Est-ce que tu pourrais m'aider à en livrer un ou deux ? Je suis pas mal débordé en ce moment...
+	- Oui
+		Postier: Chouette, merci !
+		Postier: Tiens, voici un premier colis !
+		do EventBus.emit_signal("add_item", "Colis1")
+		Postier: Il doit être livré à l'Est du Centre-Ville, direction Campus.
+		Postier: Le destinataire devrait t'attendre devant chez lui, les gens sont toujours très ponctuels lors de la distribution !
+		do SaveManager.setElement("Quests", {"S_livraison1": false})
+	- Non
+		Postier: Ah, je comprend, tu dois avoir des choses plus importantes à faire.
+		Postier: Reviens me voir si tu changes d'avis si jamais !
+	[end_timeline]

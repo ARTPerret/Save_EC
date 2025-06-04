@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Items" load_steps=2 format=3 uid="uid://bq5ri1v65mysg"]
+
+[ext_resource type="Script" uid="uid://cdxjdohll8puk" path="res://Scripts/UI/InventoryElements/Resources/items_list.gd" id="1_kinnu"]
+
+[resource]
+script = ExtResource("1_kinnu")
+dictionnaire = Dictionary[String, String]({
+"Arbre": "uid://6vl2gfio7rb7",
+"Carte": "uid://td8y23u7wg71",
+"Casque": "uid://bg5vnm88p28xa",
+"Colis1": "uid://dadthpdr6h1qc",
+"Colis2": "uid://dadthpdr6h1qc",
+"Pieces": "uid://ncjxqjpo4lfd",
+"Trash1": "uid://dr8m7vpohbvw0",
+"Trash2": "uid://dr8m7vpohbvw0",
+"Trash3": "uid://dr8m7vpohbvw0",
+"Trash4": "uid://dr8m7vpohbvw0"
+})

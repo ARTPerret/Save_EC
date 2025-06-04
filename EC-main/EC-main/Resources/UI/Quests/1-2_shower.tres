@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Quest" load_steps=2 format=3 uid="uid://b2ce66iouulsg"]
+
+[ext_resource type="Script" uid="uid://b33ppoek3j2kg" path="res://Scripts/UI/QuestElements/Resources/quest_variables.gd" id="1_3iswx"]
+
+[resource]
+script = ExtResource("1_3iswx")
+type = 1
+name = "•    Se laver"
+desc = "C'est pour éviter de puer"

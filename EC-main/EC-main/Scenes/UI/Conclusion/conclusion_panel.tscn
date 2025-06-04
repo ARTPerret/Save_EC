@@ -1,0 +1,131 @@
+[gd_scene load_steps=9 format=3 uid="uid://c8ttmemewih6u"]
+
+[ext_resource type="Script" uid="uid://cikaethue8u6i" path="res://Scripts/UI/Conclusion/conclusion_block_setup.gd" id="1_vpwob"]
+[ext_resource type="Resource" uid="uid://cimgxjc6t8xyr" path="res://Resources/UI/Conclusion/grade_block_list.tres" id="4_533il"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mucmn"]
+bg_color = Color(0.0196078, 0.0196078, 0.0196078, 0.882353)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_phx7v"]
+bg_color = Color(0.0588235, 0.0588235, 0.0588235, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="LabelSettings" id="LabelSettings_8m3t6"]
+font_size = 64
+
+[sub_resource type="LabelSettings" id="LabelSettings_ese38"]
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_ym3tv"]
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_bwj6o"]
+font_size = 64
+
+[node name="ConclusionPanel" type="PanelContainer" node_paths=PackedStringArray("target")]
+custom_minimum_size = Vector2(960, 1000)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_mucmn")
+script = ExtResource("1_vpwob")
+target = NodePath("Margin/VBox/SummaryPanel/Contents")
+category_order = Array[String](["Alimentation", "Transports", "Logement", "Déchets", "Divers", "Followers"])
+block_data = ExtResource("4_533il")
+
+[node name="Margin" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="VBox" type="VBoxContainer" parent="Margin"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="TitlePanel" type="PanelContainer" parent="Margin/VBox"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_phx7v")
+
+[node name="VBox" type="VBoxContainer" parent="Margin/VBox/TitlePanel"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="ChapterLabel" type="Label" parent="Margin/VBox/TitlePanel/VBox"]
+layout_mode = 2
+text = "Fin du Chapitre 1 !"
+label_settings = SubResource("LabelSettings_8m3t6")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SummaryLabel" type="Label" parent="Margin/VBox/TitlePanel/VBox"]
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+text = "Résumé de vos actions (cliquez pour détails) :"
+label_settings = SubResource("LabelSettings_ese38")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SummaryPanel" type="ScrollContainer" parent="Margin/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="Contents" type="VBoxContainer" parent="Margin/VBox/SummaryPanel"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 10
+
+[node name="EndPanel" type="MarginContainer" parent="Margin/VBox"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_constants/margin_left = 300
+theme_override_constants/margin_right = 300
+
+[node name="VBox" type="VBoxContainer" parent="Margin/VBox/EndPanel"]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="NoteHBox" type="HBoxContainer" parent="Margin/VBox/EndPanel/VBox"]
+layout_mode = 2
+alignment = 1
+
+[node name="NoteLabel" type="Label" parent="Margin/VBox/EndPanel/VBox/NoteHBox"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Note Finale : "
+label_settings = SubResource("LabelSettings_ym3tv")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GradeLabel" type="Label" parent="Margin/VBox/EndPanel/VBox/NoteHBox"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "A+"
+label_settings = SubResource("LabelSettings_bwj6o")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="QuitButton" type="Button" parent="Margin/VBox/EndPanel/VBox"]
+layout_mode = 2
+focus_mode = 0
+theme_override_font_sizes/font_size = 28
+text = "Nouvelle Partie"
+
+[connection signal="pressed" from="Margin/VBox/EndPanel/VBox/QuitButton" to="." method="_on_quit_button_pressed"]

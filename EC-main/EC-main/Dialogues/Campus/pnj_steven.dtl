@@ -1,0 +1,30 @@
+label book1
+if SaveManager.getElement("Quests", "Q_steven") == null
+	Steven: Comment c'est possible, je viens d'en acheter?
+	Steven: Oh salut, je t'avais pas vu.
+	- Qu'est ce que se passe?
+	Steven: J'adore faire la vaisselle, tellement que je fais souvent la vaisselle pour mes voisins et mes potes.
+	Steven: Mais j'ai plus aucun liquide vaisselle, seulement du savon de marseille.
+	Steven: Je refuse absolument de salir l'[b]ART[/b] de la vaisselle en nettoyant simplement au savon.
+	Steven: Tu pense que tu pourrais me trouver du liquide vaisselle quelque part sur le campus? Je suis de plus en plus tenté d'aller en voler au crous.
+	do SaveManager.setElement("Quests", {"Q_steven": "searching"})
+	do EventBus.emit_signal("add_quest", "steven_quest")
+elif SaveManager.getElement("Quests", "Q_steven") == "searching":
+	Steven: J'ai besoin de liquide vaisselle, j'en veux, j'en veux,j'enveux,jenveux,jenveujenveujenveujenveu...
+	Steven: [i](Il vous regarde avec des yeux écarquillés)[/i]
+elif SaveManager.getElement("Quests", "Q_steven") == "found":
+	if {SaveManager.getElement("Player", "inventory").has("Ingredients_lessive")} == true
+		- Heu, j'ai trouvé ça.
+		Steven: Cristaux de soude.... Bicarbonate....
+		Steven: Oui, ça fera l'affaire.
+		- Pour faire du liquide vaisselle...
+		Steven:[b]JE SAIS TOUT CE QU'IL Y A À SAVOIR SUR LE LIQUIDE VAISSELLE, POUR QUI ME PRENDS TU?[/b]
+		Steven: Je te remercie pour ton travail, maintenant pars, j'ai de la vaisselle à faire.
+		do EventBus.emit_signal("remove_item", "Ingredients_lessive")
+		do EventBus.emit_signal("set_quest_state", "steven_quest")
+		do EventBus.emit_signal("add_follower", 1)
+		do EventBus.emit_signal("set_empreinte", -0.5)
+		do SaveManager.setElement("Quests", {"Q_steven": true})
+else:
+	Steven: [i]Il nettoie de la vaisselle à grande vitesse, ses mains ne sont mêmes plus visibles[/i]
+[end_timeline]

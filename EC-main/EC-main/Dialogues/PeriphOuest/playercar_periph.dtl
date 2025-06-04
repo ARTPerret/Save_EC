@@ -1,0 +1,23 @@
+label book1
+if SaveManager.getElement("Quests", "3_eboueur") == true:
+	Où souhaitez-vous vous rendre ?
+	- Périphérie Ouest
+		Vous êtes déjà sur place !
+	- Centre-Ville
+		do EventBus.emit_signal("set_empreinte", 0.1)
+		do EventBus.emit_signal("change_time", -60)
+		do SaveManager.setElement("Misc", {"Car": "CentreVille"})
+		do ThreadLoad.load_scene("CentreVille", 6)
+	- Campus Universitaire
+		do SaveManager.setElement("Choice", {"Transport": 1})
+		do EventBus.emit_signal("set_empreinte", 0.6)
+		do SaveManager.setElement("Points", {"2_transport": 0.6})
+		do EventBus.emit_signal("change_time", -300)
+		do EventBus.emit_signal("set_quest_state", "2_transport")
+		do EventBus.emit_signal("set_quest_state", "2-1_voiture")
+		do SaveManager.setElement("Misc", {"Car": "Campus"})
+		do ThreadLoad.load_scene("Campus", 0)
+	[end_timeline]
+else:
+	Vous ne pouvez pas conduire votre voiture : la route vers le centre-ville est bloquée !
+	[end_timeline]

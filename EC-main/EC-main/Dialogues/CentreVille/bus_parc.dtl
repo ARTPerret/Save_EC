@@ -1,0 +1,18 @@
+label book1
+Où souhaitez-vous vous rendre ?
+- Périphérie Ouest
+	do EventBus.emit_signal("change_time", -60)
+	do ThreadLoad.load_scene("PeriphOuest", 3)
+- Périph - Corporation
+	do EventBus.emit_signal("change_time", -60)
+	do ThreadLoad.load_scene("PeriphOuest", 4)
+- Centre-Ville
+	do ThreadLoad.load_scene("CentreVille", 3)
+- Centre - TCC
+	do ThreadLoad.load_scene("CentreVille", 4)
+- Centre - Plage
+	Vous êtes déjà à cet arrêt !
+- Campus
+	do ThreadLoad.load_scene("Campus", 11)
+	do EventBus.emit_signal("change_time", -60)
+[end_timeline]

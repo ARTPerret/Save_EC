@@ -1,0 +1,73 @@
+label book1
+do EventBus.emit_signal("set_ui_visibility", false)
+do FadeManager.trigger_fade(1,0,1)
+
+[i]Dring, dring...[/i]
+Sonia: Salut ! Tu viens d'arriver au Campus ?
+Sonia: Super ! Au passage, madame Verdure nous a donné accès à l'amphithéâtre, on a pu tout préparer le temps que tu arrives !
+Sonia: Retrouve-nous à l'Amphithéâtre dès que tu le peux ! À tout de suite !
+[aa=3].[pause=1].[pause=1].
+do FadeManager.trigger_fade(0,1.5,1)
+Sonia: [pause=1]Bonjour à tous, merci d'être venus aussi nombreux pour cette réunion express !
+Sonia: Nous sommes ici pour discuter d'un enjeu majeur d'aujourd'hui : [b]l'urgence climatique ![/b]
+Sonia: Vous l'avez sûrement remarqué, mais ce printemps a été très chaud : cet été sera malheureusement pire.
+Sonia: À cause du réchauffement climatique, les températures sont à la hausse, et cet été battra des records.
+Sonia: Les conséquences seront terribles pour l'écosystème, au niveau local, mais aussi pour le reste du monde !
+Sonia: C'est pour cela que nous devons adopter les bons gestes, en tant que collectif d'étudiants : chaque geste compte, même le plus simple !
+Sonia: Mon collègue ici présent va nous donner [b]quelques exemples de gestes[/b] qu'il a appliqués aujourd'hui !
+Sonia: Dis-nous, quels gestes pourrais-tu nous conseiller ?
+
+if {PetitDej} == 1:
+	Sonia: .[pause=0,3].[pause=0,3].[pause=0,4] Tu conseilles de manger [b]des fruits et du porridge[/b] au petit déjeuner ? Un repas bien végétarien dès le matin !
+if {PetitDej} == 2:
+	Sonia: .[pause=0,3].[pause=0,3].[pause=0,4] Tu conseilles de manger [b]des céréales avec du lait de vache[/b] au petit déjeuner ? Un grand classique !
+if {PetitDej} == 3:
+	Sonia: .[pause=0,3].[pause=0,3].[pause=0,4] Tu conseilles de manger [b]des tartines et des viennoiseries[/b] au petit déjeuner ? Un petit déjeuner continental en soit !
+if {PetitDej} == 4:
+	Sonia: .[pause=0,3].[pause=0,3].[pause=0,4] Tu conseilles de manger [b]des céréales avec du lait de soja[/b] au petit déjeuner ? Une option végétarienne au grand classique !
+if {PetitDej} == 5:
+	Sonia: .[pause=0,3].[pause=0,3].[pause=0,4] Tu conseilles de manger [b]des toasts, des œufs et du bacon[/b] au petit déjeuner ? L'option favorite de nos voisins anglais !
+Sonia: Et pour la boisson ?
+
+if {PetitDejB} == 1:
+	Sonia: .[pause=0,3].[pause=0,3].[pause=0,4] Du [b]thé[/b] au petit déjeuner ! Une boisson chaude pour bien se réveiller !
+if {PetitDejB} == 2:
+	Sonia: .[pause=0,3].[pause=0,3].[pause=0,4] Du [b]café[/b] au petit déjeuner ! Une boisson chaude que les amateurs vont adorer !
+if {PetitDejB} == 3:
+	Sonia: .[pause=0,3].[pause=0,3].[pause=0,4] De [b]l'eau en bouteille[/b] ! Pas besoin de plus !
+if {PetitDejB} == 4:
+	Sonia: .[pause=0,3].[pause=0,3].[pause=0,4] Du [b]soda[/b] au petit déjeuner ! Une option sucrée, que certains préfèrerons remplacer par un jus de fruit !
+if {PetitDejB} == 5:
+	Sonia: .[pause=0,3].[pause=0,3].[pause=0,4] De [b]l'eau du robinet[/b] ! L'option économique, même pas besoin d'une bouteille en plastique !
+Sonia: D'autres conseils sur la routine du matin ?
+
+if {Lavage} == 1:
+	Sonia: .[pause=0,3].[pause=0,3].[pause=0,4] Tu conseilles de [b]prendre une douche[/b] pour se laver ? Tant que celle-ci ne prend pas trop de temps,c'est une option économe, qui évite de trop tirer sur le réseau d'eau lors d'une canicule !
+if {Lavage} == 2:
+	Sonia: .[pause=0,3].[pause=0,3].[pause=0,4] Tu conseilles de [b]prendre un bain[/b] pour se laver ? Tant que tout le monde ne prend pas son bain en même temps le réseau d'eau devrait tenir, mais attention lors de la canicule !
+Sonia: Pour changer de sujet, quel serait le moyen de transport à privilégier pour se rendre à la fac ?
+
+if {Transport} == 1:
+	Sonia: .[pause=0,3].[pause=0,3].[pause=0,4] Tu conseilles de venir [b]en voiture[/b] ? J'espère qu'il y aura suffisamment de places de parkings pour tout le monde alors !
+if {Transport} == 2:
+	Sonia: .[pause=0,3].[pause=0,3].[pause=0,4] Tu conseilles de venir [b]en transports en commun[/b] ? Nous avons la chance d'être bien desservis, alors profitons-en tous !
+if {Transport} == 3:
+	Sonia: .[pause=0,3].[pause=0,3].[pause=0,4] Tu conseilles de venir [b]à pieds[/b] ? Ça risque d'être un peu long pour certain, mais c'est une excellente manière de garder la forme !
+if {Transport} == 4:
+	Sonia: .[pause=0,3].[pause=0,3].[pause=0,4] Tu conseille de venir [b]à vélo[/b] ? Une option aussi rapide que la voiture, qui permet aussi de garder la forme !
+Sonia: Et est-ce que tu aurais d'autres conseils à donner ?
+
+if {Television} == 0:
+	Sonia: Non ?[pause=0.5] D'accord !
+if {Television} == -0.1:
+	Sonia: .[pause=0,3].[pause=0,3].[pause=0,4] Tu conseilles d'éteindre la télévision plutôt que de la laisser en veille quand celle-ci n'est pas utilisée ? Une bonne initiative pour éviter de gaspiller de l'énergie !
+if {Television} == -0.2:
+	Sonia: .[pause=0,3].[pause=0,3].[pause=0,4] Tu conseille de débrancher les appareils électriques plutôt que de les laisser en veille quand ceux-ci ne sont pas utilisés ? Une très bonne initiative pour éviter de gaspiller de l'énergie !
+	
+Sonia: Voici donc pour vous quelques petits gestes à appliquer, afin de pouvoir agir contre l'urgence climatique !
+Sonia: Grâce à nos efforts à tous, nous pouvons limiter le réchauffement climatique; et ainsi garantir une meilleure Terre à tous !
+do FadeManager.trigger_fade(1,4,1)
+Sonia: Merci de votre attention, et n'oubliez pas de le dire à vos proches ! Merci à vous !
+[wait time="3"]
+do ThreadLoad.load_scene("ConclusionScreen",1)
+[end_timeline]

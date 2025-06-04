@@ -1,0 +1,50 @@
+if SaveManager.getElement("Quests", "0_tutoriel") == false and SaveManager.getElement("Quests", "0-3_frigo") == null:
+	Votre réfrigérateur est bien rempli pour un étudiant dis donc !
+	[end_timeline]
+if SaveManager.getElement("Quests", "1-1_breakfast") == false:
+	Votre réfrigérateur est bien rempli ! Quel petit déjeuner prendre ?
+	- Porridge et fruits
+		do SaveManager.setElement("Choice", {"PetitDej": 1})
+		do EventBus.emit_signal("set_empreinte", 0.1)
+		do SaveManager.setElement("Points", {"1-1_breakfast_dej": 0.1})
+	- Céréales et lait de vache
+		do SaveManager.setElement("Choice", {"PetitDej": 2})
+		do EventBus.emit_signal("set_empreinte", 0.1)
+		do SaveManager.setElement("Points", {"1-1_breakfast_dej": 0.1})
+	- Tartines et viennoiseries
+		do SaveManager.setElement("Choice", {"PetitDej": 3})
+	- Céréales et lait de soja
+		do SaveManager.setElement("Choice", {"PetitDej": 4})
+		do EventBus.emit_signal("set_empreinte", -0.1)
+		do SaveManager.setElement("Points", {"1-1_breakfast_dej": -0.1})
+	- Toast, œufs et bacon
+		do SaveManager.setElement("Choice", {"PetitDej": 5})
+		do EventBus.emit_signal("set_empreinte", 0.3)
+		do SaveManager.setElement("Points", {"1-1_breakfast_dej": 0.3})
+	Et la boisson ?
+	- Thé
+		do SaveManager.setElement("Choice", {"PetitDejB": 1})
+		do EventBus.emit_signal("set_empreinte", -0.1)
+		do SaveManager.setElement("Points", {"1-1_breakfast_boiss": -0.1})
+	- Café
+		do SaveManager.setElement("Choice", {"PetitDejB": 2})
+		do EventBus.emit_signal("set_empreinte", 0.1)
+		do SaveManager.setElement("Points", {"1-1_breakfast_boiss": 0.1})
+	- Eau en bouteille
+		do SaveManager.setElement("Choice", {"PetitDejB": 3})
+	- Soda
+		do SaveManager.setElement("Choice", {"PetitDejB": 4})
+		do EventBus.emit_signal("set_empreinte", 0.1)
+		do SaveManager.setElement("Points", {"1-1_breakfast_boiss": 0.1})
+	- Eau du robinet
+		do SaveManager.setElement("Choice", {"PetitDejB": 5})
+		do EventBus.emit_signal("set_empreinte", -0.1)
+		do SaveManager.setElement("Points", {"1-1_breakfast_boiss": -0.1})
+	Vous êtes repus !
+	do EventBus.emit_signal("set_quest_state", "1-1_breakfast")
+	if SaveManager.getElement("Quests", "0_tutoriel") == false:
+		jump intro_appart/book6
+	if SaveManager.getElement("Quests", "1-2_shower") == true:
+		jump intro_appart/book2
+else:
+	Vous êtes rassasié, pas besoin de plus !

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Quest" load_steps=2 format=3 uid="uid://bnjg6cwmjjdn8"]
+
+[ext_resource type="Script" uid="uid://b33ppoek3j2kg" path="res://Scripts/UI/QuestElements/Resources/quest_variables.gd" id="1_5k8g0"]
+
+[resource]
+script = ExtResource("1_5k8g0")
+type = 0
+name = "Retrouve le short de Greg"
+desc = ""
+metadata/_custom_type_script = "uid://b33ppoek3j2kg"

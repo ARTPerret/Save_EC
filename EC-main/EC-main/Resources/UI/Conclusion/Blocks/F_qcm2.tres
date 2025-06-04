@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="GradeBlockVariables" load_steps=2 format=3 uid="uid://bhhvi5u2b2n13"]
+
+[ext_resource type="Script" uid="uid://d3dcgs02tcqyt" path="res://Scripts/UI/Conclusion/Ressource/grade_block_variables.gd" id="1_y3u44"]
+
+[resource]
+script = ExtResource("1_y3u44")
+title = "Parc - Arrosage des plantes"
+category = "Followers"
+description = "L'arrosage des plantes, notamment en été, est la tâche principale dans le jardin. Plusieurs bonnes pratiques sont à considérer comme si possible ne pas mouiller les feuilles, mais la plus importante en été est de bien arroser tôt le matin."
+description_scientifique = "[color=#6d6d6d]Source :[/color] [color=#007dff][url=https://www.hauert.com/ch-fr/offre/particuliers/guide/detail/larrosage-des-plantes-en-ete-les-regles-les-plus-importantes]Hauert[/url][/color]"
+mission_key_1 = "Quests"
+mission_key_2 = "F_qcm2"
+point_key_1 = "Points"
+point_key_2 = "F_qcm2"
+metadata/_custom_type_script = "uid://d3dcgs02tcqyt"

@@ -1,0 +1,11 @@
+label book1
+Où souhaitez-vous vous rendre ?
+- Entrée
+	do ThreadLoad.load_scene("Campus", 7)
+- BU
+	Vous êtes déjà à cet endroit !
+- Cafe
+	do ThreadLoad.load_scene("Campus", 9)
+- Batiment Principal
+	do ThreadLoad.load_scene("Campus", 10)
+[end_timeline]

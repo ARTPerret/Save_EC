@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="GradeBlockVariables" load_steps=2 format=3 uid="uid://3v8fe8pa7g4t"]
+
+[ext_resource type="Script" uid="uid://d3dcgs02tcqyt" path="res://Scripts/UI/Conclusion/Ressource/grade_block_variables.gd" id="1_640cv"]
+
+[resource]
+script = ExtResource("1_640cv")
+title = "Policier - Circulation en ville"
+category = "Followers"
+description = "Contrairement aux idées reçues, la diminution de la vitesse contribue à fluidifier le trafic, et donc, à diminuer les bouchons et « l’effet accordéon ». Rouler plus lentement pourrait aussi contribuer à diminuer l'impact écologique, à condition d'éviter les accoups lors de la conduite.
+"
+description_scientifique = "[color=#6d6d6d]Source :[/color] [color=#007dff][url=https://www.paris.fr/pages/la-baisse-de-la-vitesse-sur-le-peripherique-est-elle-vraiment-utile-28736]Paris.fr[/url][/color]
+"
+mission_key_1 = "Quests"
+mission_key_2 = "F_policier"
+point_key_1 = "Points"
+point_key_2 = "F_policier"
+metadata/_custom_type_script = "uid://d3dcgs02tcqyt"

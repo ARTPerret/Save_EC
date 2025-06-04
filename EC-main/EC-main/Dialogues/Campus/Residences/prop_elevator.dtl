@@ -1,0 +1,9 @@
+label book1
+À quel étage souhaitez-vous vous rendre ?
+- Rez-de-chaussée
+	do EventBus.emit_signal("send_to_floor", 0)
+- 1
+	do EventBus.emit_signal("send_to_floor", 1)
+- 2
+	do EventBus.emit_signal("send_to_floor", 2)
+[end_timeline]

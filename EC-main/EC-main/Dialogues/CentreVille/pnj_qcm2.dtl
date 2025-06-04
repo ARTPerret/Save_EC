@@ -1,0 +1,25 @@
+label book1
+if SaveManager.getElement("Quests", "F_qcm2") == true or SaveManager.getElement("Quests", "F_qcm2") == false:
+	Habitant: Jardinage et Écologie, ça va de pair ! À nous de faire en sorte que les plantes aillent au mieux !
+else:
+	Habitant: Les fleurs du parc sont magnifiques ! Ça doit demander beaucoup d'entretien de maintenir un espace vert aussi grand !
+	Habitant: L'arrosage doit être assez délicat... Je me demande d'ailleurs quel est la meilleure période pour arroser ses plantes ? Tu le sais toi ?
+	- Le matin
+		do SaveManager.setElement("Quests", {"F_qcm2": true})
+		do SaveManager.setElement("Points", {"F_qcm2": 1})
+		do EventBus.emit_signal("add_follower", 1)
+		Habitant: Ah oui, je pense savoir pourquoi : c'est pour éviter d'évaporation en journée et la stagnation de l'eau la nuit, c'est ça ?
+	- L'après-midi
+		do SaveManager.setElement("Quests", {"F_qcm2": false})
+		Habitant: En pleine journée ? Mais si le Soleil est à plein régime, ça va pas faire évaporer presque toute l'eau ? J'imagine qu'il faut juste arroser plus alors.
+	- Le soir
+		do SaveManager.setElement("Quests", {"F_qcm2": false})
+		Habitant: Ça pourrait être pas mal... Mais la fenêtre est assez petite entre la pleine journée et la nuit, il faut pas se tromper de moment.
+	- La nuit
+		do SaveManager.setElement("Quests", {"F_qcm2": false})
+		Habitant: La nuit, vraiment ? L'eau stagnerait, et les champignons en profiteraient, mais au moins l'évaporation ne sera pas un problème.
+	- (répondre plus tard)
+		[end_timeline]
+	Habitant: Je prend note de ce que tu dis, je vais l'appliquer pour mon jardin ! En attendant, je vais profiter de mon temps pour continuer d'admirer les fleurs, elles sont si jolies !
+	[end_timeline]
+[end_timeline]

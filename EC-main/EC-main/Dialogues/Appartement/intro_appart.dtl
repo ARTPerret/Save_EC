@@ -1,0 +1,120 @@
+label book1
+do EventBus.emit_signal("set_ui_visibility", true)
+do EventBus.emit_signal("set_mission_name", "Éco-Campus - Introduction")
+Bienvenue sur [color=green]Éco-Campus[/color] ![pause=1][br] S'il s'agit de votre première partie, nous vous recommandons de [b]suivre le tutoriel[/b].[br][br][br][pause=0.5][speed=0][pulse](Cliquer / tapper pour sélectionner une option)
+- Faire le tutoriel
+	jump book3
+- Passer le tutoriel
+	jump book12
+label book2
+Vous êtes maintenant fin prêt pour vous rendre à la fac !
+do EventBus.emit_signal("set_quest_state", "1_appart")
+if SaveManager.getElement("Quests", "0_tutoriel") == false:
+	jump Introduction/book8
+[end_timeline]
+label book3
+do EventBus.emit_signal("add_quest", "0_tutoriel")
+Passons en revue les [b]contrôles de bases[/b] ![br][br][br][br][br][speed=0][pulse](Cliquer / tapper pour continuer)
+Pour déplacer votre personnage, utilisez les [b]flèches directionnelles[/b] ou, sur mobile, le [b]joystick analogique[/b] à gauche de l'écran.[br][br][br][br][speed=0][pulse](Cliquer / tapper pour continuer)
+Alternativement, vous pouvez utiliser les touches, [b]Z, Q, S, D[/b] ! Essayez maintenant ![br][br][br][br][speed=0][pulse](Cliquer / tapper pour continuer)
+do EventBus.emit_signal("add_quest", "0-1_deplacer")
+[end_timeline]
+label book4
+do EventBus.emit_signal("set_quest_state", "0-1_deplacer")
+Bravo, vous savez maintenant vous déplacer ! Notez que sur ordinateur, vous pouvez vous [b]déplacer plus vite[/b] en maintenant appuyé le bouton [b]Shift / Majuscule[/b] du clavier.
+Passons maintenant à la suite !
+Pour [b]interagir[/b] avec votre environnement, utilisez la touche [b]Espace[/b], la touche [b]E[/b] ou, sur mobile, le [b]bouton interaction[/b] à droite de l'écran.
+Les éléments interactifs seront en [b]surbrillance[/b]. Essayez-donc avec votre [b]chaise de bureau[/b] : approchez-vous de celle-ci et interagissez avec  !
+do EventBus.emit_signal("add_quest", "0-2_chaise")
+[end_timeline]
+label book5
+do EventBus.emit_signal("set_quest_state", "0-2_chaise")
+Confortable, n'est-ce pas ? Vous pourrez descendre dès que vous le voudrez en [b]interagissant de nouveau[/b] (Espace, E, ou sur mobile à droite de l'écran).
+[end_timeline]
+label book11
+[wait time="1.2"]
+do EventBus.emit_signal("point_cursor", 1490.0.0, 446.0, 90.0)
+Un [b]Objectif[/b] vient de s'ajouter à votre liste de quête !
+Les [b]Objectifs[/b] sont la plupart du temps divisés en [b]Sous-Objectifs[/b], que vous devez accomplir afin de progresser dans votre mission.
+do EventBus.emit_signal("point_cursor", 927.0, 132.0, 0.0)
+Gardez en tête que vous devez accomplir ces objectifs ainsi que votre mission [b]avant que le Thermomètre ne se remplisse \: si celui-ci est au max, c'est perdu ![/b]
+Note \: survoler l'interface permet de révéler le temps qu'il vous reste exactement !
+do EventBus.emit_signal("point_cursor", 4000.0, 0.0, 0.0)
+Commençons par le petit-déjeuner ! Rendez-vous à votre [b]réfrigérateur[/b] et interagissez avec !
+do EventBus.emit_signal("add_quest", "0-3_frigo", 3)
+[end_timeline]
+label book6
+[wait time="0.6"]
+do EventBus.emit_signal("set_quest_state", "0-3_frigo")
+Dans [color=green]Éco-Campus[/color], les choix que vous faites ont des conséquences sur votre environnement.
+do EventBus.emit_signal("point_cursor", 889.0, 182.0, 0.0)
+Vous voyez ce nombre ? Il s'agit de votre [b]Impact Environemental[/b].
+Votre [b]Impact Environnemental[/b] démarre à une moyenne de 10 \: si vos actions ont des [color=green]conséquences positives[/color], votre [color=green]impact diminuera[/color] \: si vos actions ont des [color=red]conséquences négatives[/color], votre [color=red]impact augmentera[/color].
+Votre objectif est donc essayer de [color=green]diminer le plus possible votre Impact Environnemental[/color] !
+Si votre Impact Environnemental évolue au delà d'un certain seuil, la [b]Vitesse du Thermomètre[/b] évoluera en conséquent.
+Un [color=green]meilleur Impact[/color] environnemental [color=green]ralentit la vitesse[/color] de découlement du chronomètre, tandis qu'un [color=red]mauvais Impact l'accélère[/color] !
+do EventBus.emit_signal("point_cursor", 4000.0, 0.0, 0.0)
+Passons maintenant au prochain sous-objectif ! Rendez-vous dans votre [b]salle de bain[/b] pour la suite de l'aventure !
+do EventBus.emit_signal("add_quest", "0-4_baignoire", 4)
+[end_timeline]
+label book7
+[wait time="0.6"]
+Vous voici à présent dans un [b]Mini-jeu[/b] !
+Dans les Mini-jeux, vous pouvez interagir directement avec les éléments en [b]cliquant / tappant[/b] dessus.
+Il est aussi possible de prendre [b]différentes décisions[/b] lors des mini-jeux, aux conséquences sur votre Impact Environnemental. Explorez vos options et essayez-donc !
+[end_timeline]
+label book8
+[wait time="0.6"]
+do EventBus.emit_signal("set_quest_state", "0-4_baignoire")
+Vous êtes maintenant fin prêt à découvrir le monde d'[color=green]Éco-Campus[/color] \: vous pouvez désormais sortir de chez vous !
+Cependant n'hésitez pas à prendre le temps d'explorer, et de potentiellement découvrir des [color=yellow]Objectifs Secrets[/color], qui [b]amélioreront[/b] davantage votre Impact Environnemental.
+Dernières informations : vous pouvez mettre le jeu en [b]pause[/b] et accéder aux [b]options[/b] en appuyant sur [b]Échap[/b] ou, sur mobile, le [b]bouton à haut à gauche de l'écran[/b]. Notez aussi que le jeu [b]sauvegarde votre progression automatiquement[/b] !
+Amusez-vous bien sur [color=green]Éco-Campus[/color] !
+do EventBus.emit_signal("change_time", 300)
+do EventBus.emit_signal("set_quest_state", "0_tutoriel")
+[end_timeline]
+label book9
+[wait time="0.6"]
+Bravo, vous venez de trouver un [color=yellow]Objectif Secret[/color] ! Il s'agit de mini-jeux cachées qui n'aparaissent pas dans votre liste de quête.
+Les Objectifs Secrets vous apportent un [color=green]bonus à l'Impact Environnemental[/color], qui peut être plus élevé en fonction de votre initiative ! Essayez de trouver la meilleure action possible !
+[end_timeline]
+label book10
+do EventBus.emit_signal("point_cursor", 1020.0, 182.0, 0.0)
+[wait time="0.6"]
+Note \: vous venez d'obtenir votre premier [b]Follower[/b] !
+Les Followers vous apportent immédiatement du [color=green]temps supplémentaire[/color] sur le Chronomètre quand sensibilisés, et [b]plus tard à la fin du chapitre[/b] !
+Les Followers vous poseront à chaque fois une [b]question sur le thème de l'écologie[/b], à vous d'y répondre correctement pour les persuader !
+Des [b]indices[/b] ce cachent dans le jeu pour chacunes des questions, à vous d'explorer pour les trouver !
+do EventBus.emit_signal("point_cursor", 4000, 0.0, 0.0)
+[wait time="0.6"]
+jump pnj_eboueur/book3
+label book12
+[wait time="0.3"]
+do EventBus.emit_signal("play_cutscene", "phone_start")
+[wait time="1"]
+[i]Dring, dring...[/i]
+Sonia: Salut, c'est [b]Sonia[/b], ton amie de toujours ! T'as bien dormi ?
+Sonia: Je n'arrête pas de repenser au flash news de CVN d'hier soir à la télé...
+Sonia: C'est inquiétant de se dire que les gens ne sont pas au courant de l'urgence écologique qui nous attend !
+Sonia: À ce sujet, j'y ai réfléchi : et si on faisait quelque chose ?
+Sonia: On ne pourra peut-être pas sensibiliser toute la ville d'un coup, mais nous pouvons déjà [b]commencer par les étudiants ![/b]
+Sonia: On se donne [b]rendez-vous au Campus Universitaire[/b] avec les autres membres du BDE pour organiser quelque chose.
+Sonia: Ça serait chouette que tu te joignes à nous, on aura besoin de toi !
+Sonia: Bref, le temps presse, mais prends le temps de te préparer tranquillement. À tout à l'heure !
+do EventBus.emit_signal("play_cutscene", "phone_end")
+[end_timeline]
+label book13
+Il est l'heure de se rendre à la fac !
+do EventBus.emit_signal("set_mission_name", "Sensibiliser les étudiants")
+do EventBus.emit_signal("add_quest", "1_appart")
+do EventBus.emit_signal("add_quest", "1-1_breakfast")
+do EventBus.emit_signal("add_quest", "1-2_shower")
+if SaveManager.getElement("Quests", "0_tutoriel") != null:
+	jump intro_appart/book11
+[end_timeline]
+label book14
+do EventBus.emit_signal("point_cursor", 87.0, 526.0, 270.0)
+Note \: vous venez d'ajouter un objet à votre [b]inventaire[/b] !
+Les objets dans votre inventaire vous offrent des options supplémentaires lors de choix, ou peuvent vous indiquer où vous en êtes dans une quête. Votre inventaire n'est qu'à titre indicatif : pas besoin de cliquer dessus !
+do EventBus.emit_signal("point_cursor", 4000.0, 0.0, 0.0)
+[end_timeline]

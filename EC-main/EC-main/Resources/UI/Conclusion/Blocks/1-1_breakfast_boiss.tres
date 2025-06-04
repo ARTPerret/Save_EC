@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="GradeBlockVariables" load_steps=2 format=3 uid="uid://b3d2tni0da86f"]
+
+[ext_resource type="Script" uid="uid://d3dcgs02tcqyt" path="res://Scripts/UI/Conclusion/Ressource/grade_block_variables.gd" id="1_cdd3h"]
+
+[resource]
+script = ExtResource("1_cdd3h")
+title = "Prendre le petit déjeuner (Boisson)"
+category = "Alimentation"
+description = "Les boissons représentent environ 10% de l'empreinte carbone de nos repas. Les boissons froides commes les sodas et les jus de fruits ont généralement tendance à émettre plus de CO2 que les boissons chaudes, à noter cependant que le café est une exception. La meilleure option est de prendre du thé, ou tout simplement de l'eau du robinet."
+description_scientifique = "[color=#6d6d6d]Source :[/color] [color=#007dff][url=https://impactco2.fr/outils/boisson]Impact CO2[/url][/color]"
+mission_key_1 = "Quests"
+mission_key_2 = "1-1_breakfast"
+point_key_1 = "Points"
+point_key_2 = "1-1_breakfast_boiss"
+metadata/_custom_type_script = "uid://d3dcgs02tcqyt"

@@ -1,0 +1,128 @@
+[gd_scene load_steps=8 format=3 uid="uid://b1c44utdyam2d"]
+
+[ext_resource type="Script" uid="uid://dl85ep7xxokrb" path="res://Scripts/UI/Conclusion/summary_block.gd" id="1_hteiq"]
+[ext_resource type="Texture2D" uid="uid://b6vb3d6w3p8cw" path="res://Graphics/UI/Footprint.svg" id="2_08nvy"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4ttt5"]
+bg_color = Color(0.0588235, 0.0588235, 0.0588235, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_08nvy"]
+bg_color = Color(0.0980392, 0.0980392, 0.0980392, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="LabelSettings" id="LabelSettings_d3cha"]
+font_size = 22
+
+[sub_resource type="LabelSettings" id="LabelSettings_i26dy"]
+resource_local_to_scene = true
+font_size = 22
+font_color = Color(0.427493, 0.427493, 0.427493, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iv1ju"]
+bg_color = Color(0, 0, 0, 0.196078)
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[node name="CategoryPanel" type="PanelContainer"]
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_4ttt5")
+metadata/topic_path = NodePath("Margin/VBox/InfoPannel/VBox/Margin/TopicHBox/TopicLabel")
+metadata/desc_path = NodePath("Margin/VBox/InfoPannel/VBox/DescPannel/MarginContainer/VBox/DescLabel")
+metadata/source_path = NodePath("Margin/VBox/InfoPannel/VBox/DescPannel/MarginContainer/VBox/SourceLabel")
+metadata/score_path = NodePath("Margin/VBox/InfoPannel/VBox/Margin/TopicHBox/ScoreLabel")
+metadata/type_path = NodePath("Margin/VBox/InfoPannel/VBox/Margin/TopicHBox/TextureRect")
+
+[node name="Margin" type="MarginContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBox" type="VBoxContainer" parent="Margin"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="InfoPannel" type="PanelContainer" parent="Margin/VBox"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_08nvy")
+
+[node name="VBox" type="VBoxContainer" parent="Margin/VBox/InfoPannel" node_paths=PackedStringArray("desciption")]
+layout_mode = 2
+script = ExtResource("1_hteiq")
+desciption = NodePath("DescPannel")
+
+[node name="Margin" type="MarginContainer" parent="Margin/VBox/InfoPannel/VBox"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 5
+
+[node name="TopicHBox" type="HBoxContainer" parent="Margin/VBox/InfoPannel/VBox/Margin"]
+layout_mode = 2
+alignment = 1
+
+[node name="TopicLabel" type="Label" parent="Margin/VBox/InfoPannel/VBox/Margin/TopicHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Prendre le petit déjeuner : toast, oeuf et bacon"
+label_settings = SubResource("LabelSettings_d3cha")
+vertical_alignment = 1
+
+[node name="ScoreLabel" type="Label" parent="Margin/VBox/InfoPannel/VBox/Margin/TopicHBox"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+text = "+ 0,0"
+label_settings = SubResource("LabelSettings_i26dy")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Margin/VBox/InfoPannel/VBox/Margin/TopicHBox"]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+texture = ExtResource("2_08nvy")
+expand_mode = 1
+
+[node name="DescPannel" type="PanelContainer" parent="Margin/VBox/InfoPannel/VBox"]
+visible = false
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_iv1ju")
+
+[node name="MarginContainer" type="MarginContainer" parent="Margin/VBox/InfoPannel/VBox/DescPannel"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 5
+
+[node name="VBox" type="VBoxContainer" parent="Margin/VBox/InfoPannel/VBox/DescPannel/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="DescLabel" type="RichTextLabel" parent="Margin/VBox/InfoPannel/VBox/DescPannel/MarginContainer/VBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+fit_content = true
+
+[node name="SourceLabel" type="RichTextLabel" parent="Margin/VBox/InfoPannel/VBox/DescPannel/MarginContainer/VBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "Source : Trust me bro"
+fit_content = true
+
+[connection signal="mouse_entered" from="Margin/VBox/InfoPannel/VBox/Margin/TopicHBox" to="Margin/VBox/InfoPannel/VBox" method="_on_mouse_toggle" binds= [true]]
+[connection signal="mouse_exited" from="Margin/VBox/InfoPannel/VBox/Margin/TopicHBox" to="Margin/VBox/InfoPannel/VBox" method="_on_mouse_toggle" binds= [false]]
+[connection signal="meta_clicked" from="Margin/VBox/InfoPannel/VBox/DescPannel/MarginContainer/VBox/SourceLabel" to="Margin/VBox/InfoPannel/VBox" method="_on_source_label_clicked"]

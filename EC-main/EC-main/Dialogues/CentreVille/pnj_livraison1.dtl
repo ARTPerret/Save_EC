@@ -1,0 +1,33 @@
+if SaveManager.getElement("Quests", "S_livraison1") == true:
+	Habitant: J'espère que m'a commande n'a pas été endommagé pendant le transport !
+	[end_timeline]
+if SaveManager.getElement("Quests", "S_livraison1") == false:
+	Habitant: Oh, c'est toi le livreur aujourd'hui ? D'accord...
+	Habitant: C'est cool de ta part d'aider notre cher livreur, entre les colis et la distribution du journal ça ne doit pas être facile pour lui.
+	Habitant: D'ailleurs, à propos du journal, j'y pense...
+	Habitant: Cet hiver, je lisais dans le journal qu'on devait baisser le chauffage... Je sais plus c'était quoi la température maximum qu'on nous recommandait, tu t'en souviens ?
+	- 17°C Max
+		do SaveManager.setElement("Quests", {"pnj_livraison1": false})
+		Habitant: Ah bon ? Hmmm, il me semblait que c'était plus, mais si tu le dis !
+	- 18°C Max
+		do SaveManager.setElement("Quests", {"pnj_livraison1": false})
+		Habitant: Ah bon ? Hmmm, il me semblait que c'était plus, mais si tu le dis !
+	- 19°C Max
+		do SaveManager.setElement("Quests", {"pnj_livraison1": true})
+		do SaveManager.setElement("Points", {"pnj_livraison1": 1})
+		do EventBus.emit_signal("add_follower", 1)
+		Habitant: Ah oui, c'était ça ! Il disaient que ça nous permettait d'économiser 7% d'énergie, pas mal pour la facture à la fin du mois !
+	- 20°C Max
+		do SaveManager.setElement("Quests", {"pnj_livraison1": false})
+		Habitant: Ah bon ? Hmmm, il me semblait que c'était moins, mais si tu le dis !
+	- (répondre plus tard)
+		[end_timeline]
+	Habitant: Merci d'avoir répondu à ma question mais va, retourne voir le livreur, il doit encore avoir besoin de toi !
+	do SaveManager.setElement("Quests", {"S_livraison1": true})
+	do SaveManager.setElement("Points", {"S_livraison": -0.1})
+	do EventBus.emit_signal("set_empreinte", -0.1)
+	do EventBus.emit_signal("remove_item", "Colis1")
+	[end_timeline]
+if SaveManager.getElement("Quests", "S_livraison1") == null:
+	Habitant: J'attend une livraison, surement le livreur est en chemin !
+	[end_timeline]

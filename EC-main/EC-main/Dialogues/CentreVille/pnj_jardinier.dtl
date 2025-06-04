@@ -1,0 +1,18 @@
+if SaveManager.getElement("Quests", "S_jardinier") == true:
+	Jardinier: Merci pour tes efforts, mon garçon. Grâce à ces arbres, dans quelques années on pourra respirer plus facilement, c'est important de penser au long terme pour l'écologie.
+	[end_timeline]
+if SaveManager.getElement("Quests", "S_jardinier") == false:
+	Jardinier: Tu trouveras les emplacements pour planter les arbres dans les quatre coins du parc. Profite-en pour admirer notre travail jusque là !
+	[end_timeline]
+if SaveManager.getElement("Quests", "S_jardinier") == null:
+	Jardinier: Salut mon enfant. Nous travaillons d'arrache-pied dans le parc, en préparation pour cet été qui s'annonce rude.
+	Jardinier: Est-ce que ça te dirait de nous filer un coup de main à nous les jardiniers ?
+	Jardinier: Aujourd'hui, nous plantons de nouvelles plantes dans le parc : est-ce que tu pourrai nous aider à planter quelques arbres ?
+	- Oui
+		Jardinier: Merci mon garçon. Tiens, voici les arbres à planter.
+		do EventBus.emit_signal("add_item", "Arbre")
+		Jardinier: Tu trouveras des panneaux pour indiquer où il faut planter ces arbres : ils ont dans les 4 coins du parc, profite-en pour admirer le reste de notre travail !
+		do SaveManager.setElement("Quests", {"S_jardinier": false})
+	- Non
+		Jardinier: C'est entendu- il ne faut cependant pas avoir peur de se salir les mains pour l'écologie mon garçon !
+	[end_timeline]

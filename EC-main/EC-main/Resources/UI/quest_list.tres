@@ -1,0 +1,34 @@
+[gd_resource type="Resource" script_class="QuestList" load_steps=2 format=3 uid="uid://bnvvnakxw6yl5"]
+
+[ext_resource type="Script" uid="uid://ganv8v6i5ph6" path="res://Scripts/UI/QuestElements/Resources/quest_list.gd" id="1_q1q63"]
+
+[resource]
+script = ExtResource("1_q1q63")
+quests = Dictionary[String, String]({
+"0-1_deplacer": "uid://bk4u35enc02xr",
+"0-2_chaise": "uid://dwp2xcuovho6e",
+"0-3_frigo": "uid://brlmna1hoe6h",
+"0-4_baignoire": "uid://lhu0eyknqk1b",
+"0_tutoriel": "uid://h2o1rkl5yd5x",
+"1-1_breakfast": "uid://bd7hg8onbk7we",
+"1-2_shower": "uid://b2ce66iouulsg",
+"1_appart": "uid://yt4xycg3kvnl",
+"2-1_voiture": "uid://c2d32v68si25b",
+"2-2_transports": "uid://dse32nmpy3eb3",
+"2-3_pieds": "uid://bjn7ucwcq15bq",
+"2-4_velo": "uid://e1ic08c26glh",
+"2_transport": "uid://djoavc7u3i0yy",
+"3-1_ramasser": "uid://bwr0shqeulkwj",
+"3-2_trier": "uid://bi41jp5nckjht",
+"3-3_parler": "uid://bxt35qemiuowu",
+"3_eboueur": "uid://51gomaom0up",
+"antoine_quest": "uid://bu41p85fnxr1x",
+"flora_quest": "uid://bj8ufu55fhmyg",
+"francoisresponsabledelarestaurationducrous_quest": "uid://njcpwk33f2rs",
+"greg_quest": "uid://bnjg6cwmjjdn8",
+"jean_quest": "uid://d4hukuie50dq0",
+"julie_quest": "uid://crbu5p3wpnene",
+"maxime_quest": "uid://cwg8jnikcumc3",
+"romain_quest": "uid://bomt18yu70fb6",
+"steven_quest": "uid://1b2dxvfpb8t2"
+})

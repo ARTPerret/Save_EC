@@ -1,0 +1,4 @@
+Les fortes chaleurs sont arrivées.[pause=0.5].[pause=0.5].[pause=1] Vous êtes à court de temps, vous n'avez pas réussi à sensibiliser Campus-Ville avant la canicule ![pause=1.5][br][br][br][pulse]Game Over !
+do FadeManager.trigger_fade(1,3,1)
+[wait time="3"]
+do ThreadLoad.load_scene("ConclusionScreen", 0)

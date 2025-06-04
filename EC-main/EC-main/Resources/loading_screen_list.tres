@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="LoadingScreenList" load_steps=2 format=3 uid="uid://bbt22kryavcuy"]
+
+[ext_resource type="Script" uid="uid://cw5t18gjobue6" path="res://Scripts/LoadingScreens/Ressources/loading_screen_list.gd" id="1_hk8wj"]
+
+[resource]
+script = ExtResource("1_hk8wj")
+types = Dictionary[String, String]({
+"DebugTrans": "uid://nrggjd5m8l82"
+})

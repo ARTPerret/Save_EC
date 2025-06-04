@@ -1,0 +1,28 @@
+label book1
+if SaveManager.getElement("Quests", "Q_romain") == null
+	Romain: Yo frère, tu aurais pas une feuille?
+	Romain: Je veux dire, une feuille de papier, j'ai une éval juste après et j'en ai aucune.
+	- Oui
+		if {SaveManager.getElement("Player", "inventory").has("Feuille")} == true
+			Romain: Cimer frère, tiens, cadeau de ma part, une feuille pour une feuille.
+			do SaveManager.setElement("Quests", {"Q_romain": true})
+			do EventBus.emit_signal("set_quest_state", "romain_quest")
+			do EventBus.emit_signal("add_follower", 1)
+			do EventBus.emit_signal("set_empreinte", -0.5)
+			do EventBus.emit_signal("remove_item", "Feuille")
+			do EventBus.emit_signal("add_item", "Chanvre")
+		else:
+			Romain: On dirait pas que tu ai de feuille non plus. Tant pis.
+			Romain: Pense à moi si tu en trouve une.
+			do SaveManager.setElement("Quests", {"Q_romain": false})
+			do EventBus.emit_signal("add_quest", "romain_quest")
+	- Non
+		Romain: Tu as pas de feuille non plus? Chaud, je vais faire quoi moi?
+		Romain: Pense à moi si tu trouve une feuille, ok?
+		do SaveManager.setElement("Quests", {"Q_romain": false})
+		do EventBus.emit_signal("add_quest", "romain_quest")
+elif SaveManager.getElement("Quests", "Q_romain") == false:
+	Romain: Tu as toujours rien trouvé? J'ai entendu qu'un élève échangeait des objets contre des ordures. Je me demande si il a une fiche.
+elif SaveManager.getElement("Quests", "Q_romain") == true:
+	Romain: Bon, maintenant, faut que je trouve à côté de qui je m'assois pour ce contrôle. Julie a souvent des bonnes réponses.
+[end_timeline]

@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="GradeBlockVariables" load_steps=2 format=3 uid="uid://bydcnwei21uwg"]
+
+[ext_resource type="Script" uid="uid://d3dcgs02tcqyt" path="res://Scripts/UI/Conclusion/Ressource/grade_block_variables.gd" id="1_5hpp5"]
+
+[resource]
+script = ExtResource("1_5hpp5")
+title = "Touriste - Préservation plage"
+category = "Followers"
+description = "Il existe une réglementation qui protège l'écosystème fragile des littoraux. Les autorités peuvent tolérer le ramassage lorsqu'il se fait en petite quantité, mais le ramassage excessif est passible d'amendes pouvant s'élever jusqu'à 1 500 €.
+
+"
+description_scientifique = "[color=#6d6d6d]Source :[/color] [color=#007dff][url=https://www.service-public.fr/particuliers/actualites/A15848]Service-Public[/url][/color]
+"
+mission_key_1 = "Quests"
+mission_key_2 = "F_qcm3"
+point_key_1 = "Points"
+point_key_2 = "F_qcm3"
+metadata/_custom_type_script = "uid://d3dcgs02tcqyt"

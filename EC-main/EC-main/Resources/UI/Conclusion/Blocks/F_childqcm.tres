@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="GradeBlockVariables" load_steps=2 format=3 uid="uid://b1vi1l4vfiq1f"]
+
+[ext_resource type="Script" uid="uid://d3dcgs02tcqyt" path="res://Scripts/UI/Conclusion/Ressource/grade_block_variables.gd" id="1_5sng0"]
+
+[resource]
+script = ExtResource("1_5sng0")
+title = "Enfant - Nourrir les oiseaux"
+category = "Followers"
+description = "Les oiseaux sont incapables de digérer correctement le pain et autres produits transformés, ce qui peut provoquer une multitude de problèmes de santé chez eux. De plus, cela peut changer le comportement de l'animal, pouvant le rendre moins indépendant mais aussi plus agressif.
+"
+description_scientifique = "[color=#6d6d6d]Source :[/color] [color=#007dff][url=https://www.lpo.fr/decouvrir-la-nature/conseils-biodiversite/conseils-biodiversite/accueillir-la-faune-sauvage/pourquoi-il-ne-faut-pas-donner-de-pain-aux-oiseaux]LPO France[/url][/color]"
+mission_key_1 = "Quests"
+mission_key_2 = "F_childqcm"
+point_key_1 = "Points"
+point_key_2 = "F_childqcm"
+metadata/_custom_type_script = "uid://d3dcgs02tcqyt"

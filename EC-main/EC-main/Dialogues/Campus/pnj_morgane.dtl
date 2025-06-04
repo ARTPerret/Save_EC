@@ -1,0 +1,9 @@
+label book1
+if SaveManager.getElement("Quests", "Q_francoisresponsabledelarestaurationducrous") == null
+	Morgane: Salut, il fait beau aujourd'hui, nan?
+elif SaveManager.getElement("Quests", "Q_morgane") == true:
+	Morgane: Tu as besoin d'autre chose? Je t'ai déjà dit que je ne mangeais pas au crous.
+else:
+	Morgane: Mes habitudes au crous? Je mange pas au crous, j'aime juste squatter les tables car c'est une place assise à l'extérieur.
+	do SaveManager.setElement("Quests", {"Q_morgane": true})
+[end_timeline]

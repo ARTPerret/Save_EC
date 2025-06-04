@@ -1,0 +1,44 @@
+label book1
+if SaveManager.getElement("Quests", "S_vélo2") == true:
+	Reparateur: Ton vélo t'attend devant le garage. Amuse-toi bien avec !
+	[end_timeline]
+if SaveManager.getElement("Quests", "S_vélo2") == false:
+	Reparateur: Est-ce que t'es prêt à réparer ton vélo ?
+	- Oui
+		Reparateur: Super \: les pièces de vélo seront à ta gauche, et les outils seront à ta droite. Répare ton vélo étape par étape !
+		do EventBus.emit_signal("setup_minigame", "velo")
+	- Non
+		Reparateur: C'est comme tu veux, mais ton vélo va devoir rester ici en attendant.
+	[end_timeline]
+if SaveManager.getElement("Quests", "S_vélo2") == true:
+	[end_timeline]
+if SaveManager.getElement("Quests", "S_vélo1") == null:
+	Reparateur: Ah, te voilà !
+	Reparateur: J'ai commencé les réparations sur ton vélo. Cependant, il manque des pièces importantes pour finir de l'assembler.
+	Reparateur: Ces pièces ont été livrées au Magasin du Centre-Ville, est-ce que tu peux aller les récupérer ?
+	- Oui
+		do SaveManager.setElement("Quests", {"S_vélo1": false})
+		Reparateur: Parfait ! Le [b]Magasin[/b] est au [b]Sud du parc[/b], face à la plage. Tu pourras difficilement le manquer.
+		Reparateur: Une fois que tu as récupéré les pièces, reviens me voir.
+	- Non
+		Reparateur: C'est comme tu veux, mais ton vélo va devoir rester ici en attendant.
+	[end_timeline]
+if SaveManager.getElement("Quests", "S_vélo1") == false:
+	Le [b]Magasin[/b] est au [b]Sud du parc[/b], face à la plage.
+	Reparateur: C'est cool d'avoir un magasin face à la mer, je suis jaloux.
+	[end_timeline]
+if SaveManager.getElement("Quests", "S_vélo1") == true:
+	do SaveManager.setElement("Quests", {"S_vélo2": false})
+	Reparateur: Parfait, je vois que tu as les pièces qu'ils manquent, les réparations vont pouvoir être terminées.
+	do EventBus.emit_signal("remove_item", "Pieces")
+	Reparateur: Mon atelier réparation vélo est en libre service, je t'invite à le réparer toi-même !
+	- Oui
+		Reparateur: Super \: les pièces de vélo seront à ta gauche, et les outils seront à ta droite. Répare ton vélo étape par étape !
+		do EventBus.emit_signal("setup_minigame", "velo")
+	- Non
+		Reparateur: C'est comme tu veux, mais ton vélo va devoir rester ici en attendant.
+	[end_timeline]
+label book2
+do SaveManager.setElement("Quests", {"S_vélo2": true})
+Reparateur: Et voilà, ton vélo est tout réparé ! Je viens de te le sortir devant le garage. Amuse-toi bien avec, tu l'as bien mérité !
+[end_timeline]

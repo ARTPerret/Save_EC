@@ -1,0 +1,10 @@
+label book1
+I'm gonna play a cutscene.
+do EventBus.emit_signal("play_cutscene", "cutscene_1")
+[end_timeline]
+label book2
+I just paused the cutscene.
+do EventBus.emit_signal("play_cutscene")
+[end_timeline]
+label book3
+The cutscene is over now.

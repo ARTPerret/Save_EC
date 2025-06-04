@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Quest" load_steps=2 format=3 uid="uid://brlmna1hoe6h"]
+
+[ext_resource type="Script" uid="uid://b33ppoek3j2kg" path="res://Scripts/UI/QuestElements/Resources/quest_variables.gd" id="1_40v6o"]
+
+[resource]
+script = ExtResource("1_40v6o")
+type = 1
+name = "•    Interagir : Réfrigétateur"
+desc = ""
+metadata/_custom_type_script = "uid://b33ppoek3j2kg"

@@ -1,0 +1,20 @@
+label book1
+if SaveManager.getElement("Quests", "S_plage3") == true:
+	Touriste: N'oublie pas : il est interdit de ramasser les coquillages sur la plage : ils servent à la régénération du sable et éviter l’érosion.
+	Touriste: N'hésite pas à en informer les gens d'ici, pour que cette plage puisse être préservée.
+	[end_timeline]
+if SaveManager.getElement("Quests", "S_plage2") == true:
+	Touriste: C'est un sacré effort que tu as fait là, de nettoyer la plage à toi tout seul.
+	Touriste: Clairement, tu te soucis beaucoup de l'écologie, notamment celle de la mer. Respect, gamin.
+	Touriste: Et tu sais quoi, je vais te donner un conseil pour t'aider à mieux préserver cette plage, et toutes les autres ;
+	Touriste: Les gens ne le savent pas vraiment, mais la meilleure manière de préserver une plage est de ne pas y récupérer les coquillages :[br] ceux-ci servent à la régénération du sable et à éviter l’érosion de la plage avec le temps.
+	Touriste: C'est pour ça qu'il est formellement interdit de le faire. N'hésite pas à le rappeler aux gens d'ici, pour que cette plage puisse être préservée.
+	do SaveManager.setElement("Quests", {"S_plage3": true})
+	[end_timeline]
+if SaveManager.getElement("Quests", "S_plage") == null:
+	Touriste: Je suis biologiste marin, mais je suis actuellement en vacance en ville.
+	Touriste: Je pensais venir me détendre sur la plage, mais bon sang...
+	Touriste: Tout ces déchets sur la plage... Les gens n'ont aucun respect pour la mer ici.
+	[end_timeline]
+Touriste: Je vois ce que tu es en train de faire... C'est très noble de ta part, gamin. J'apprécie.
+[end_timeline]

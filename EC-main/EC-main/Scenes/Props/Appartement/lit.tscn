@@ -1,0 +1,49 @@
+[gd_scene load_steps=8 format=3 uid="uid://buv610vd4bdfb"]
+
+[ext_resource type="Texture2D" uid="uid://drn703q5tni2a" path="res://Graphics/Props/AppartementSolo.png" id="1_h0q8t"]
+[ext_resource type="Shader" uid="uid://c2ug5tlxurkwa" path="res://Shaders/outline.gdshader" id="2_oqfvk"]
+[ext_resource type="Script" uid="uid://2pg4i3168q1p" path="res://Scripts/Props/Types/prop_talk.gd" id="2_q7yw1"]
+
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1mp60"]
+shader = ExtResource("2_oqfvk")
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/width = 0.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_haukc"]
+atlas = ExtResource("1_h0q8t")
+region = Rect2(75, 0, 20, 42)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ys2a0"]
+size = Vector2(16, 38)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8rlkn"]
+size = Vector2(10, 14)
+
+[node name="Lit" type="Node2D"]
+script = ExtResource("2_q7yw1")
+timeline = "Lit"
+
+[node name="PropSprite" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_1mp60")
+position = Vector2(-10, -21)
+texture = SubResource("AtlasTexture_haukc")
+centered = false
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_ys2a0")
+debug_color = Color(1, 0, 0, 0.419608)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(13, 12)
+shape = SubResource("RectangleShape2D_8rlkn")
+
+[node name="FacingDirection" type="Marker2D" parent="."]
+position = Vector2(0, 8)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

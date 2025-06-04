@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="GradeBlockVariables" load_steps=2 format=3 uid="uid://dips266yktpn2"]
+
+[ext_resource type="Script" uid="uid://d3dcgs02tcqyt" path="res://Scripts/UI/Conclusion/Ressource/grade_block_variables.gd" id="1_mc7hq"]
+
+[resource]
+script = ExtResource("1_mc7hq")
+title = "Planter des arbres"
+category = "Divers"
+description = "Planter des arbres n'a en soit aucun impact sur l'émission de CO2. Les arbres séquestrent le CO2 à moyenne de 50 Kg par an, il faudrait qu'un français plante 360 arbres en un an pour compenser ses émissions de CO2. Planter des arbres reste cependant une bonne chose afin de préserver la biodiversité, et pour aider à l'infiltration de l'eau en ville.
+"
+description_scientifique = "[color=#6d6d6d]Source :[/color] [color=#007dff][url=https://blog.helios.do/planter-arbres-pour-sauver-le-monde]Helios[/url][/color]"
+mission_key_1 = "Quests"
+mission_key_2 = "S_jardinier"
+point_key_1 = "Points"
+point_key_2 = "S_jardinier"
+metadata/_custom_type_script = "uid://d3dcgs02tcqyt"

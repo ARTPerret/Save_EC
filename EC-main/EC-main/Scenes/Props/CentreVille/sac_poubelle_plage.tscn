@@ -1,0 +1,53 @@
+[gd_scene load_steps=9 format=3 uid="uid://eiq3vd31ditj"]
+
+[ext_resource type="Script" uid="uid://bq2gjoyp48wk7" path="res://Scripts/Props/Types/sac_poubelle_plage.gd" id="1_bidg4"]
+[ext_resource type="AudioStream" uid="uid://bng27oilms6jo" path="res://Audio/SFX/Temp/FB_Tap.wav" id="2_1e4w3"]
+[ext_resource type="Shader" uid="uid://c2ug5tlxurkwa" path="res://Shaders/outline.gdshader" id="3_relqw"]
+[ext_resource type="Texture2D" uid="uid://bdukdhad5h1tn" path="res://Graphics/Props/VilleSolo.png" id="4_ryo64"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_aomuj"]
+resource_local_to_scene = true
+shader = ExtResource("3_relqw")
+shader_parameter/line_color = Color(1, 1, 0.196078, 1)
+shader_parameter/width = 0.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p5fih"]
+atlas = ExtResource("4_ryo64")
+region = Rect2(136, 41, 15, 15)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rxyj1"]
+size = Vector2(25, 26)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_abqwm"]
+size = Vector2(11, 6)
+
+[node name="Sac_Poubelle_Plage" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_bidg4")
+sfx_pick_up = ExtResource("2_1e4w3")
+
+[node name="PropSprite" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_aomuj")
+position = Vector2(0, 8)
+texture = SubResource("AtlasTexture_p5fih")
+centered = false
+offset = Vector2(0, -8)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(7.5, 10)
+shape = SubResource("RectangleShape2D_rxyj1")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(7.5, 10)
+shape = SubResource("RectangleShape2D_abqwm")
+debug_color = Color(1, 0, 0, 0.419608)
+
+[node name="FacingDirection" type="Marker2D" parent="."]
+position = Vector2(6.5, 9.5)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

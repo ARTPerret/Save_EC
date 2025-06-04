@@ -1,0 +1,9 @@
+label book1
+if SaveManager.getElement("Quests", "3_eboueur") == true:
+	Habitant: La route pour le centre-ville est débloquée, on peut enfin s'y rendre !
+	Habitant: Je t'ais vu ramasser les poubelles aussi : c'est chouette pour le quartier, merci !
+	[end_timeline]
+else:
+	Habitant: Un camion poubelle a pris un mauvais virage au bout de la rue ! Il a même renversé des conteneurs !
+	Habitant: Résultat \: y'a des poubelles plein la rue, et la route direction le centre-ville est bloquée...
+	[end_timeline]

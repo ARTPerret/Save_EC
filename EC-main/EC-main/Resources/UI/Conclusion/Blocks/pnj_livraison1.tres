@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="GradeBlockVariables" load_steps=2 format=3 uid="uid://cbdpq6mhhmvuq"]
+
+[ext_resource type="Script" uid="uid://d3dcgs02tcqyt" path="res://Scripts/UI/Conclusion/Ressource/grade_block_variables.gd" id="1_2s26x"]
+
+[resource]
+script = ExtResource("1_2s26x")
+title = "Livraison - Température Hiver"
+category = "Followers"
+description = "En général, un chauffage est considéré comme insuffisant lorsqu'il ne permet pas d'atteindre 18 °C au centre de chaque pièce. Dans un logement chauffé, la moyenne des températures de l'ensemble des pièces est réglementairement limitée à 19°C. Il ne faut pas oublier d'éteindre son chauffage en été !"
+description_scientifique = "[color=#6d6d6d]Source :[/color] [color=#007dff][url=https://www.service-public.fr/particuliers/vosdroits/F32563]Service-Public[/url][/color]"
+mission_key_1 = "Quests"
+mission_key_2 = "pnj_livraison1"
+point_key_1 = "Points"
+point_key_2 = "pnj_livraison1"
+metadata/_custom_type_script = "uid://d3dcgs02tcqyt"

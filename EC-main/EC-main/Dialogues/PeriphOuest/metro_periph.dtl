@@ -1,0 +1,17 @@
+if {SaveManager.getElement("Player", "inventory").has("Carte")} == true:
+	Où souhaitez-vous vous rendre ?
+	- Périphérie Ouest
+		Vous êtes déjà à cet arrêt !
+	- Centre-Ville
+		do SaveManager.setElement("Choice", {"Transport": 2})
+		do EventBus.emit_signal("change_time", -60)
+		do ThreadLoad.load_scene("CentreVille", 2)
+	- Campus Universitaire
+		do EventBus.emit_signal("change_time", -600)
+		do EventBus.emit_signal("set_quest_state", "2_transport")
+		do EventBus.emit_signal("set_quest_state", "2-2_transports")
+		do ThreadLoad.load_scene("Campus", 0)
+	[end_timeline]
+else:
+	Vous ne pouvez pas prendre le métro \: vous n'avez pas votre titre de transport !
+	[end_timeline]

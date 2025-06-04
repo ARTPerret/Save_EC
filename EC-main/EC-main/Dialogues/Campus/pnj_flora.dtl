@@ -1,0 +1,17 @@
+label book1
+if SaveManager.getElement("Quests", "Q_flora") == null
+	Flora: Salut, contente de te voir, j'ai passé ma matinée à creuser des trous pour planter des nouveaux arbres dans le campus, mais j'avais oublié les graines au BDE.
+	Flora: Tu pourrais aller les planter pour moi ?
+	- Oui
+		Flora: Merci beaucoup, tu trouvera des trous un peu partout à l'université. J'en ai fait 10 ce matin. Tu n'a pas à tout planter, mais ça m'aiderai beaucoup.
+		do SaveManager.setElement("Quests", {"Q_flora": false})
+		do EventBus.emit_signal("add_quest", "flora_quest")
+	- Non
+		Flora: Tu dois être occupé, je comprends, mais n'hésite pas à venir si tu as un peu de temps. Chaque action, même la plus petite compte.
+elif SaveManager.getElement("Quests", "Q_flora") == false:
+	Flora: Tu n'a pas encore planté tout les arbres? Ne t'inquiète pas, tu as tout ton temps, mais le plus tôt reste le mieux.
+elif SaveManager.getElement("Quests", "Q_flora") == true:
+	Flora: Hey, tu as planté toutes les graines pas vrai? On ne sera plus à l'université quand ils auront poussé, mais faire un effort pour ceux qui viennent après nous est toujours une bonne chose.
+	do EventBus.emit_signal("set_quest_state", "flora_quest")
+	do EventBus.emit_signal("add_follower", 1)
+[end_timeline]

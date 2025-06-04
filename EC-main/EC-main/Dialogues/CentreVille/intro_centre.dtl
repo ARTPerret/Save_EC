@@ -1,0 +1,7 @@
+label book1
+do EventBus.emit_signal("remove_quest", "3_eboueur")
+do EventBus.emit_signal("remove_quest", "3-1_ramasser")
+do EventBus.emit_signal("remove_quest", "3-2_trier")
+do EventBus.emit_signal("remove_quest", "3-3_parler")
+Bienvenue au Centre-Ville ! Il y a beaucoup de choses à découvrir ici, n'hésitez pas à bien prendre le temps d'explorer !
+[end_timeline]

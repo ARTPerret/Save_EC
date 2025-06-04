@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="GradeBlockList" load_steps=2 format=3 uid="uid://cimgxjc6t8xyr"]
+
+[ext_resource type="Script" uid="uid://x4070xccs7ll" path="res://Scripts/UI/Conclusion/Ressource/grade_block_list.gd" id="1_c5jvs"]
+
+[resource]
+script = ExtResource("1_c5jvs")
+blocks = Dictionary[String, String]({
+"1-1_breakfast_boiss": "uid://b3d2tni0da86f",
+"1-1_breakfast_dej": "uid://cswda4yvu71xm",
+"1-2_shower": "uid://8ws8nny3lhik",
+"2_transport": "uid://c26u6t814r24q",
+"3-2_trier": "uid://bwotjxbutiovs",
+"3-3_parler": "uid://bue0qem4uij6m",
+"F_childqcm": "uid://b1vi1l4vfiq1f",
+"F_policier": "uid://3v8fe8pa7g4t",
+"F_qcm": "uid://brtmp4mqaorao",
+"F_qcm2": "uid://bhhvi5u2b2n13",
+"F_qcm3": "uid://bydcnwei21uwg",
+"S_jardinier": "uid://dips266yktpn2",
+"S_livraison": "uid://dnadj8v0ylmtd",
+"S_plage": "uid://wy2oueo3q1ri",
+"S_television": "uid://c1ireytxohkao",
+"pnj_livraison1": "uid://cbdpq6mhhmvuq",
+"pnj_livraison2": "uid://dx6xfikng7dcw"
+})
+metadata/_custom_type_script = "uid://x4070xccs7ll"

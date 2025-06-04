@@ -1,0 +1,24 @@
+label book1
+if SaveManager.getElement("Quests", "F_qcm") == true or SaveManager.getElement("Quests", "F_qcm") == false:
+	Je sens que je vais me régaler cet été !
+else:
+	Cette chaleur me donne envie de faire des salades de fruits cet été : quel fruits devrait-je acheter ?
+	- Fraise, Mangue, Rhubarbe, Pomelo, Cerise
+		do SaveManager.setElement("Quests", {"F_qcm": false})
+		Hmmmm ? Pourquoi pas, mais ça risque d'être difficile de s'en fournir hors saison...
+	- Melon, Figue, Pêche, Mirabelle, Pastèque
+		do SaveManager.setElement("Quests", {"F_qcm": true})
+		do SaveManager.setElement("Points", {"F_qcm": 1})
+		do EventBus.emit_signal("add_follower", 1)
+		Oh, des fruits de saisons, bonne idée ! Ça sera plus facile à trouver, et aussi je pourrai soutenir les producteurs locaux !
+	- Raisin, Prune, Kiwi, Noix, Grenade
+		do SaveManager.setElement("Quests", {"F_qcm": false})
+		Hmmmm ? Pourquoi pas, mais ça risque d'être difficile de s'en fournir hors saison...permis...
+	- Clémentine, Citron, Ananas d’outre-mer, Poires, Noix
+		do SaveManager.setElement("Quests", {"F_qcm": false})
+		Hmmmm ? Pourquoi pas, mais ça risque d'être difficile de s'en fournir hors saison...
+	- (répondre plus tard)
+		[end_timeline]
+	C'est noté, merci ! Je sens en tout cas que ça fera d'excellentes salades, j'en ais déjà l'eau à la bouche !
+	[end_timeline]
+[end_timeline]

@@ -1,0 +1,17 @@
+label book1
+if SaveManager.getElement("Quests", "3-2_trier") == false:
+	Voulez-vous trier les déchets ?
+	- Oui
+		do EventBus.emit_signal("setup_minigame", "tridechet")
+	- Non
+else:
+	if SaveManager.getElement("Quests", "3-3_parler") == false:
+		Les poubelles sont remplies ! Allez maintenant parler à l'éboueur !
+	else:
+		De jolies poubelles ! Celles-ci sont vides.
+[end_timeline]
+label book2
+do EventBus.emit_signal("set_quest_state", "3-2_trier")
+Vous avez fini de trier les déchets ! Parlez à l'éboueur pour accomplir la mission !
+do EventBus.emit_signal("add_quest", "3-3_parler")
+[end_timeline]

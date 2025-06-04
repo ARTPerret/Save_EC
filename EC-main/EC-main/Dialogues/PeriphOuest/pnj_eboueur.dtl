@@ -1,0 +1,54 @@
+label book1
+if SaveManager.getElement("Quests", "3_eboueur") == true:
+	Eboueur: Fais comme si je n'étais plus là ! Je ne devrai plus être là justement !!
+	[end_timeline]
+if SaveManager.getElement("Quests", "3_eboueur") == false:
+	if SaveManager.getElement("Quests", "3-1_ramasser") == false:
+		Eboueur: Les poubelles sont sur les trottoirs, tu ne pourras pas les louper.
+		[end_timeline]
+	if SaveManager.getElement("Quests", "3-2_trier") == false:
+		Eboueur: Super, est-ce que tu peux maintenant les jeter dans les conteneurs ? Je les ramasserai avec le camion tous de suite après.
+		[end_timeline]
+	if SaveManager.getElement("Quests", "3-3_parler") == false:
+		Eboueur: Merci beaucoup pour le coup de main, jeune homme. J'avais besoin de cette petite pause pour reprendre mes esprits.
+		Eboueur: Avant que je ne parte cependant, j'ai une petite question à te poser concernant le recyclage, est-ce que tu es prêt ?
+		jump Question
+else:
+	Eboueur: J'ai complètement raté mon virage, j'ai failli renverser mon camion sur la route... Heureusement, ce n'est pas arrivé, il n'y a rien eu de grave.
+	Eboueur: J'ai tout de même renversé les poubelles sur le bord de la route... J'ai pris le temps de les relever, mais je suis encore un peu secoué...
+	Eboueur: Est-ce que ça te dérangerai de me filer un petit coup de main ? Je crois que j'ai besoin de m'assoir un petit peu...
+	do EventBus.emit_signal("add_quest", "3_eboueur")
+	do EventBus.emit_signal("add_quest", "3-1_ramasser")
+	[end_timeline]
+label book2
+do EventBus.emit_signal("set_quest_state", "3-1_ramasser")
+Eboueur: Merci, jeune homme. Si tu peux les jeter dans les conteneurs, ça serait chouette pour tous le monde, moi le premier. Pense à bien trier les déchets... !
+do EventBus.emit_signal("add_quest", "3-2_trier")
+[end_timeline]
+label TryAgain
+Eboueur: Je suis sympa, je te laisse ré-essayer.
+jump Question
+label Question
+Eboueur: Imagine que j'ai une bouteille de verre à jeter. À ton avis, dans quelle poubelle dois-je la jeter ?
+- Grise
+	Eboueur: C'est pas ça, non. Le poubelle grise est réservée aux déchets non recyclable, et nous sommes capable de recycler le verre.
+	jump TryAgain
+- Jaune
+	Eboueur: ... Pas vraiment, non. Le verre peut être recyclé, mais celui-ci doit être jetée dans une autre poubelle que la jaune !
+	jump TryAgain
+- Verte
+	do EventBus.emit_signal("add_follower", 1)
+	Eboueur: C'est ça, bravo ! Ça dépend des communes, mais généralement le verre doit être jeté dans des conteneurs verts à des endroits précis en ville.
+	do EventBus.emit_signal("set_quest_state", "3-3_parler")
+	do SaveManager.setElement("Points", {"3-3_parler": 1})
+	Eboueur: Bien joué en tout cas, tu m'a convaincu que l'écologie, ça t'intéresses. Garde le cap !
+	if SaveManager.getElement("Quests", "0_tutoriel") == true:
+		jump intro_appart/book10
+	label book3
+	Eboueur: Bon, bref, je devrais vite repartir, je me sens mieux et j'ai suffisamment bloqué la route comme ça. Encore merci du coup de main, jeune homme !
+	do EventBus.emit_signal("set_quest_state", "3_eboueur")
+	do EventBus.emit_signal("play_cutscene", "cutscene_eboueur_done")
+	[end_timeline]
+- Bleu
+	Eboueur: ... Raté, on a pas de poubelle bleue dans notre ville. Ça dépend des communes, mais les poubelles bleues sont généralement réservé au carton et au papier !
+	jump TryAgain

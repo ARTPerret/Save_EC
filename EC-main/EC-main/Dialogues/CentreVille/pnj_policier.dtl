@@ -1,0 +1,23 @@
+if SaveManager.getElement("Quests", "F_policier") == true or SaveManager.getElement("Quests", "F_policier") == false:
+	Policier: Bien réguler la circulation, c'est ma façon de contribuer à la diminuniton de la pollution de l'air !
+else:
+	Policier: Quand je ne suis pas occupé avec autre chose, j'aime bien passer mon temps à réguler la circulation.
+	Policier: Toutes ces voitures, des fois je me demande à quel point elles peuvent réellement polluer. Selon-toi, à quel vitesse devraient-elles rouler en ville pour limiter tout ça ?
+	- Le plus lentement possible
+		do SaveManager.setElement("Quests", {"F_policier": false})
+		Policier: Vraiment ? Hmm, ça ne voudrait pas pourtant dire que les voitures restent plus longtemps sur la route ?
+	- Aux alentours de 30 km/h
+		do SaveManager.setElement("Quests", {"F_policier": true})
+		do SaveManager.setElement("Points", {"F_policier": 1})
+		do EventBus.emit_signal("add_follower", 1)
+		Policier: Je pense que c'est un bon compromis. Pas besoin d'aller plus vite en ville, même quand la limitation le permet. En plus, ça limiterait les accidents.
+	- Aux alentours de 50 km/h
+		do SaveManager.setElement("Quests", {"F_policier": false})
+		Policier: C'est parfois la limitation de vitesse. C'est plus lent au centre-ville, mais j'imagine que les gens peuvent rouler à cette vitesse sans problème ailleurs quand c'est permis...
+	- À la vitesse maximale autorisée
+		do SaveManager.setElement("Quests", {"F_policier": false})
+		Policier: Vraiment ? Hmm, j'ai justement l'impression qu'à vouloir aller trop vite, les voitures se gènent entre elles et ça cause des embouteillages.
+	- (répondre plus tard)
+		[end_timeline]
+	Policier: Je vais tester ton conseil en tout cas, je verrai bien ce que ça donne en pratique ! Tu peux circuler.
+	[end_timeline]
