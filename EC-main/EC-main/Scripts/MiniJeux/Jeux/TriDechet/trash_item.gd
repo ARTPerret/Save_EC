@@ -1,7 +1,7 @@
 extends Node2D
 class_name TrashItem
 
-@export_enum("Recyclable", "Non Recyclable", "Verre") var type: int
+@export_enum("Recyclable", "Non Recyclable", "Verre", "Papier") var type: int
 
 var speed: float
 

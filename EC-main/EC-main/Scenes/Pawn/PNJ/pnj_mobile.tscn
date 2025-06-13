@@ -4,14 +4,14 @@
 [ext_resource type="Script" uid="uid://bxfl65rn1pqqw" path="res://Scripts/Pawn/state_machine.gd" id="2_6q7pp"]
 [ext_resource type="Script" uid="uid://cntkcubtfb3kf" path="res://Scripts/Pawn/Types/PNJ/state_regular.gd" id="3_j34d2"]
 [ext_resource type="Script" uid="uid://dduy3rp133is8" path="res://Scripts/Pawn/state_pathfinding.gd" id="4_snmpb"]
-[ext_resource type="Shader" uid="uid://c2ug5tlxurkwa" path="res://Shaders/outline.gdshader" id="5_iwcx3"]
+[ext_resource type="Shader" path="res://Shaders/outline_for_npc.gdshader" id="5_j34d2"]
 [ext_resource type="Texture2D" uid="uid://b1w62earwl7un" path="res://Graphics/Characters/character_player.png" id="6_h8deo"]
 [ext_resource type="Script" uid="uid://b3126vbix628p" path="res://Scripts/Pawn/player_anim.gd" id="7_rvass"]
 [ext_resource type="Texture2D" uid="uid://d0u7jqiyj23cm" path="res://Graphics/Other/char_shadow.png" id="8_j34d2"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_utgjr"]
 resource_local_to_scene = true
-shader = ExtResource("5_iwcx3")
+shader = ExtResource("5_j34d2")
 shader_parameter/line_color = Color(1, 1, 1, 1)
 shader_parameter/width = 0.0
 
@@ -286,6 +286,7 @@ states/Walk/position = Vector2(515.333, 118)
 transitions = ["Start", "Walk", SubResource("AnimationNodeStateMachineTransition_hyw4k")]
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_pb38o"]
+graph_offset = Vector2(-384.037, 33.2317)
 nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_t5d6h")
 nodes/TimeScale/position = Vector2(493.333, 160)
 nodes/Transition/node = SubResource("AnimationNodeTransition_2sv47")

@@ -60,11 +60,17 @@ func _on_collision_other(area: Area2D, inside: bool) -> void:
 
 func _on_trash_enter(area: Area2D) -> void:
 	area.monitoring = false
+	area.get_parent().queue_free()
 	if type == area.get_parent().type:
 		minigame_window.update_score(-0.05)
+		feedback(Color(0,1,0))
+		
 	else:
 		minigame_window.update_score(0.1)
-	area.get_parent().queue_free()
+		feedback(Color(1,0,0))
+		
+		print("ALLO !")
+	
 
 func _on_mouse_hover_toogled(arg: float) -> void:
 	if !minigame_window.holding_trash:
@@ -80,3 +86,11 @@ func _on_mouse_hover_toogled(arg: float) -> void:
 			mouse_is_off = true
 		else:
 			mouse_is_off = false
+			
+func feedback(feedback_color: Color) -> void:
+	sprite_poubelle.material.set_shader_parameter("line_color", feedback_color)
+	sprite_poubelle.material.set_shader_parameter("width",0.7)
+	await get_tree().create_timer(0.5).timeout 
+	sprite_poubelle.material.set_shader_parameter("line_color",Color(1,1,1))
+	if (mouse_is_off == true) or (mouse_is_off == false && minigame_window.holding_trash == true):
+		sprite_poubelle.material.set_shader_parameter("width",0)

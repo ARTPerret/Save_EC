@@ -30,6 +30,7 @@ func _initialize_inventaire() -> void:
 func add_item(item_name: String) -> void:
 	var item_load: Control = item_display.instantiate()
 	item_load.name = item_name
+	print(list_item)
 	item_load.get_node("MarginContainer/TextureRect").texture = load(list_item.dictionnaire[item_name])
 	
 	if SaveManager.getElement("Quests", "0_tutoriel") != null and SaveManager.getElement("Misc", "first_time_added") == null:

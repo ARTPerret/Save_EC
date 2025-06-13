@@ -1,0 +1,23 @@
+if SaveManager.getElement("Quests", "S_dechet_campus") == "done":
+	Vous avez fait votre part dans les résidences, félicitations.
+	[end_timeline]
+elif SaveManager.getElement("Quests", "S_dechet_campus") == "sorted":
+	Vous avez nettoyé les deux résidences, Antoine apprécierai sûrement de l'apprendre.
+	[end_timeline]
+elif SaveManager.getElement("Quests", "S_dechet_campus") == "all":
+	Voulez-vous trier les déchets ?
+	- Oui
+		do EventBus.emit_signal("setup_minigame", "tridechet4PB")
+	- Non
+	[end_timeline]
+elif SaveManager.getElement("Quests", "S_dechet_campus") == "bas" or SaveManager.getElement("Quests", "S_dechet_campus") == "haut":
+	Il reste encore des déchets dans les résidences !
+	[end_timeline]
+elif SaveManager.getElement("Quests", "S_dechet_campus") == null:
+	Les poubelles des résidences ! Et manifestement, les gens ne les utilisent pas... !
+	[end_timeline]
+label book2
+	Et voilà, une très bonne chose de faite !
+	do SaveManager.setElement("Quests", {"S_dechet_campus": "sorted"})
+	do SaveManager.setElement("Quests", {"Q_antoine": true})
+	[end_timeline]

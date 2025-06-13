@@ -7,10 +7,11 @@
 [ext_resource type="AudioStream" uid="uid://bng27oilms6jo" path="res://Audio/SFX/Temp/FB_Tap.wav" id="5_76lt3"]
 [ext_resource type="PackedScene" uid="uid://q7300yqgpl64" path="res://Scenes/MiniJeux/TriDechet/DechetTypes/ref_verre.tscn" id="5_h3ye7"]
 [ext_resource type="PackedScene" uid="uid://c4ibps4ddsx3q" path="res://Scenes/MiniJeux/TriDechet/PoubelleTypes/ref.tscn" id="6_ff1f2"]
-[ext_resource type="Texture2D" uid="uid://dxnvxj2oia83o" path="res://Graphics/Other/bg_poub2.png" id="7_bi8gk"]
+[ext_resource type="Texture2D" uid="uid://baf78n1r4ai4u" path="res://Graphics/Minigames/Tri/BG_Tri_Beach.png" id="7_bi8gk"]
 [ext_resource type="Shader" uid="uid://c2ug5tlxurkwa" path="res://Shaders/outline.gdshader" id="7_q7g7p"]
 [ext_resource type="Texture2D" uid="uid://sm0i5714jmm7" path="res://Graphics/TEMP/TEMP_Trash.png" id="8_kxl63"]
 [ext_resource type="Texture2D" uid="uid://d111wqta8chq3" path="res://Graphics/UI/hand_cursor.svg" id="9_6jsu8"]
+
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7mlrj"]
 resource_local_to_scene = true

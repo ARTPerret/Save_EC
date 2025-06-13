@@ -1,35 +1,37 @@
 label book1
 if SaveManager.getElement("Quests", "Q_francoisresponsabledelarestaurationducrous") == null:
-	"François responsable de la restauration du crous": Les élèves jettent encore des kilos de nourriture aujourd'hui. Entre ça et la nourriture jetée par la cuisine à la fin de la journée. On va pas s'en sortir.
-	"François responsable de la restauration du crous": Ça nous coûte tellement cher, tout ça pour êter gaspillé en fin de compte.
-	"François responsable de la restauration du crous": Il faut qu'on trouve une solution, tu as une idée?
+	Francois: Les élèves jettent encore des kilos de nourriture aujourd'hui. Entre ça et la nourriture jetée par la cuisine à la fin de la journée. On va pas s'en sortir.
+	Francois: Ça nous coûte tellement cher, tout ça pour être gaspillé en fin de compte.
+	Francois: Il faut qu'on trouve une solution, tu as une idée?
 	- ...
 	- Heuuuuuu
-	"François responsable de la restauration du crous": Ouais, merci. Bon, d'un autre côté je vois pas non plus.
-	"François responsable de la restauration du crous": Bon, va demander à tes camarades qui trainent dans le coin quelles sont leurs habitudes, qu'on trouve une idée.
+	Francois: Ouais, merci. Bon, d'un autre côté je vois pas non plus.
+	Francois: Bon, va demander à tes camarades qui trainent dans le coin quelles sont leurs habitudes, qu'on trouve une idée.
 	do SaveManager.setElement("Quests", {"Q_francoisresponsabledelarestaurationducrous": false})
 	do EventBus.emit_signal("add_quest", "francoisresponsabledelarestaurationducrous_quest")
-elif SaveManager.getElement("Quests", "Q_francoisresponsabledelarestaurationducrous") == false and (SaveManager.getElement("Quests", "Q_morgane") = null or SaveManager.getElement("Quests", "Q_gaspard") = null or SaveManager.getElement("Quests", "Q_lilian") = null):
-	"François responsable de la restauration du crous": Tu as des infos?
-	"François responsable de la restauration du crous": Non? Va demander à tes camarades qui trainent dans le coin quelles sont leurs habitudes, qu'on trouve une idée pour limiter le gaspillage.
-elif SaveManager.getElement("Quests", "Q_francoisresponsabledelarestaurationducrous") ==  false and SaveManager.getElement("Quests", "Q_morgane") = true and SaveManager.getElement("Quests", "Q_gaspard") = true and SaveManager.getElement("Quests", "Q_lilian") = true:
-	"François responsable de la restauration du crous": Tu as des infos?
-	"François responsable de la restauration du crous": Je vois, entre ceux qui ne finissent pas leur assiette et ceux qui ne mangent pas le soir, on peux trouver une idée.
-	"François responsable de la restauration du crous": Je sais, durant les services, on va donner des portions plus petites, pour éviter que les étudiant gaspillent mais en échange, nous pouvont donner la possibilité de se resservir du plat principal.
-	"François responsable de la restauration du crous": Quand aux restes de la cuisine, on peut donner la nourriture restante après les services dans des barquettes.
-	"François responsable de la restauration du crous": Ainsi, les élèves qui pourrait en avoir besoin pour le soir pourront les avoir et on limiterai la nourriture gaspillée.
-	"François responsable de la restauration du crous": Merci pour ton aide, je vais essayer de mettre en place ces mesures aussi vite que possible.
+elif SaveManager.getElement("Quests", "Q_francoisresponsabledelarestaurationducrous") == false and (SaveManager.getElement("Quests", "Q_morgane") == null or SaveManager.getElement("Quests", "Q_gaspard") == null or SaveManager.getElement("Quests", "Q_lilian") == null):
+	Francois: Tu as des infos?
+	Francois: Non? Va demander à tes camarades qui trainent dans le coin quelles sont leurs habitudes, qu'on trouve une idée pour limiter le gaspillage.
+elif SaveManager.getElement("Quests", "Q_francoisresponsabledelarestaurationducrous") ==  false and SaveManager.getElement("Quests", "Q_morgane") == true and SaveManager.getElement("Quests", "Q_gaspard") == true and SaveManager.getElement("Quests", "Q_lilian") == true:
+	Francois: Tu as des infos?
+	Francois: Je vois, entre ceux qui ne finissent pas leur assiette et ceux qui ne mangent pas le soir, on peux trouver une idée.
+	Francois: Je sais, durant les services, on va donner des portions plus petites, pour éviter que les étudiants gaspillent mais en échange, nous pouvons donner la possibilité de se resservir du plat principal.
+	Francois: Quand aux restes de la cuisine, on peut donner la nourriture restante après les services dans des barquettes.
+	Francois: Ainsi, les élèves qui pourraient en avoir besoin pour le soir pourront les avoir et on limiterait la nourriture gaspillée.
+	Francois: Merci pour ton aide, je vais essayer de mettre en place ces mesures aussi vite que possible.
+	
 	do SaveManager.setElement("Quests", {"Q_francoisresponsabledelarestaurationducrous": true})
 	do EventBus.emit_signal("set_quest_state", "francoisresponsabledelarestaurationducrous_quest")
 	do EventBus.emit_signal("add_follower", 1)
 elif SaveManager.getElement("Quests", "Q_francoisresponsabledelarestaurationducrous") == true:
-	"François responsable de la restauration du crous": Merci pour ton aide, je vais essayer de mettre en place ces mesures aussi vite que possible.
+	Francois: Merci pour ton aide, je vais essayer de mettre en place ces mesures aussi vite que possible.
 if SaveManager.getElement("Quests", "Q_steven") == "searching":
-	"François responsable de la restauration du crous": Hey, tu as besoin d'aide sur quelque chose nan?
+	Francois: Hey, tu as besoin d'aide sur quelque chose nan?
 	- Un étudiant m'a demandé de lui trouver du liquide vaisselle
-	"François responsable de la restauration du crous": Il n'a que du savon de marseille? C'est en réalité assez facile de faire son propre liquide vaisselle.
-	"François responsable de la restauration du crous": Avec de l'eau, du savon de marseille, des cristaux de soude et du bicarbonate.
-	"François responsable de la restauration du crous": Je peux te donner les cristaux et le bicarbonate si tu veux.
-	do EventBus.emit_signal("add_item", "Ingredients_lessive")
-	do SaveManager.setElement("Quests", {"Q_steven": "found"})
+		Francois: Il n'a que du savon de Marseille? C'est en réalité assez facile de faire son propre liquide vaisselle.
+		Francois: Avec de l'eau, du savon de marseille, des cristaux de soude et du bicarbonate.
+		Francois: Je peux te donner les cristaux et le bicarbonate si tu veux.
+		do EventBus.emit_signal("add_item", "Ingredients_lessive")
+		do SaveManager.setElement("Quests", {"Q_steven": "found"})
+	- Non, rien.
 [end_timeline]

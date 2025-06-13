@@ -1,0 +1,54 @@
+[gd_scene load_steps=8 format=3 uid="uid://bn7nmolsu8lk4"]
+
+[ext_resource type="Script" uid="uid://dy8w17ofvuvxj" path="res://Scripts/Props/Types/zone_de_plante_campus.gd" id="1_2m5jv"]
+[ext_resource type="Shader" uid="uid://c2ug5tlxurkwa" path="res://Shaders/outline.gdshader" id="2_oixt5"]
+[ext_resource type="Texture2D" uid="uid://bdukdhad5h1tn" path="res://Graphics/Props/VilleSolo.png" id="3_kfccf"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jdcxi"]
+resource_local_to_scene = true
+shader = ExtResource("2_oixt5")
+shader_parameter/line_color = Color(1, 1, 0.196078, 1)
+shader_parameter/width = 0.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8klag"]
+resource_local_to_scene = true
+atlas = ExtResource("3_kfccf")
+region = Rect2(151, 41, 16, 17)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dac7g"]
+size = Vector2(22, 21)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nn0nq"]
+size = Vector2(6, 5)
+
+[node name="ZoneDePlanteCampus" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_2m5jv")
+timeline = "quest_trees"
+
+[node name="PropSprite" type="Sprite2D" parent="."]
+y_sort_enabled = true
+material = SubResource("ShaderMaterial_jdcxi")
+position = Vector2(0, 10)
+texture = SubResource("AtlasTexture_8klag")
+centered = false
+offset = Vector2(0, -10)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(8, 12.5)
+shape = SubResource("RectangleShape2D_dac7g")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(8, 12.5)
+shape = SubResource("RectangleShape2D_nn0nq")
+debug_color = Color(1, 0, 0, 0.419608)
+
+[node name="FacingDirection" type="Marker2D" parent="."]
+position = Vector2(8, 12)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

@@ -1,0 +1,111 @@
+[gd_scene load_steps=5 format=3 uid="uid://dv6dw4iistpww"]
+
+[ext_resource type="Script" uid="uid://m8ghibfj6wn8" path="res://Scripts/Pawn/Types/PNJ/PNJ_Mobile/Car/intersections_entrees.gd" id="1_d0yqo"]
+[ext_resource type="Shape2D" uid="uid://cufn4eawme2i" path="res://Misc/Collision/Intersection_Verticale.tres" id="2_vfdpg"]
+[ext_resource type="Shape2D" uid="uid://lwll4a5tw7go" path="res://Misc/Collision/Intersection_horizontale.tres" id="3_0kwck"]
+[ext_resource type="Script" uid="uid://c2wuyt1qou2eu" path="res://Scripts/Pawn/Types/PNJ/PNJ_Mobile/Car/intersections_sorties.gd" id="4_5qlek"]
+
+[node name="Intersections" type="Node2D"]
+
+[node name="Inter1" type="Node2D" parent="."]
+position = Vector2(391, 408)
+
+[node name="Inter_Entrees" type="Node2D" parent="Inter1"]
+script = ExtResource("1_d0yqo")
+
+[node name="Entree" type="Area2D" parent="Inter1/Inter_Entrees"]
+position = Vector2(-91, 32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Inter1/Inter_Entrees/Entree"]
+shape = ExtResource("2_vfdpg")
+
+[node name="Entree2" type="Area2D" parent="Inter1/Inter_Entrees"]
+position = Vector2(94, -27)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Inter1/Inter_Entrees/Entree2"]
+shape = ExtResource("2_vfdpg")
+
+[node name="Entree3" type="Area2D" parent="Inter1/Inter_Entrees"]
+position = Vector2(-27, -90)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Inter1/Inter_Entrees/Entree3"]
+shape = ExtResource("3_0kwck")
+
+[node name="Inter_Sorties" type="Node2D" parent="Inter1"]
+script = ExtResource("4_5qlek")
+
+[node name="Sortie" type="Area2D" parent="Inter1/Inter_Sorties"]
+position = Vector2(-90, -30)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Inter1/Inter_Sorties/Sortie"]
+shape = ExtResource("2_vfdpg")
+
+[node name="Sortie2" type="Area2D" parent="Inter1/Inter_Sorties"]
+position = Vector2(95, 34)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Inter1/Inter_Sorties/Sortie2"]
+shape = ExtResource("2_vfdpg")
+
+[node name="Sortie3" type="Area2D" parent="Inter1/Inter_Sorties"]
+position = Vector2(30, -90)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Inter1/Inter_Sorties/Sortie3"]
+shape = ExtResource("3_0kwck")
+
+[node name="Inter2" type="Node2D" parent="."]
+position = Vector2(813, 733)
+
+[node name="Inter_Entrees" type="Node2D" parent="Inter2"]
+script = ExtResource("1_d0yqo")
+
+[node name="Entree" type="Area2D" parent="Inter2/Inter_Entrees"]
+position = Vector2(-80, 14)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Inter2/Inter_Entrees/Entree"]
+shape = ExtResource("2_vfdpg")
+
+[node name="Entree2" type="Area2D" parent="Inter2/Inter_Entrees"]
+position = Vector2(40, 70)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Inter2/Inter_Entrees/Entree2"]
+shape = ExtResource("3_0kwck")
+
+[node name="Entree3" type="Area2D" parent="Inter2/Inter_Entrees"]
+position = Vector2(-17, -89)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Inter2/Inter_Entrees/Entree3"]
+shape = ExtResource("3_0kwck")
+
+[node name="Inter_Sorties" type="Node2D" parent="Inter2"]
+script = ExtResource("4_5qlek")
+
+[node name="Sortie" type="Area2D" parent="Inter2/Inter_Sorties"]
+position = Vector2(-80, -46)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Inter2/Inter_Sorties/Sortie"]
+shape = ExtResource("2_vfdpg")
+
+[node name="Sortie2" type="Area2D" parent="Inter2/Inter_Sorties"]
+position = Vector2(-19, 70)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Inter2/Inter_Sorties/Sortie2"]
+shape = ExtResource("3_0kwck")
+
+[node name="Sortie3" type="Area2D" parent="Inter2/Inter_Sorties"]
+position = Vector2(41, -89)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Inter2/Inter_Sorties/Sortie3"]
+shape = ExtResource("3_0kwck")
+
+[connection signal="area_entered" from="Inter1/Inter_Entrees/Entree" to="Inter1/Inter_Entrees" method="_on_entree_area_entered"]
+[connection signal="area_entered" from="Inter1/Inter_Entrees/Entree2" to="Inter1/Inter_Entrees" method="_on_entree_area_entered"]
+[connection signal="area_entered" from="Inter1/Inter_Entrees/Entree3" to="Inter1/Inter_Entrees" method="_on_entree_area_entered"]
+[connection signal="area_entered" from="Inter1/Inter_Sorties/Sortie" to="Inter1/Inter_Sorties" method="_on_sortie_area_entered"]
+[connection signal="area_entered" from="Inter1/Inter_Sorties/Sortie2" to="Inter1/Inter_Sorties" method="_on_sortie_area_entered"]
+[connection signal="area_entered" from="Inter1/Inter_Sorties/Sortie3" to="Inter1/Inter_Sorties" method="_on_sortie_area_entered"]
+[connection signal="area_entered" from="Inter2/Inter_Entrees/Entree" to="Inter2/Inter_Entrees" method="_on_entree_area_entered"]
+[connection signal="area_entered" from="Inter2/Inter_Entrees/Entree2" to="Inter2/Inter_Entrees" method="_on_entree_area_entered"]
+[connection signal="area_entered" from="Inter2/Inter_Entrees/Entree3" to="Inter2/Inter_Entrees" method="_on_entree_area_entered"]
+[connection signal="area_entered" from="Inter2/Inter_Sorties/Sortie" to="Inter2/Inter_Sorties" method="_on_sortie_area_entered"]
+[connection signal="area_entered" from="Inter2/Inter_Sorties/Sortie2" to="Inter2/Inter_Sorties" method="_on_sortie_area_entered"]
+[connection signal="area_entered" from="Inter2/Inter_Sorties/Sortie3" to="Inter2/Inter_Sorties" method="_on_sortie_area_entered"]

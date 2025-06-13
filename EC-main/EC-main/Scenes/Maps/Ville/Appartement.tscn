@@ -193,6 +193,7 @@ music = ExtResource("2_7f2nx")
 music_volume = -5.0
 
 [node name="StartPoints" type="Node2D" parent="."]
+visible = false
 
 [node name="0_Lit" type="Marker2D" parent="StartPoints"]
 z_index = 50
@@ -454,6 +455,7 @@ position = Vector2(227, 138)
 position = Vector2(206, 68)
 
 [node name="SceneSaveChecks" type="Node2D" parent="."]
+visible = false
 script = ExtResource("15_01gxp")
 timeline = "intro_appart"
 
@@ -469,6 +471,7 @@ script = ExtResource("19_mxecm")
 tele_node = NodePath("../../Props/Television")
 
 [node name="Cutscenes" type="Node2D" parent="."]
+visible = false
 script = ExtResource("21_kqdyn")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Cutscenes"]

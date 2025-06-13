@@ -15,8 +15,11 @@ var minigame_window: Control
 
 func initialize_outil() -> void:
 	screen_limit = minigame_window.size - size
+	#Creation d'un offset pour des positions correctes
+	position_item.x = self.position.x + $"..".position.x
+	position_item.y = self.position.y + $"..".position.y
 	global_position = position_item
-
+	
 func _physics_process(_delta: float) -> void:
 	if button_pressed:
 		global_position = get_global_mouse_position() - click_offset

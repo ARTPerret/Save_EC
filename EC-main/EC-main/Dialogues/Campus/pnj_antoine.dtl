@@ -8,7 +8,11 @@ if SaveManager.getElement("Quests", "Q_antoine") == null
 	do EventBus.emit_signal("add_quest", "antoine_quest")
 elif SaveManager.getElement("Quests", "Q_antoine") == false:
 	Antoine: Je nettoie aussi vite que je peux mais ils salissent plus vite que je peux nettoyer, j'en peux plus.
+elif SaveManager.getElement("Quests", "S_dechet_campus") == "done":
+	Antoine: Merci de m'avoir aidé, si les gens faisait attention ou ramassaient quand ils voyaient un déchet. Tout serait beaucoup plus propre.
 elif SaveManager.getElement("Quests", "Q_antoine") == true:
-	Antoine: Oh woaw, c'est toi qui as tout nettoyé? Merci beaucoup, j'espère que tu n'as pas eu trop de mal avec le tri, mais je te remercie en tout cas.
+	Antoine: Oh woah, c'est toi qui as tout nettoyé? Merci beaucoup, j'espère que tu n'as pas eu trop de mal avec le tri, mais je te remercie en tout cas.
+	do EventBus.emit_signal("set_quest_state", "antoine_quest")
+	do SaveManager.setElement("Quests", {"S_dechet_campus": "done"})
 	do EventBus.emit_signal("add_follower", 1)
 [end_timeline]

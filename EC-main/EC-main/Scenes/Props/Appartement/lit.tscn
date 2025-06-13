@@ -4,7 +4,6 @@
 [ext_resource type="Shader" uid="uid://c2ug5tlxurkwa" path="res://Shaders/outline.gdshader" id="2_oqfvk"]
 [ext_resource type="Script" uid="uid://2pg4i3168q1p" path="res://Scripts/Props/Types/prop_talk.gd" id="2_q7yw1"]
 
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1mp60"]
 shader = ExtResource("2_oqfvk")
 shader_parameter/line_color = Color(1, 1, 1, 1)

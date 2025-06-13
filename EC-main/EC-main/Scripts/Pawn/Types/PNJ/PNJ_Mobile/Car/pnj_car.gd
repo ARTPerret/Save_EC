@@ -15,8 +15,8 @@ var trajet_pause: bool = false
 var current_target: int = 1
 var target_array: Array
 var exited_spawn: bool = false
-var id_in_queue: int = 0
-var intersection: Node2D
+var id_in_queue:int = 0
+var already_stopped:bool = false
 
 
 
@@ -41,6 +41,13 @@ func initialize_pawn() -> void:
 	#if i.id == spawn_id:
 	target_pos = target_array[current_target].position
 	set_movement_target(target_pos)
+	
+func stop_car() -> void:
+	if already_stopped == false:
+		state_machine.change_state("Regular")
+		await get_tree().create_timer(5.0).timeout 
+		state_machine.change_state("Pathfinding")
+		already_stopped = true
 
 func _on_navigation_agent_2d_navigation_finished() -> void:
 	current_target += 1
@@ -55,7 +62,6 @@ func _on_navigation_agent_2d_navigation_finished() -> void:
 		collision.disabled = true
 		detecteur.disabled = true
 		position = target_array[current_target-1].position
-		
 		
 
 func _on_navigation_agent_2d_velocity_computed(safe_velocity: Vector2) -> void:

@@ -6,10 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://c4ibps4ddsx3q" path="res://Scenes/MiniJeux/TriDechet/PoubelleTypes/ref.tscn" id="4_7cc60"]
 [ext_resource type="PackedScene" uid="uid://rf4a4v7hbyi7" path="res://Scenes/MiniJeux/TriDechet/DechetTypes/ref_nonrec.tscn" id="4_ltthm"]
 [ext_resource type="AudioStream" uid="uid://bng27oilms6jo" path="res://Audio/SFX/Temp/FB_Tap.wav" id="5_eka6x"]
-[ext_resource type="Texture2D" uid="uid://dhqkiseh86c4t" path="res://Graphics/Other/bg_poub.png" id="6_7vvsc"]
+[ext_resource type="Texture2D" uid="uid://c10jixm7rvfnq" path="res://Graphics/Minigames/Tri/BG_Tri_City.png" id="6_7vvsc"]
 [ext_resource type="Texture2D" uid="uid://sm0i5714jmm7" path="res://Graphics/TEMP/TEMP_Trash.png" id="6_i8t5w"]
 [ext_resource type="Shader" uid="uid://c2ug5tlxurkwa" path="res://Shaders/outline.gdshader" id="7_eka6x"]
 [ext_resource type="Texture2D" uid="uid://d111wqta8chq3" path="res://Graphics/UI/hand_cursor.svg" id="9_om02x"]
+
 
 [sub_resource type="Animation" id="Animation_7vvsc"]
 length = 0.001

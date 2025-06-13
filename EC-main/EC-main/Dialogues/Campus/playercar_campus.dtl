@@ -1,0 +1,15 @@
+label book1
+Où souhaitez-vous vous rendre ?
+- Périphérie Ouest
+	do EventBus.emit_signal("set_empreinte", 0.1)
+	do EventBus.emit_signal("change_time", -60)
+	do SaveManager.setElement("Misc", {"Car": "PeriphOuest"})
+	do ThreadLoad.load_scene("PeriphOuest", 5)
+- Campus Universitaire
+	Vous êtes déjà sur place !
+- Centre-Ville
+	do EventBus.emit_signal("set_empreinte", 0.1)
+	do EventBus.emit_signal("change_time", -60)
+	do SaveManager.setElement("Misc", {"Car": "CentreVille"})
+	do ThreadLoad.load_scene("CentreVille", 6)
+[end_timeline]

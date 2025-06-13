@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_3k0xf")
-types = {
+types = Dictionary[String, String]({
 "Default": "uid://dtsdy6b7oq6h4",
 "Mobile": "uid://bs16bs1oatfng"
-}
+})

@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_fch74")
-type = 0
+type = 1
 name = "Plante des arbres pour Flora 0/10"
 desc = ""
 metadata/_custom_type_script = "uid://b33ppoek3j2kg"

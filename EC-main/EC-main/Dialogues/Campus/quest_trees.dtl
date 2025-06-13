@@ -1,0 +1,16 @@
+label book1
+Un petit panneau planté dans le sol.
+[end_timeline]
+label book2
+L'arbuste se porte bien !
+[end_timeline]
+label book3
+Vous plantez l'arbre !
+do EventBus.emit_signal("set_empreinte", -0.2)
+[end_timeline]
+label book4
+do EventBus.emit_signal("remove_item", "Graines")
+Vous avez planté toutes les graines données par Flora ! Une bonne action de faite ! 
+Retournez voir Flora pour l'en informer.
+do SaveManager.setElement("Quests", {"Q_flora": true})
+[end_timeline]

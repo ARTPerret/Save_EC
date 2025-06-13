@@ -4,7 +4,6 @@
 [ext_resource type="Shader" uid="uid://c2ug5tlxurkwa" path="res://Shaders/outline.gdshader" id="2_wva7x"]
 [ext_resource type="Texture2D" uid="uid://drn703q5tni2a" path="res://Graphics/Props/AppartementSolo.png" id="3_kkywm"]
 
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_yy8sl"]
 shader = ExtResource("2_wva7x")
 shader_parameter/line_color = Color(1, 1, 1, 1)

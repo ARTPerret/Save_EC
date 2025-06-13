@@ -10,10 +10,10 @@ if SaveManager.getElement("Quests", "Q_maxime") == null
 	- Pas vraiment non.
 elif SaveManager.getElement("Quests", "Q_maxime") == false:
 	Maxime: Tu t'en sors? J'aurais besoin d'un peu d'eau de la rivière pour étudier la teneur en microplastique.
-	if {SaveManager.getElement("Player", "inventory").has("echantillon_eau")} == true:
+	if {SaveManager.getElement("Player", "inventory").has("Echantillon_eau")} == true:
 		Maxime: Oh, parfait, c'est exactement ce que je voulais.
 		Maxime: (AJOUTER LES INFORMATIONS SUR LES MICROPLASTIQUE ET INDUSTRIE DU TEXTILE)
-		do EventBus.emit_signal("remove_item", "echantillon_eau")
+		do EventBus.emit_signal("remove_item", "Echantillon_eau")
 		do EventBus.emit_signal("set_quest_state", "maxime_quest")
 		do EventBus.emit_signal("add_follower", 1)
 		do EventBus.emit_signal("set_empreinte", -2.0)

@@ -15,7 +15,7 @@ func update_id_cars():
 
 
 func update_nb_car_wainting(car: Node2D) -> void:
-	array_cars_waiting.push_front(car)
+	array_cars_waiting.push_back(car)
 	
 func car_exit():
 	update_id_cars()
@@ -23,6 +23,7 @@ func car_exit():
 
 
 func _on_entree_area_entered(area: Area2D) -> void:
+	print(nb_cars)
 	if area.get_parent() is PNJCar:
 		#print (nb_cars)
 		if nb_cars == 0: 
@@ -32,4 +33,3 @@ func _on_entree_area_entered(area: Area2D) -> void:
 			area.get_parent().id_in_queue = nb_cars
 			nb_cars += 1
 			update_nb_car_wainting(area.get_parent())
-		print(nb_cars)

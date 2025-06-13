@@ -602,6 +602,7 @@ grow_vertical = 2
 script = ExtResource("12_dga6m")
 item_display = ExtResource("14_81klo")
 list_item = ExtResource("9_cwurv")
+metadata/_edit_use_anchors_ = true
 
 [node name="MarginContainer" type="MarginContainer" parent="UI/InvElements"]
 layout_mode = 2

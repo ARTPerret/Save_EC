@@ -12,29 +12,33 @@ if SaveManager.getElement("Quests", "Q_greg") == null
 	- Je peux essayer je suppose
 		Greg: Merci mec, tu me sauve la vie, tu devrais essayer de parler avec Léon un peu plus bas, il utilise son bateau pour chercher des objets au fond de l'eau.
 		Greg: Je serais bien allé lui demander moi même mais bon...
-		do SaveManager.setElement("Quests", {"Q_greg": "accepted"})
+		do SaveManager.setElement("Quests", {"Q_greg": false})
+		do SaveManager.setElement("Quests", {"S_greg": "accepted"})
 		do EventBus.emit_signal("add_quest", "greg_quest")
 	- Je suis TRÈS occupé
 		Greg: Ouais, évidemment. Je vais attendre qu'une âme plus charitable passe moi.
-		do SaveManager.setElement("Quests", {"Q_greg": "refused"})
-elif SaveManager.getElement("Quests", "Q_greg") == "refused":
+		do SaveManager.setElement("Quests", {"Q_greg": false})
+		do SaveManager.setElement("Quests", {"S_greg": "refused"})
+elif SaveManager.getElement("Quests", "S_greg") == "refused":
 	Greg: Tiens, te revoilà. Tu es moins occupé maintenant? Tu peux m'aider à sauver mon honneur?
 	- Je peux essayer je suppose
 		Greg: Merci mec, tu me sauve la vie, tu devrais essayer de parler avec Léon un peu plus bas, il utilise son bateau pour chercher des objets au fond de l'eau.
 		Greg: Je serais bien allé lui demander moi même mais bon...
-		do SaveManager.setElement("Quests", {"Q_greg": "accepted"})
+		do SaveManager.setElement("Quests", {"S_greg": "accepted"})
 		do EventBus.emit_signal("add_quest", "greg_quest")
 	- Je suis TRÈS occupé
 		Greg: Ouais, évidemment. Je vais attendre qu'une âme plus charitable passe moi.
-		do SaveManager.setElement("Quests", {"Q_greg": "refused"})
-elif SaveManager.getElement("Quests", "Q_greg") == "accepted":
+elif SaveManager.getElement("Quests", "S_greg") == "accepted":
 	Greg: Tu n'as pas encore trouvé mon short? Léon devrait pouvoir t'aider, il se trouve en bas, près de son bateau.
-elif SaveManager.getElement("Quests", "Q_greg") == "found":
+elif SaveManager.getElement("Quests", "S_greg") == "found":
 	Greg: OH, MON SHORT.
 	Greg: Merci mec, je sais pas ce que j'aurais fait sans toi.
 	do EventBus.emit_signal("add_follower", 1)
-	do SaveManager.setElement("Quests", {"Q_greg": "finished"})	
-elif SaveManager.getElement("Quests", "Q_greg") == "finished":
+	do EventBus..emit_signal("remove_item", "Short")
+	do SaveManager.setElement("Quests", {"S_greg": "finished"})	
+	do EventBus.emit_signal("set_quest_state", "greg_quest")
+		do SaveManager.setElement("Quests", {"Q_greg": true})
+elif SaveManager.getElement("Quests", "Q_greg") == true:
 	Greg: Merci d'avoir retrouvé mon short.
 	Greg: Je me suis habitué à ce buisson, je pense que je vais y rester encore un peu.
 [end_timeline]

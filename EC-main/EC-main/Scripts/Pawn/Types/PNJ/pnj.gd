@@ -20,12 +20,8 @@ func _on_navigation_agent_2d_navigation_finished() -> void:
 func on_interact(player: Player) -> void:
 	erase_outline()
 	Dialogic.start(timeline, "book1")
-	
 	await Dialogic.timeline_started
-	
 	var play_dir: Vector2 = position - player.position
-	player.skin.set_animation_direction(play_dir)
-	skin.set_animation_direction(-play_dir)
 
 func draw_outline() -> void:
 	sprite.material.set_shader_parameter("width",1.0)

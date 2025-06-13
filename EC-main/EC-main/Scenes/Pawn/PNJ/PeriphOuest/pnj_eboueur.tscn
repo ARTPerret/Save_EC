@@ -9,7 +9,6 @@
 [ext_resource type="Script" uid="uid://b3126vbix628p" path="res://Scripts/Pawn/player_anim.gd" id="7_7wphh"]
 [ext_resource type="Texture2D" uid="uid://d0u7jqiyj23cm" path="res://Graphics/Other/char_shadow.png" id="8_flp25"]
 
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_uymh2"]
 resource_local_to_scene = true
 shader = ExtResource("5_e5hke")

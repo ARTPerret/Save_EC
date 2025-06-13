@@ -1,4 +1,5 @@
-class_name Map
+class_name Mapset
+
 extends Node2D
 
 
@@ -32,17 +33,11 @@ func _ready() -> void:
 func initialize_player() -> void:
 	EventBus.emit_signal("pause_time", false)
 	EventBus.emit_signal("set_ui_visibility", true)
-
 	player = player_resource.instantiate()
-	player.position = $StartPoints.get_child(
-		clamp(start_id, 0, $StartPoints.get_child_count() - 1)
-	).position
-
+	player.position = $StartPoints.get_child(start_id).position # Ordre du child important
 	if get_node_or_null("Cutscenes"):
-		$Cutscenes.player = player
+		$Cutscenes.player = player # Envoie une ref pour déplacer le joueur lors des cutscenes
 	add_child(player)
-
-
 
 func initialize_camera() -> void:
 	camera = camera_resource.instantiate()

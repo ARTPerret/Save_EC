@@ -1,16 +1,15 @@
-[gd_scene load_steps=16 format=3 uid="uid://cysq8n807qxk6"]
+[gd_scene load_steps=17 format=3 uid="uid://cysq8n807qxk6"]
 
 [ext_resource type="Script" uid="uid://dia0ley3to101" path="res://Scripts/MiniJeux/minigame_setup.gd" id="1_fhjup"]
 [ext_resource type="PackedScene" uid="uid://dpetw1dobdtfv" path="res://Scenes/MiniJeux/Velo/pièce_vélo.tscn" id="2_45o1r"]
 [ext_resource type="Script" uid="uid://b81ew5onrw8io" path="res://Scripts/MiniJeux/Jeux/Vélo/velo.gd" id="2_djmmm"]
-[ext_resource type="Texture2D" uid="uid://dfsp0je4k6vhf" path="res://Graphics/Other/bg_velo.png" id="3_4363w"]
+[ext_resource type="Texture2D" uid="uid://cs6oqt6ii1n1p" path="res://Graphics/Minigames/Velo/BG_Velo.png" id="3_4363w"]
 [ext_resource type="PackedScene" uid="uid://bob0ru5rubcc1" path="res://Scenes/MiniJeux/Velo/anchor.tscn" id="3_tgnvy"]
 [ext_resource type="Texture2D" uid="uid://sm0i5714jmm7" path="res://Graphics/TEMP/TEMP_Trash.png" id="4_quksx"]
+[ext_resource type="Texture2D" uid="uid://c18iq877r33vg" path="res://Graphics/Minigames/Velo/Velo_sans_chaine.png" id="4_rqmdg"]
+[ext_resource type="Script" uid="uid://dggrfky46fqbn" path="res://Scenes/MiniJeux/Velo/text_button.gd" id="5_15brd"]
 [ext_resource type="PackedScene" uid="uid://b1dbx3flwo4jg" path="res://Scenes/MiniJeux/Velo/outil.tscn" id="5_djmmm"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_quksx"]
-atlas = ExtResource("4_quksx")
-region = Rect2(4, 22, 40, 28)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4363w"]
 atlas = ExtResource("4_quksx")
@@ -62,15 +61,20 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_4363w")
 
-[node name="Sprite2D" type="Sprite2D" parent="WindowSize"]
+[node name="Velo_sprite" type="Sprite2D" parent="WindowSize"]
 position = Vector2(404, 342)
 scale = Vector2(12, 12)
-texture = SubResource("AtlasTexture_quksx")
+texture = ExtResource("4_rqmdg")
 
-[node name="Container_Pieces" type="PanelContainer" parent="WindowSize"]
+[node name="Text_button" type="Button" parent="WindowSize"]
 layout_mode = 0
-offset_right = 400.0
-offset_bottom = 60.0
+offset_left = 340.0
+offset_top = 19.0
+offset_right = 463.0
+offset_bottom = 50.0
+text = "Mode d'emploi
+"
+script = ExtResource("5_15brd")
 
 [node name="VSeparator" type="VSeparator" parent="WindowSize"]
 layout_mode = 0
@@ -78,19 +82,78 @@ offset_left = 397.0
 offset_right = 401.0
 offset_bottom = 59.0
 
+[node name="Container_text" type="PanelContainer" parent="WindowSize"]
+visible = false
+z_index = 4
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -396.0
+offset_top = -206.5
+offset_right = 396.0
+offset_bottom = 206.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Velo_Text" type="Label" parent="WindowSize/Container_text"]
+layout_mode = 2
+text = "Manuel de réparation de vélo : 
+
+Commencez tout d'abord par installer la chaîne, avant de visser les deux roues. 
+N'oubliez pas de bien serrer les boulons avec la clé à molette !
+
+Ensuite, installez tout autre accessoire sur votre vélo, comme une sonnette ou un panier par exemple. 
+Ce type d'accessoire s'installe en serrant les vis avec un tournevis.
+
+Avant de partir, n'oubliez pas de gonflez vos pneus avec une pompe ! "
+horizontal_alignment = 1
+
 [node name="Container_Outils" type="PanelContainer" parent="WindowSize"]
+layout_mode = 2
+offset_left = 678.0
+offset_top = 19.0
+offset_right = 789.0
+offset_bottom = 180.0
+
+[node name="Container_Pieces" type="PanelContainer" parent="WindowSize"]
 layout_mode = 0
-offset_left = 400.0
-offset_right = 800.0
-offset_bottom = 60.0
+offset_left = 9.0
+offset_top = 19.0
+offset_right = 115.0
+offset_bottom = 220.0
+
+[node name="Label" type="Label" parent="WindowSize"]
+layout_mode = 0
+offset_left = 712.0
+offset_top = 19.0
+offset_right = 758.0
+offset_bottom = 42.0
+text = "Outils"
+
+[node name="Label2" type="Label" parent="WindowSize"]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 19.0
+offset_right = 87.0
+offset_bottom = 42.0
+text = "Pièces"
 
 [node name="PanelPieces" type="Control" parent="WindowSize"]
 anchors_preset = 0
-offset_right = 400.0
-offset_bottom = 60.0
+offset_left = 6.0
+offset_top = 40.0
+offset_right = 115.0
+offset_bottom = 220.0
 
 [node name="Chaine" parent="WindowSize/PanelPieces" instance=ExtResource("2_45o1r")]
 layout_mode = 0
+offset_left = 6.0
+offset_top = 8.0
+offset_right = 106.0
+offset_bottom = 48.0
 text = "
 "
 icon = SubResource("AtlasTexture_4363w")
@@ -101,8 +164,10 @@ position_item = Vector2(0, 0)
 
 [node name="Boulon_1" parent="WindowSize/PanelPieces" instance=ExtResource("2_45o1r")]
 layout_mode = 0
-offset_left = 100.0
-offset_right = 200.0
+offset_left = 6.0
+offset_top = 51.0
+offset_right = 106.0
+offset_bottom = 91.0
 text = "
 "
 icon = SubResource("AtlasTexture_rqmdg")
@@ -114,8 +179,10 @@ id_piece_velo = 1
 
 [node name="Boulon_2" parent="WindowSize/PanelPieces" instance=ExtResource("2_45o1r")]
 layout_mode = 0
-offset_left = 200.0
-offset_right = 300.0
+offset_left = 6.0
+offset_top = 94.0
+offset_right = 106.0
+offset_bottom = 134.0
 text = "
 "
 icon = SubResource("AtlasTexture_15brd")
@@ -126,8 +193,10 @@ id_piece_velo = 1
 
 [node name="Sonette" parent="WindowSize/PanelPieces" instance=ExtResource("2_45o1r")]
 layout_mode = 0
-offset_left = 300.0
-offset_right = 400.0
+offset_left = 6.0
+offset_top = 137.0
+offset_right = 106.0
+offset_bottom = 177.0
 text = "
 "
 icon = SubResource("AtlasTexture_4tsbv")
@@ -179,12 +248,17 @@ piece_is_on = true
 
 [node name="PanelOutils" type="Control" parent="WindowSize"]
 anchors_preset = 0
-offset_left = 400.0
-offset_right = 800.0
-offset_bottom = 40.0
+offset_left = 678.0
+offset_top = 40.0
+offset_right = 789.0
+offset_bottom = 189.0
 
 [node name="Cle_a_molette" parent="WindowSize/PanelOutils" instance=ExtResource("5_djmmm")]
 layout_mode = 0
+offset_left = 4.0
+offset_top = 8.0
+offset_right = 104.0
+offset_bottom = 48.0
 text = "
 "
 icon = SubResource("AtlasTexture_xqi1l")
@@ -196,8 +270,10 @@ id_anchor_interactible = Array[int]([1])
 
 [node name="Tournevis" parent="WindowSize/PanelOutils" instance=ExtResource("5_djmmm")]
 layout_mode = 0
-offset_left = 150.0
-offset_right = 250.0
+offset_left = 4.0
+offset_top = 51.0
+offset_right = 104.0
+offset_bottom = 91.0
 text = "
 "
 icon = SubResource("AtlasTexture_hx55q")
@@ -209,8 +285,10 @@ id_anchor_interactible = Array[int]([2])
 
 [node name="Pompe" parent="WindowSize/PanelOutils" instance=ExtResource("5_djmmm")]
 layout_mode = 0
-offset_left = 300.0
-offset_right = 400.0
+offset_left = 4.0
+offset_top = 94.0
+offset_right = 104.0
+offset_bottom = 134.0
 text = "
 "
 icon = SubResource("AtlasTexture_sntwy")
@@ -219,3 +297,5 @@ icon_alignment = 1
 expand_icon = true
 position_item = Vector2(700, 0)
 id_anchor_interactible = Array[int]([3])
+
+[connection signal="pressed" from="WindowSize/Text_button" to="." method="_on_text_button_pressed"]

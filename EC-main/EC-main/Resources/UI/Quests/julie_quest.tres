@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_i1e0f")
-type = 0
+type = 1
 name = "Julie est occupée"
 desc = "Reparle à Julie"
 metadata/_custom_type_script = "uid://b33ppoek3j2kg"

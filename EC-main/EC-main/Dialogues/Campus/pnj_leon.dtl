@@ -1,10 +1,40 @@
 label book1
-if SaveManager.getElement("Quests", "Q_greg") == null
-	Léon: Salut, belle matinée pas vrai?
-	Léon: J'ai entendu un bruit dans les buissons au dessus de moi, il y a pas moyen que je bouge, mais tu peux aller voir si tu veux.
-elif SaveManager.getElement("Quests", "Q_greg") == false:
-	Léon: Tu as besoin de chercher un truc dans la rivière. Tu peux utiliser ma barque si tu veux, j'ai mis un aimant pour voir ce que je trouvais au fond de la rivière.
-	Léon: Si tu t'en sers bien tu réussira peux-être à trouver ce que tu cherche
-elif SaveManager.getElement("Quests", "Q_greg") == true:
-	Léon: Tu as trouvé ce que tu cherchais? C'est cool, tu peux continuer à te servir de ma barque si tu veux, c'est toujours bien de nettoyer notre lieu de travail.
+if SaveManager.getElement("Quests", "S_greg") == null or SaveManager.getElement("Quests", "S_greg") == "refused":
+	Leon: Salut, belle matinée pas vrai?
+	Leon: J'ai entendu un bruit dans les buissons au dessus de moi, il y a pas moyen que je bouge, mais tu peux aller voir si tu veux.
+elif SaveManager.getElement("Quests", "S_greg") == "accepted":
+	Leon: Tu as besoin de chercher un truc dans la rivière. Tu peux utiliser ma barque si tu veux, j'ai mis un aimant pour voir ce que je trouvais au fond de la rivière.
+	Leon: Si tu t'en sers bien tu réussiras peux-être à trouver ce que tu cherches
+	Leon: Alors, on embarque ?
+	- Oui
+		do EventBus.emit_signal("setup_minigame", "peche")
+	- Non
+		Leon: Bon... Bah dit moi quand tu seras prêt.
+elif SaveManager.getElement("Quests", "S_greg") == "found" or SaveManager.getElement("Quests", "S_greg") == "finished":
+	Leon: Tu as trouvé ce que tu cherchais? C'est cool, tu peux continuer à te servir de ma barque si tu veux, c'est toujours bien de nettoyer notre lieu de travail.
+	Leon: On embarque ?
+	- Oui
+		do EventBus.emit_signal("setup_minigame", "peche")
+	- Non
+		Leon: N'hésite pas, si tu veux revenir faire un tour !
+[end_timeline]
+label book2
+# Short
+Leon: Ahah ! On l'a eu son short ! Va vite lui donner !
+do SaveManager.setElement("Quests", {"S_greg": "found"})
+do EventBus.emit_signal("add_item", "Short")
+[end_timeline]
+label book3
+# Pas short
+Leon: On a pas trouvé de short hein...
+Leon: Tu veux refaire un tour ? On aura peut être plus de chance la deuxième fois !
+- Oui
+	do EventBus.emit_signal("setup_minigame", "peche")
+- Non
+	Leon: Dac, bah reviens me voir si tu veux réessayer.
+[end_timeline]
+label book4
+# Fin minijeu après quête
+Leon: Ahah c'était sympa ! Et si on peut nettoyer la rivière, ça fera du bien à l'écosystème !
+Leon: Reviens quand tu veux !
 [end_timeline]

@@ -31,7 +31,6 @@ overrides = {}
 script = ExtResource("1_cpru6")
 scene = ExtResource("5_2ua5s")
 overrides = {
-"box_color_custom": "Color(0.175781, 0.170975, 0.170975, 1)",
 "box_panel": "\"vn_textbox_default_panel.tres\"",
 "box_size": "Vector2(800, 225)",
 "name_label_box_offset": "Vector2(10, 0)",
@@ -64,4 +63,4 @@ layer_info = {
 }
 base_overrides = {}
 layers = Array[ExtResource("1_cpru6")]([])
-metadata/_latest_layer = "12"
+metadata/_latest_layer = "13"

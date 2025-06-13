@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://c4vdvo6fwouoc"]
+[gd_scene load_steps=25 format=4 uid="uid://c4vdvo6fwouoc"]
 
 [ext_resource type="Script" uid="uid://cf8lmues6tq0y" path="res://Scripts/Maps/map_setup.gd" id="1_e6ska"]
 [ext_resource type="AudioStream" uid="uid://cr30twokork7q" path="res://Audio/Streams/Loop_maison.tres" id="2_20pl4"]
@@ -6,6 +6,12 @@
 [ext_resource type="Script" uid="uid://crdiqbq6soqn5" path="res://Scenes/Maps/Campus/escalier_bas_1.gd" id="3_bqukj"]
 [ext_resource type="TileSet" uid="uid://cdbp3041niwnl" path="res://Graphics/Usabletilsets/interior.tres" id="4_vq2nh"]
 [ext_resource type="PackedScene" uid="uid://bguj43xutdndd" path="res://Scenes/Maps/Campus/Residences/Elevator.tscn" id="6_bqukj"]
+[ext_resource type="Script" uid="uid://p84yjmew4jt8" path="res://Scripts/Events/Campus/mission_dechet_bas.gd" id="7_cta4j"]
+[ext_resource type="PackedScene" uid="uid://bwgrac1gda0vw" path="res://Scenes/Props/Campus/dechet_campus.tscn" id="8_182is"]
+[ext_resource type="Script" uid="uid://c8ro42bc02e34" path="res://Scripts/Props/Types/prop_dechets_bas.gd" id="9_182is"]
+[ext_resource type="Texture2D" uid="uid://sm0i5714jmm7" path="res://Graphics/TEMP/TEMP_Trash.png" id="9_wwiox"]
+[ext_resource type="AudioStream" uid="uid://bng27oilms6jo" path="res://Audio/SFX/Temp/FB_Tap.wav" id="10_wwiox"]
+[ext_resource type="Shader" uid="uid://c2ug5tlxurkwa" path="res://Shaders/outline.gdshader" id="11_3kohw"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_6q087"]
 
@@ -17,8 +23,46 @@ size = Vector2(30.5, 10)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6q087"]
 size = Vector2(22, 10)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2w0xk"]
+shader = ExtResource("11_3kohw")
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/width = 0.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3kohw"]
+atlas = ExtResource("9_wwiox")
+region = Rect2(114, 0, 14, 29.5)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_etl6w"]
+shader = ExtResource("11_3kohw")
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/width = 0.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cta4j"]
+atlas = ExtResource("9_wwiox")
+region = Rect2(47, 17.5, 13, 30)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_psy6p"]
+shader = ExtResource("11_3kohw")
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/width = 0.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_182is"]
+atlas = ExtResource("9_wwiox")
+region = Rect2(61, 14.5, 20, 32)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_85exe"]
+shader = ExtResource("11_3kohw")
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/width = 0.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wwiox"]
+atlas = ExtResource("9_wwiox")
+region = Rect2(44, 52.5, 24, 22)
+
 [node name="Residence_interior_bas" type="Node2D"]
 script = ExtResource("1_e6ska")
+limit_left = -1000
+limit_top = -1000
 music = ExtResource("2_20pl4")
 
 [node name="StartPoints" type="Node2D" parent="."]
@@ -53,7 +97,7 @@ visible = false
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Collision/Etage1/Mur"]
 position = Vector2(360, 120)
-polygon = PackedVector2Array(-168, -72, -360, -72, -360, 46, -271, 46, -271, 57, -271, 63, -209, 63, -209, 56, -209, 46, -15, 46, -15, 56, -15, 63, 47, 63, 47, 56, 47, 46, 241, 46, 241, 57, 241, 65, 303, 65, 303, 56, 303, 46, 392, 46, 392, -72, 200, -72, 200, -120, 136, -120, 136, -72, -104, -72, -104, -120, -168, -120, -168, -72, -184, -40, -152, -40, -152, -54, -148, -54, -148, -58, -124, -58, -124, -54, -120, -54, -120, -40, -3, -40, -3, -41, 35, -41, 35, -40, 152, -40, 152, -54, 156, -54, 156, -60, 180, -60, 180, -54, 184, -54, 184, -40, 216, -40, 216, -24, 376, -24, 376, 40, 296, 40, 296, 56, 248, 56, 248, 40, 47, 40, 40, 40, 40, 56, -8, 56, -8, 40, -209, 40, -216, 40, -216, 56, -264, 56, -264, 40, -344, 40, -344, -24, -184, -24, -184, -40)
+polygon = PackedVector2Array(-168, -72, -360, -72, -360, 46, -271, 46, -271, 57, -271, 63, -209, 63, -209, 56, -209, 46, -15, 46, -15, 56, -15, 63, 47, 63, 47, 56, 47, 46, 241, 46, 241, 57, 241, 65, 303, 65, 303, 56, 303, 46, 392, 46, 392, -72, 200, -72, 200, -120, 136, -120, 136, -72, -104, -72, -104, -120, -168, -120, -168, -72, -184, -40, -152, -40, -152, -54, -148, -54, -148, -58, -124, -58, -124, -54, -120, -54, -120, -40, -3, -40, -3, -41, 35, -41, 35, -40, 152, -40, 152, -54, 156, -54, 156, -60, 180, -60, 180, -54, 184, -54, 184, -40, 216, -40, 216, -26, 376, -26, 376, 40, 296, 40, 296, 56, 248, 56, 248, 40, 47, 40, 40, 40, 40, 56, -8, 56, -8, 40, -209, 40, -216, 40, -216, 56, -264, 56, -264, 40, -344, 40, -344, -26, -184, -26, -184, -40)
 
 [node name="Etage2" type="Node2D" parent="Collision"]
 
@@ -62,89 +106,89 @@ position = Vector2(0, 304)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Collision/Etage2/Mur"]
 position = Vector2(360, 120)
-polygon = PackedVector2Array(-168, -72, -360, -72, -360, 46, 392, 46, 392, -72, 200, -72, 200, -120, 136, -120, 136, -72, 120, -72, 120, -120, 56, -120, 56, -72, -24, -72, -24, -120, -88, -120, -88, -72, -104, -72, -104, -120, -168, -120, -168, -72, -184, -40, -152, -40, -152, -54, -148, -54, -148, -58, -124, -58, -124, -54, -120, -54, -120, -40, -72, -40, -72, -50, -68, -50, -68, -53, -44, -53, -44, -50, -40, -50, -40, -40, -3, -40, -3, -41, 35, -41, 35, -40, 72, -40, 72, -50, 76, -50, 76, -53, 100, -53, 100, -50, 104, -50, 104, -40, 152, -40, 152, -54, 156, -54, 156, -58, 180, -58, 180, -54, 184, -54, 184, -40, 200, -40, 200, -41, 216, -41, 216, -40, 232, -40, 232, -41, 248, -41, 248, -40, 296, -40, 296, -41, 312, -41, 312, -40, 376, -40, 376, -11, 375, -11, 375, -9, 376, -9, 376, 9, 375, 9, 375, 11, 376, 11, 376, 13, 365, 13, 365, 23, 376, 23, 376, 40, -344, 40, -344, 11, -343, 11, -343, 9, -344, 9, -344, -9, -343, -9, -343, -11, -344, -11.2081, -344, -40, -280, -40, -280, -41, -264, -41, -264, -40, -216, -40, -216, -41, -200, -41, -200, -40, -197, -40, -197, -38, -199, -38, -199, -29, -184, -29, -184, -38, -187, -38, -187, -40, -184, -40)
+polygon = PackedVector2Array(-168, -72, -360, -72, -360, 46, 392, 46, 392, -72, 200, -72, 200, -120, 136, -120, 136, -72, 120, -72, 120, -120, 56, -120, 56, -72, -24, -72, -24, -120, -88, -120, -88, -72, -104, -72, -104, -120, -168, -120, -168, -72, -184, -40, -152, -40, -152, -54, -148, -54, -148, -58, -124, -58, -124, -54, -120, -54, -120, -40, -72, -40, -72, -50, -68, -50, -68, -53, -44, -53, -44, -50, -40, -50, -40, -40, -3, -40, -3, -41, 35, -41, 35, -40, 72, -40, 72, -50, 76, -50, 76, -53, 100, -53, 100, -50, 104, -50, 104, -40, 152, -40, 152, -54, 156, -54, 156, -58, 180, -58, 180, -54, 184, -54, 184, -40, 200, -40, 200, -41, 216, -41, 216, -40, 232, -40, 232, -41, 248, -41, 248, -40, 296, -40, 296, -41, 312, -41, 312, -40, 376, -40, 376, -11, 375, -11, 375, -9, 376, -9, 376, 9, 375, 9, 375, 11, 376, 11, 376, 13, 365, 13, 365, 23, 376, 23, 376, 40, -344, 40, -344, 11, -343, 11, -343, 9, -344, 9, -344, -9, -343, -9, -343, -11, -344, -11.2081, -344, -40, -280, -40, -280, -41, -264, -41, -264, -40, -216, -40, -216, -41, -200, -41, -200, -40, -197, -40, -197, -38, -199, -38, -199, -31, -184, -31, -184, -38, -187, -38, -187, -40, -184, -40)
 
 [node name="Pot" type="StaticBody2D" parent="Collision/Etage2"]
 position = Vector2(56, 391)
 
 [node name="Pot1" type="CollisionPolygon2D" parent="Collision/Etage2/Pot"]
-polygon = PackedVector2Array(2, 6, 2, 5, 3, 5, 3, 4, 4, 4, 4, 3, 5, 3, 5, -2, 4, -2, 4, -3, 3, -3, 3, -4, 2, -4, 2, -5, -2, -5, -2, -4, -3, -4, -3, -3, -4, -3, -4, -2, -5, -2, -5, 3, -4, 3, -4, 4, -3, 4, -3, 5, -2, 5, -2, 6)
+polygon = PackedVector2Array(4, 3, 5, 3, 5, -2, 4, -2, 4, -3, 3, -3, 3, -4, 2, -4, 2, -5, -2, -5, -2, -4, -3, -4, -3, -3, -4, -3, -4, -2, -5, -2, -5, 3, -4, 3, -3, 3)
 
 [node name="Pot2" type="CollisionPolygon2D" parent="Collision/Etage2/Pot"]
 position = Vector2(64, 0)
-polygon = PackedVector2Array(2, 6, 2, 5, 3, 5, 3, 4, 4, 4, 4, 3, 5, 3, 5, -2, 4, -2, 4, -3, 3, -3, 3, -4, 2, -4, 2, -5, -2, -5, -2, -4, -3, -4, -3, -3, -4, -3, -4, -2, -5, -2, -5, 3, -4, 3, -4, 4, -3, 4, -3, 5, -2, 5, -2, 6)
+polygon = PackedVector2Array(4, 3, 5, 3, 5, -2, 4, -2, 4, -3, 3, -3, 3, -4, 2, -4, 2, -5, -2, -5, -2, -4, -3, -4, -3, -3, -4, -3, -4, -2, -5, -2, -5, 3, -4, 3, -3, 3)
 
 [node name="Pot3" type="CollisionPolygon2D" parent="Collision/Etage2/Pot"]
-position = Vector2(0, 64)
-polygon = PackedVector2Array(2, 6, 2, 5, 3, 5, 3, 4, 4, 4, 4, 3, 5, 3, 5, -2, 4, -2, 4, -3, 3, -3, 3, -4, 2, -4, 2, -5, -2, -5, -2, -4, -3, -4, -3, -3, -4, -3, -4, -2, -5, -2, -5, 3, -4, 3, -4, 4, -3, 4, -3, 5, -2, 5, -2, 6)
+position = Vector2(128, 0)
+polygon = PackedVector2Array(4, 3, 5, 3, 5, -2, 4, -2, 4, -3, 3, -3, 3, -4, 2, -4, 2, -5, -2, -5, -2, -4, -3, -4, -3, -3, -4, -3, -4, -2, -5, -2, -5, 3, -4, 3, -3, 3)
 
 [node name="Pot4" type="CollisionPolygon2D" parent="Collision/Etage2/Pot"]
-position = Vector2(64, 64)
-polygon = PackedVector2Array(2, 6, 2, 5, 3, 5, 3, 4, 4, 4, 4, 3, 5, 3, 5, -2, 4, -2, 4, -3, 3, -3, 3, -4, 2, -4, 2, -5, -2, -5, -2, -4, -3, -4, -3, -3, -4, -3, -4, -2, -5, -2, -5, 3, -4, 3, -4, 4, -3, 4, -3, 5, -2, 5, -2, 6)
+position = Vector2(208, 0)
+polygon = PackedVector2Array(4, 3, 5, 3, 5, -2, 4, -2, 4, -3, 3, -3, 3, -4, 2, -4, 2, -5, -2, -5, -2, -4, -3, -4, -3, -3, -4, -3, -4, -2, -5, -2, -5, 3, -4, 3, -3, 3)
 
 [node name="Pot5" type="CollisionPolygon2D" parent="Collision/Etage2/Pot"]
-position = Vector2(128, 64)
-polygon = PackedVector2Array(2, 6, 2, 5, 3, 5, 3, 4, 4, 4, 4, 3, 5, 3, 5, -2, 4, -2, 4, -3, 3, -3, 3, -4, 2, -4, 2, -5, -2, -5, -2, -4, -3, -4, -3, -3, -4, -3, -4, -2, -5, -2, -5, 3, -4, 3, -4, 4, -3, 4, -3, 5, -2, 5, -2, 6)
+position = Vector2(288, 0)
+polygon = PackedVector2Array(4, 3, 5, 3, 5, -2, 4, -2, 4, -3, 3, -3, 3, -4, 2, -4, 2, -5, -2, -5, -2, -4, -3, -4, -3, -3, -4, -3, -4, -2, -5, -2, -5, 3, -4, 3, -3, 3)
 
 [node name="Pot6" type="CollisionPolygon2D" parent="Collision/Etage2/Pot"]
-position = Vector2(128, 0)
-polygon = PackedVector2Array(2, 6, 2, 5, 3, 5, 3, 4, 4, 4, 4, 3, 5, 3, 5, -2, 4, -2, 4, -3, 3, -3, 3, -4, 2, -4, 2, -5, -2, -5, -2, -4, -3, -4, -3, -3, -4, -3, -4, -2, -5, -2, -5, 3, -4, 3, -4, 4, -3, 4, -3, 5, -2, 5, -2, 6)
+position = Vector2(352, 0)
+polygon = PackedVector2Array(4, 3, 5, 3, 5, -2, 4, -2, 4, -3, 3, -3, 3, -4, 2, -4, 2, -5, -2, -5, -2, -4, -3, -4, -3, -3, -4, -3, -4, -2, -5, -2, -5, 3, -4, 3, -3, 3)
 
 [node name="Pot7" type="CollisionPolygon2D" parent="Collision/Etage2/Pot"]
-position = Vector2(208, 0)
-polygon = PackedVector2Array(2, 6, 2, 5, 3, 5, 3, 4, 4, 4, 4, 3, 5, 3, 5, -2, 4, -2, 4, -3, 3, -3, 3, -4, 2, -4, 2, -5, -2, -5, -2, -4, -3, -4, -3, -3, -4, -3, -4, -2, -5, -2, -5, 3, -4, 3, -4, 4, -3, 4, -3, 5, -2, 5, -2, 6)
+position = Vector2(432, 0)
+polygon = PackedVector2Array(4, 3, 5, 3, 5, -2, 4, -2, 4, -3, 3, -3, 3, -4, 2, -4, 2, -5, -2, -5, -2, -4, -3, -4, -3, -3, -4, -3, -4, -2, -5, -2, -5, 3, -4, 3, -3, 3)
 
 [node name="Pot8" type="CollisionPolygon2D" parent="Collision/Etage2/Pot"]
-position = Vector2(208, 64)
-polygon = PackedVector2Array(2, 6, 2, 5, 3, 5, 3, 4, 4, 4, 4, 3, 5, 3, 5, -2, 4, -2, 4, -3, 3, -3, 3, -4, 2, -4, 2, -5, -2, -5, -2, -4, -3, -4, -3, -3, -4, -3, -4, -2, -5, -2, -5, 3, -4, 3, -4, 4, -3, 4, -3, 5, -2, 5, -2, 6)
+position = Vector2(512, 0)
+polygon = PackedVector2Array(4, 3, 5, 3, 5, -2, 4, -2, 4, -3, 3, -3, 3, -4, 2, -4, 2, -5, -2, -5, -2, -4, -3, -4, -3, -3, -4, -3, -4, -2, -5, -2, -5, 3, -4, 3, -3, 3)
 
 [node name="Pot9" type="CollisionPolygon2D" parent="Collision/Etage2/Pot"]
-position = Vector2(288, 64)
-polygon = PackedVector2Array(2, 6, 2, 5, 3, 5, 3, 4, 4, 4, 4, 3, 5, 3, 5, -2, 4, -2, 4, -3, 3, -3, 3, -4, 2, -4, 2, -5, -2, -5, -2, -4, -3, -4, -3, -3, -4, -3, -4, -2, -5, -2, -5, 3, -4, 3, -4, 4, -3, 4, -3, 5, -2, 5, -2, 6)
+position = Vector2(576, 0)
+polygon = PackedVector2Array(4, 3, 5, 3, 5, -2, 4, -2, 4, -3, 3, -3, 3, -4, 2, -4, 2, -5, -2, -5, -2, -4, -3, -4, -3, -3, -4, -3, -4, -2, -5, -2, -5, 3, -4, 3, -3, 3)
 
 [node name="Pot10" type="CollisionPolygon2D" parent="Collision/Etage2/Pot"]
-position = Vector2(288, 0)
-polygon = PackedVector2Array(2, 6, 2, 5, 3, 5, 3, 4, 4, 4, 4, 3, 5, 3, 5, -2, 4, -2, 4, -3, 3, -3, 3, -4, 2, -4, 2, -5, -2, -5, -2, -4, -3, -4, -3, -3, -4, -3, -4, -2, -5, -2, -5, 3, -4, 3, -4, 4, -3, 4, -3, 5, -2, 5, -2, 6)
+position = Vector2(640, 0)
+polygon = PackedVector2Array(4, 3, 5, 3, 5, -2, 4, -2, 4, -3, 3, -3, 3, -4, 2, -4, 2, -5, -2, -5, -2, -4, -3, -4, -3, -3, -4, -3, -4, -2, -5, -2, -5, 3, -4, 3, -3, 3)
 
 [node name="Pot11" type="CollisionPolygon2D" parent="Collision/Etage2/Pot"]
-position = Vector2(352, 0)
-polygon = PackedVector2Array(2, 6, 2, 5, 3, 5, 3, 4, 4, 4, 4, 3, 5, 3, 5, -2, 4, -2, 4, -3, 3, -3, 3, -4, 2, -4, 2, -5, -2, -5, -2, -4, -3, -4, -3, -3, -4, -3, -4, -2, -5, -2, -5, 3, -4, 3, -4, 4, -3, 4, -3, 5, -2, 5, -2, 6)
+position = Vector2(0, 64)
+polygon = PackedVector2Array(4, 4, 4, 3, 5, 3, 5, -3, 4, -3, 4, -4, 3, -4, 3, -5, -3, -5, -3, -4, -4, -4, -4, -3, -5, -3, -5, 3, -4, 3, -4, 4, -3, 4, -3, 5, -2, 5, -2, 6, 2, 6, 2, 5, 3, 5, 3, 4)
 
 [node name="Pot12" type="CollisionPolygon2D" parent="Collision/Etage2/Pot"]
-position = Vector2(352, 64)
-polygon = PackedVector2Array(2, 6, 2, 5, 3, 5, 3, 4, 4, 4, 4, 3, 5, 3, 5, -2, 4, -2, 4, -3, 3, -3, 3, -4, 2, -4, 2, -5, -2, -5, -2, -4, -3, -4, -3, -3, -4, -3, -4, -2, -5, -2, -5, 3, -4, 3, -4, 4, -3, 4, -3, 5, -2, 5, -2, 6)
+position = Vector2(128, 64)
+polygon = PackedVector2Array(4, 4, 4, 3, 5, 3, 5, -3, 4, -3, 4, -4, 3, -4, 3, -5, -3, -5, -3, -4, -4, -4, -4, -3, -5, -3, -5, 3, -4, 3, -4, 4, -3, 4, -3, 5, -2, 5, -2, 6, 2, 6, 2, 5, 3, 5, 3, 4)
 
 [node name="Pot13" type="CollisionPolygon2D" parent="Collision/Etage2/Pot"]
-position = Vector2(432, 64)
-polygon = PackedVector2Array(2, 6, 2, 5, 3, 5, 3, 4, 4, 4, 4, 3, 5, 3, 5, -2, 4, -2, 4, -3, 3, -3, 3, -4, 2, -4, 2, -5, -2, -5, -2, -4, -3, -4, -3, -3, -4, -3, -4, -2, -5, -2, -5, 3, -4, 3, -4, 4, -3, 4, -3, 5, -2, 5, -2, 6)
+position = Vector2(208, 64)
+polygon = PackedVector2Array(4, 4, 4, 3, 5, 3, 5, -3, 4, -3, 4, -4, 3, -4, 3, -5, -3, -5, -3, -4, -4, -4, -4, -3, -5, -3, -5, 3, -4, 3, -4, 4, -3, 4, -3, 5, -2, 5, -2, 6, 2, 6, 2, 5, 3, 5, 3, 4)
 
 [node name="Pot14" type="CollisionPolygon2D" parent="Collision/Etage2/Pot"]
-position = Vector2(432, 0)
-polygon = PackedVector2Array(2, 6, 2, 5, 3, 5, 3, 4, 4, 4, 4, 3, 5, 3, 5, -2, 4, -2, 4, -3, 3, -3, 3, -4, 2, -4, 2, -5, -2, -5, -2, -4, -3, -4, -3, -3, -4, -3, -4, -2, -5, -2, -5, 3, -4, 3, -4, 4, -3, 4, -3, 5, -2, 5, -2, 6)
+position = Vector2(288, 64)
+polygon = PackedVector2Array(4, 4, 4, 3, 5, 3, 5, -3, 4, -3, 4, -4, 3, -4, 3, -5, -3, -5, -3, -4, -4, -4, -4, -3, -5, -3, -5, 3, -4, 3, -4, 4, -3, 4, -3, 5, -2, 5, -2, 6, 2, 6, 2, 5, 3, 5, 3, 4)
 
 [node name="Pot15" type="CollisionPolygon2D" parent="Collision/Etage2/Pot"]
-position = Vector2(512, 0)
-polygon = PackedVector2Array(2, 6, 2, 5, 3, 5, 3, 4, 4, 4, 4, 3, 5, 3, 5, -2, 4, -2, 4, -3, 3, -3, 3, -4, 2, -4, 2, -5, -2, -5, -2, -4, -3, -4, -3, -3, -4, -3, -4, -2, -5, -2, -5, 3, -4, 3, -4, 4, -3, 4, -3, 5, -2, 5, -2, 6)
+position = Vector2(352, 64)
+polygon = PackedVector2Array(4, 4, 4, 3, 5, 3, 5, -3, 4, -3, 4, -4, 3, -4, 3, -5, -3, -5, -3, -4, -4, -4, -4, -3, -5, -3, -5, 3, -4, 3, -4, 4, -3, 4, -3, 5, -2, 5, -2, 6, 2, 6, 2, 5, 3, 5, 3, 4)
 
 [node name="Pot16" type="CollisionPolygon2D" parent="Collision/Etage2/Pot"]
-position = Vector2(512, 64)
-polygon = PackedVector2Array(2, 6, 2, 5, 3, 5, 3, 4, 4, 4, 4, 3, 5, 3, 5, -2, 4, -2, 4, -3, 3, -3, 3, -4, 2, -4, 2, -5, -2, -5, -2, -4, -3, -4, -3, -3, -4, -3, -4, -2, -5, -2, -5, 3, -4, 3, -4, 4, -3, 4, -3, 5, -2, 5, -2, 6)
+position = Vector2(432, 64)
+polygon = PackedVector2Array(4, 4, 4, 3, 5, 3, 5, -3, 4, -3, 4, -4, 3, -4, 3, -5, -3, -5, -3, -4, -4, -4, -4, -3, -5, -3, -5, 3, -4, 3, -4, 4, -3, 4, -3, 5, -2, 5, -2, 6, 2, 6, 2, 5, 3, 5, 3, 4)
 
 [node name="Pot17" type="CollisionPolygon2D" parent="Collision/Etage2/Pot"]
-position = Vector2(640, 0)
-polygon = PackedVector2Array(2, 6, 2, 5, 3, 5, 3, 4, 4, 4, 4, 3, 5, 3, 5, -2, 4, -2, 4, -3, 3, -3, 3, -4, 2, -4, 2, -5, -2, -5, -2, -4, -3, -4, -3, -3, -4, -3, -4, -2, -5, -2, -5, 3, -4, 3, -4, 4, -3, 4, -3, 5, -2, 5, -2, 6)
+position = Vector2(512, 64)
+polygon = PackedVector2Array(4, 4, 4, 3, 5, 3, 5, -3, 4, -3, 4, -4, 3, -4, 3, -5, -3, -5, -3, -4, -4, -4, -4, -3, -5, -3, -5, 3, -4, 3, -4, 4, -3, 4, -3, 5, -2, 5, -2, 6, 2, 6, 2, 5, 3, 5, 3, 4)
 
 [node name="Pot18" type="CollisionPolygon2D" parent="Collision/Etage2/Pot"]
-position = Vector2(640, 64)
-polygon = PackedVector2Array(2, 6, 2, 5, 3, 5, 3, 4, 4, 4, 4, 3, 5, 3, 5, -2, 4, -2, 4, -3, 3, -3, 3, -4, 2, -4, 2, -5, -2, -5, -2, -4, -3, -4, -3, -3, -4, -3, -4, -2, -5, -2, -5, 3, -4, 3, -4, 4, -3, 4, -3, 5, -2, 5, -2, 6)
+position = Vector2(576, 64)
+polygon = PackedVector2Array(4, 4, 4, 3, 5, 3, 5, -3, 4, -3, 4, -4, 3, -4, 3, -5, -3, -5, -3, -4, -4, -4, -4, -3, -5, -3, -5, 3, -4, 3, -4, 4, -3, 4, -3, 5, -2, 5, -2, 6, 2, 6, 2, 5, 3, 5, 3, 4)
 
 [node name="Pot19" type="CollisionPolygon2D" parent="Collision/Etage2/Pot"]
-position = Vector2(576, 0)
-polygon = PackedVector2Array(2, 6, 2, 5, 3, 5, 3, 4, 4, 4, 4, 3, 5, 3, 5, -2, 4, -2, 4, -3, 3, -3, 3, -4, 2, -4, 2, -5, -2, -5, -2, -4, -3, -4, -3, -3, -4, -3, -4, -2, -5, -2, -5, 3, -4, 3, -4, 4, -3, 4, -3, 5, -2, 5, -2, 6)
+position = Vector2(640, 64)
+polygon = PackedVector2Array(4, 4, 4, 3, 5, 3, 5, -3, 4, -3, 4, -4, 3, -4, 3, -5, -3, -5, -3, -4, -4, -4, -4, -3, -5, -3, -5, 3, -4, 3, -4, 4, -3, 4, -3, 5, -2, 5, -2, 6, 2, 6, 2, 5, 3, 5, 3, 4)
 
 [node name="Pot20" type="CollisionPolygon2D" parent="Collision/Etage2/Pot"]
-position = Vector2(576, 64)
-polygon = PackedVector2Array(2, 6, 2, 5, 3, 5, 3, 4, 4, 4, 4, 3, 5, 3, 5, -2, 4, -2, 4, -3, 3, -3, 3, -4, 2, -4, 2, -5, -2, -5, -2, -4, -3, -4, -3, -3, -4, -3, -4, -2, -5, -2, -5, 3, -4, 3, -4, 4, -3, 4, -3, 5, -2, 5, -2, 6)
+position = Vector2(64, 64)
+polygon = PackedVector2Array(4, 4, 4, 3, 5, 3, 5, -3, 4, -3, 4, -4, 3, -4, 3, -5, -3, -5, -3, -4, -4, -4, -4, -3, -5, -3, -5, 3, -4, 3, -4, 4, -3, 4, -3, 5, -2, 5, -2, 6, 2, 6, 2, 5, 3, 5, 3, 4)
 
 [node name="Etage3" type="Node2D" parent="Collision"]
 
@@ -153,89 +197,89 @@ position = Vector2(0, 560)
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Collision/Etage3/Mur"]
 position = Vector2(360, 120)
-polygon = PackedVector2Array(-72, -40, -168, -72, -360, -72, -360, 46, 392, 46, 392, -72, 120, -72, 120, -120, 56, -120, 56, -72, -24, -72, -24, -120, -88, -120, -88, -72, -168, -72, -72, -40, -72, -50, -68, -50, -68, -53, -44, -53, -44, -50, -40, -50, -40, -40, -3, -40, -3, -41, 35, -41, 35, -40, 72, -40, 72, -50, 76, -50, 76, -53, 100, -53, 100, -50, 104, -50, 104, -40, 232, -40, 232, -41, 248, -41, 248, -40, 296, -40, 296, -41, 312, -41, 312, -40, 376, -40, 376, -11, 375, -11, 375, -9, 376, -9, 376, 9, 375, 9, 375, 11, 376, 11, 376, 40, -344, 40, -344, 11, -343, 11, -343, 9, -344, 9, -344, -9, -343, -9, -343, -11, -344, -11.2081, -344, -40, -280, -40, -280, -41, -264, -41, -264, -40, -216, -40, -216, -41, -200, -41, -200, -40)
+polygon = PackedVector2Array(-72, -40, -168, -72, -360, -72, -360, 46, 392, 46, 392, -72, 120, -72, 120, -120, 56, -120, 56, -72, -24, -72, -24, -120, -88, -120, -88, -72, -168, -72, -72, -40, -72, -50, -68, -50, -68, -53, -44, -53, -44, -50, -40, -50, -40, -40, -3, -40, -3, -41, 35, -41, 35, -40, 72, -40, 72, -50, 76, -50, 76, -53, 100, -53, 100, -50, 104, -50, 104, -40, 232, -40, 232, -41, 248, -41, 248, -40, 296, -40, 296, -41, 312, -41, 312, -40, 376, -40, 376, -11, 375, -11, 375, -9, 376, -9, 376, 9, 375, 9, 375, 11, 376, 11, 376, 40, -344, 40, -344, 11, -343, 11, -343, 9, -344, 9, -344, -9, -343, -9, -343, -11, -344, -11.2081, -344, -40, -280, -40, -280, -41, -264, -41, -264, -40, -260.969, -40, -261, -38, -263, -38, -263, -31, -248, -31, -248, -38, -251, -38, -251, -40, -216, -40, -216, -41, -200, -41, -200, -40)
 
 [node name="Pot" type="StaticBody2D" parent="Collision/Etage3"]
 position = Vector2(56, 647)
 
 [node name="Pot1" type="CollisionPolygon2D" parent="Collision/Etage3/Pot"]
-polygon = PackedVector2Array(2, 6, 2, 5, 3, 5, 3, 4, 4, 4, 4, 3, 5, 3, 5, -2, 4, -2, 4, -3, 3, -3, 3, -4, 2, -4, 2, -5, -2, -5, -2, -4, -3, -4, -3, -3, -4, -3, -4, -2, -5, -2, -5, 3, -4, 3, -4, 4, -3, 4, -3, 5, -2, 5, -2, 6)
+polygon = PackedVector2Array(4, 3, 5, 3, 5, -2, 4, -2, 4, -3, 3, -3, 3, -4, 2, -4, 2, -5, -2, -5, -2, -4, -3, -4, -3, -3, -4, -3, -4, -2, -5, -2, -5, 3, -4, 3, -3, 3)
 
 [node name="Pot2" type="CollisionPolygon2D" parent="Collision/Etage3/Pot"]
 position = Vector2(64, 0)
-polygon = PackedVector2Array(2, 6, 2, 5, 3, 5, 3, 4, 4, 4, 4, 3, 5, 3, 5, -2, 4, -2, 4, -3, 3, -3, 3, -4, 2, -4, 2, -5, -2, -5, -2, -4, -3, -4, -3, -3, -4, -3, -4, -2, -5, -2, -5, 3, -4, 3, -4, 4, -3, 4, -3, 5, -2, 5, -2, 6)
+polygon = PackedVector2Array(4, 3, 5, 3, 5, -2, 4, -2, 4, -3, 3, -3, 3, -4, 2, -4, 2, -5, -2, -5, -2, -4, -3, -4, -3, -3, -4, -3, -4, -2, -5, -2, -5, 3, -4, 3, -3, 3)
 
 [node name="Pot3" type="CollisionPolygon2D" parent="Collision/Etage3/Pot"]
-position = Vector2(0, 64)
-polygon = PackedVector2Array(2, 6, 2, 5, 3, 5, 3, 4, 4, 4, 4, 3, 5, 3, 5, -2, 4, -2, 4, -3, 3, -3, 3, -4, 2, -4, 2, -5, -2, -5, -2, -4, -3, -4, -3, -3, -4, -3, -4, -2, -5, -2, -5, 3, -4, 3, -4, 4, -3, 4, -3, 5, -2, 5, -2, 6)
+position = Vector2(128, 0)
+polygon = PackedVector2Array(4, 3, 5, 3, 5, -2, 4, -2, 4, -3, 3, -3, 3, -4, 2, -4, 2, -5, -2, -5, -2, -4, -3, -4, -3, -3, -4, -3, -4, -2, -5, -2, -5, 3, -4, 3, -3, 3)
 
 [node name="Pot4" type="CollisionPolygon2D" parent="Collision/Etage3/Pot"]
-position = Vector2(64, 64)
-polygon = PackedVector2Array(2, 6, 2, 5, 3, 5, 3, 4, 4, 4, 4, 3, 5, 3, 5, -2, 4, -2, 4, -3, 3, -3, 3, -4, 2, -4, 2, -5, -2, -5, -2, -4, -3, -4, -3, -3, -4, -3, -4, -2, -5, -2, -5, 3, -4, 3, -4, 4, -3, 4, -3, 5, -2, 5, -2, 6)
+position = Vector2(208, 0)
+polygon = PackedVector2Array(4, 3, 5, 3, 5, -2, 4, -2, 4, -3, 3, -3, 3, -4, 2, -4, 2, -5, -2, -5, -2, -4, -3, -4, -3, -3, -4, -3, -4, -2, -5, -2, -5, 3, -4, 3, -3, 3)
 
 [node name="Pot5" type="CollisionPolygon2D" parent="Collision/Etage3/Pot"]
-position = Vector2(128, 64)
-polygon = PackedVector2Array(2, 6, 2, 5, 3, 5, 3, 4, 4, 4, 4, 3, 5, 3, 5, -2, 4, -2, 4, -3, 3, -3, 3, -4, 2, -4, 2, -5, -2, -5, -2, -4, -3, -4, -3, -3, -4, -3, -4, -2, -5, -2, -5, 3, -4, 3, -4, 4, -3, 4, -3, 5, -2, 5, -2, 6)
+position = Vector2(288, 0)
+polygon = PackedVector2Array(4, 3, 5, 3, 5, -2, 4, -2, 4, -3, 3, -3, 3, -4, 2, -4, 2, -5, -2, -5, -2, -4, -3, -4, -3, -3, -4, -3, -4, -2, -5, -2, -5, 3, -4, 3, -3, 3)
 
 [node name="Pot6" type="CollisionPolygon2D" parent="Collision/Etage3/Pot"]
-position = Vector2(128, 0)
-polygon = PackedVector2Array(2, 6, 2, 5, 3, 5, 3, 4, 4, 4, 4, 3, 5, 3, 5, -2, 4, -2, 4, -3, 3, -3, 3, -4, 2, -4, 2, -5, -2, -5, -2, -4, -3, -4, -3, -3, -4, -3, -4, -2, -5, -2, -5, 3, -4, 3, -4, 4, -3, 4, -3, 5, -2, 5, -2, 6)
+position = Vector2(352, 0)
+polygon = PackedVector2Array(4, 3, 5, 3, 5, -2, 4, -2, 4, -3, 3, -3, 3, -4, 2, -4, 2, -5, -2, -5, -2, -4, -3, -4, -3, -3, -4, -3, -4, -2, -5, -2, -5, 3, -4, 3, -3, 3)
 
 [node name="Pot7" type="CollisionPolygon2D" parent="Collision/Etage3/Pot"]
-position = Vector2(208, 0)
-polygon = PackedVector2Array(2, 6, 2, 5, 3, 5, 3, 4, 4, 4, 4, 3, 5, 3, 5, -2, 4, -2, 4, -3, 3, -3, 3, -4, 2, -4, 2, -5, -2, -5, -2, -4, -3, -4, -3, -3, -4, -3, -4, -2, -5, -2, -5, 3, -4, 3, -4, 4, -3, 4, -3, 5, -2, 5, -2, 6)
+position = Vector2(432, 0)
+polygon = PackedVector2Array(4, 3, 5, 3, 5, -2, 4, -2, 4, -3, 3, -3, 3, -4, 2, -4, 2, -5, -2, -5, -2, -4, -3, -4, -3, -3, -4, -3, -4, -2, -5, -2, -5, 3, -4, 3, -3, 3)
 
 [node name="Pot8" type="CollisionPolygon2D" parent="Collision/Etage3/Pot"]
-position = Vector2(208, 64)
-polygon = PackedVector2Array(2, 6, 2, 5, 3, 5, 3, 4, 4, 4, 4, 3, 5, 3, 5, -2, 4, -2, 4, -3, 3, -3, 3, -4, 2, -4, 2, -5, -2, -5, -2, -4, -3, -4, -3, -3, -4, -3, -4, -2, -5, -2, -5, 3, -4, 3, -4, 4, -3, 4, -3, 5, -2, 5, -2, 6)
+position = Vector2(512, 0)
+polygon = PackedVector2Array(4, 3, 5, 3, 5, -2, 4, -2, 4, -3, 3, -3, 3, -4, 2, -4, 2, -5, -2, -5, -2, -4, -3, -4, -3, -3, -4, -3, -4, -2, -5, -2, -5, 3, -4, 3, -3, 3)
 
 [node name="Pot9" type="CollisionPolygon2D" parent="Collision/Etage3/Pot"]
-position = Vector2(288, 64)
-polygon = PackedVector2Array(2, 6, 2, 5, 3, 5, 3, 4, 4, 4, 4, 3, 5, 3, 5, -2, 4, -2, 4, -3, 3, -3, 3, -4, 2, -4, 2, -5, -2, -5, -2, -4, -3, -4, -3, -3, -4, -3, -4, -2, -5, -2, -5, 3, -4, 3, -4, 4, -3, 4, -3, 5, -2, 5, -2, 6)
+position = Vector2(576, 0)
+polygon = PackedVector2Array(4, 3, 5, 3, 5, -2, 4, -2, 4, -3, 3, -3, 3, -4, 2, -4, 2, -5, -2, -5, -2, -4, -3, -4, -3, -3, -4, -3, -4, -2, -5, -2, -5, 3, -4, 3, -3, 3)
 
 [node name="Pot10" type="CollisionPolygon2D" parent="Collision/Etage3/Pot"]
-position = Vector2(288, 0)
-polygon = PackedVector2Array(2, 6, 2, 5, 3, 5, 3, 4, 4, 4, 4, 3, 5, 3, 5, -2, 4, -2, 4, -3, 3, -3, 3, -4, 2, -4, 2, -5, -2, -5, -2, -4, -3, -4, -3, -3, -4, -3, -4, -2, -5, -2, -5, 3, -4, 3, -4, 4, -3, 4, -3, 5, -2, 5, -2, 6)
+position = Vector2(640, 0)
+polygon = PackedVector2Array(4, 3, 5, 3, 5, -2, 4, -2, 4, -3, 3, -3, 3, -4, 2, -4, 2, -5, -2, -5, -2, -4, -3, -4, -3, -3, -4, -3, -4, -2, -5, -2, -5, 3, -4, 3, -3, 3)
 
 [node name="Pot11" type="CollisionPolygon2D" parent="Collision/Etage3/Pot"]
-position = Vector2(352, 0)
-polygon = PackedVector2Array(2, 6, 2, 5, 3, 5, 3, 4, 4, 4, 4, 3, 5, 3, 5, -2, 4, -2, 4, -3, 3, -3, 3, -4, 2, -4, 2, -5, -2, -5, -2, -4, -3, -4, -3, -3, -4, -3, -4, -2, -5, -2, -5, 3, -4, 3, -4, 4, -3, 4, -3, 5, -2, 5, -2, 6)
+position = Vector2(0, 64)
+polygon = PackedVector2Array(4, 4, 4, 3, 5, 3, 5, -3, 4, -3, 4, -4, 3, -4, 3, -5, -3, -5, -3, -4, -4, -4, -4, -3, -5, -3, -5, 3, -4, 3, -4, 4, -3, 4, -3, 5, -2, 5, -2, 6, 2, 6, 2, 5, 3, 5, 3, 4)
 
 [node name="Pot12" type="CollisionPolygon2D" parent="Collision/Etage3/Pot"]
-position = Vector2(352, 64)
-polygon = PackedVector2Array(2, 6, 2, 5, 3, 5, 3, 4, 4, 4, 4, 3, 5, 3, 5, -2, 4, -2, 4, -3, 3, -3, 3, -4, 2, -4, 2, -5, -2, -5, -2, -4, -3, -4, -3, -3, -4, -3, -4, -2, -5, -2, -5, 3, -4, 3, -4, 4, -3, 4, -3, 5, -2, 5, -2, 6)
+position = Vector2(128, 64)
+polygon = PackedVector2Array(4, 4, 4, 3, 5, 3, 5, -3, 4, -3, 4, -4, 3, -4, 3, -5, -3, -5, -3, -4, -4, -4, -4, -3, -5, -3, -5, 3, -4, 3, -4, 4, -3, 4, -3, 5, -2, 5, -2, 6, 2, 6, 2, 5, 3, 5, 3, 4)
 
 [node name="Pot13" type="CollisionPolygon2D" parent="Collision/Etage3/Pot"]
-position = Vector2(432, 64)
-polygon = PackedVector2Array(2, 6, 2, 5, 3, 5, 3, 4, 4, 4, 4, 3, 5, 3, 5, -2, 4, -2, 4, -3, 3, -3, 3, -4, 2, -4, 2, -5, -2, -5, -2, -4, -3, -4, -3, -3, -4, -3, -4, -2, -5, -2, -5, 3, -4, 3, -4, 4, -3, 4, -3, 5, -2, 5, -2, 6)
+position = Vector2(208, 64)
+polygon = PackedVector2Array(4, 4, 4, 3, 5, 3, 5, -3, 4, -3, 4, -4, 3, -4, 3, -5, -3, -5, -3, -4, -4, -4, -4, -3, -5, -3, -5, 3, -4, 3, -4, 4, -3, 4, -3, 5, -2, 5, -2, 6, 2, 6, 2, 5, 3, 5, 3, 4)
 
 [node name="Pot14" type="CollisionPolygon2D" parent="Collision/Etage3/Pot"]
-position = Vector2(432, 0)
-polygon = PackedVector2Array(2, 6, 2, 5, 3, 5, 3, 4, 4, 4, 4, 3, 5, 3, 5, -2, 4, -2, 4, -3, 3, -3, 3, -4, 2, -4, 2, -5, -2, -5, -2, -4, -3, -4, -3, -3, -4, -3, -4, -2, -5, -2, -5, 3, -4, 3, -4, 4, -3, 4, -3, 5, -2, 5, -2, 6)
+position = Vector2(288, 64)
+polygon = PackedVector2Array(4, 4, 4, 3, 5, 3, 5, -3, 4, -3, 4, -4, 3, -4, 3, -5, -3, -5, -3, -4, -4, -4, -4, -3, -5, -3, -5, 3, -4, 3, -4, 4, -3, 4, -3, 5, -2, 5, -2, 6, 2, 6, 2, 5, 3, 5, 3, 4)
 
 [node name="Pot15" type="CollisionPolygon2D" parent="Collision/Etage3/Pot"]
-position = Vector2(512, 0)
-polygon = PackedVector2Array(2, 6, 2, 5, 3, 5, 3, 4, 4, 4, 4, 3, 5, 3, 5, -2, 4, -2, 4, -3, 3, -3, 3, -4, 2, -4, 2, -5, -2, -5, -2, -4, -3, -4, -3, -3, -4, -3, -4, -2, -5, -2, -5, 3, -4, 3, -4, 4, -3, 4, -3, 5, -2, 5, -2, 6)
+position = Vector2(352, 64)
+polygon = PackedVector2Array(4, 4, 4, 3, 5, 3, 5, -3, 4, -3, 4, -4, 3, -4, 3, -5, -3, -5, -3, -4, -4, -4, -4, -3, -5, -3, -5, 3, -4, 3, -4, 4, -3, 4, -3, 5, -2, 5, -2, 6, 2, 6, 2, 5, 3, 5, 3, 4)
 
 [node name="Pot16" type="CollisionPolygon2D" parent="Collision/Etage3/Pot"]
-position = Vector2(512, 64)
-polygon = PackedVector2Array(2, 6, 2, 5, 3, 5, 3, 4, 4, 4, 4, 3, 5, 3, 5, -2, 4, -2, 4, -3, 3, -3, 3, -4, 2, -4, 2, -5, -2, -5, -2, -4, -3, -4, -3, -3, -4, -3, -4, -2, -5, -2, -5, 3, -4, 3, -4, 4, -3, 4, -3, 5, -2, 5, -2, 6)
+position = Vector2(432, 64)
+polygon = PackedVector2Array(4, 4, 4, 3, 5, 3, 5, -3, 4, -3, 4, -4, 3, -4, 3, -5, -3, -5, -3, -4, -4, -4, -4, -3, -5, -3, -5, 3, -4, 3, -4, 4, -3, 4, -3, 5, -2, 5, -2, 6, 2, 6, 2, 5, 3, 5, 3, 4)
 
 [node name="Pot17" type="CollisionPolygon2D" parent="Collision/Etage3/Pot"]
-position = Vector2(640, 0)
-polygon = PackedVector2Array(2, 6, 2, 5, 3, 5, 3, 4, 4, 4, 4, 3, 5, 3, 5, -2, 4, -2, 4, -3, 3, -3, 3, -4, 2, -4, 2, -5, -2, -5, -2, -4, -3, -4, -3, -3, -4, -3, -4, -2, -5, -2, -5, 3, -4, 3, -4, 4, -3, 4, -3, 5, -2, 5, -2, 6)
+position = Vector2(512, 64)
+polygon = PackedVector2Array(4, 4, 4, 3, 5, 3, 5, -3, 4, -3, 4, -4, 3, -4, 3, -5, -3, -5, -3, -4, -4, -4, -4, -3, -5, -3, -5, 3, -4, 3, -4, 4, -3, 4, -3, 5, -2, 5, -2, 6, 2, 6, 2, 5, 3, 5, 3, 4)
 
 [node name="Pot18" type="CollisionPolygon2D" parent="Collision/Etage3/Pot"]
-position = Vector2(640, 64)
-polygon = PackedVector2Array(2, 6, 2, 5, 3, 5, 3, 4, 4, 4, 4, 3, 5, 3, 5, -2, 4, -2, 4, -3, 3, -3, 3, -4, 2, -4, 2, -5, -2, -5, -2, -4, -3, -4, -3, -3, -4, -3, -4, -2, -5, -2, -5, 3, -4, 3, -4, 4, -3, 4, -3, 5, -2, 5, -2, 6)
+position = Vector2(576, 64)
+polygon = PackedVector2Array(4, 4, 4, 3, 5, 3, 5, -3, 4, -3, 4, -4, 3, -4, 3, -5, -3, -5, -3, -4, -4, -4, -4, -3, -5, -3, -5, 3, -4, 3, -4, 4, -3, 4, -3, 5, -2, 5, -2, 6, 2, 6, 2, 5, 3, 5, 3, 4)
 
 [node name="Pot19" type="CollisionPolygon2D" parent="Collision/Etage3/Pot"]
-position = Vector2(576, 0)
-polygon = PackedVector2Array(2, 6, 2, 5, 3, 5, 3, 4, 4, 4, 4, 3, 5, 3, 5, -2, 4, -2, 4, -3, 3, -3, 3, -4, 2, -4, 2, -5, -2, -5, -2, -4, -3, -4, -3, -3, -4, -3, -4, -2, -5, -2, -5, 3, -4, 3, -4, 4, -3, 4, -3, 5, -2, 5, -2, 6)
+position = Vector2(640, 64)
+polygon = PackedVector2Array(4, 4, 4, 3, 5, 3, 5, -3, 4, -3, 4, -4, 3, -4, 3, -5, -3, -5, -3, -4, -4, -4, -4, -3, -5, -3, -5, 3, -4, 3, -4, 4, -3, 4, -3, 5, -2, 5, -2, 6, 2, 6, 2, 5, 3, 5, 3, 4)
 
 [node name="Pot20" type="CollisionPolygon2D" parent="Collision/Etage3/Pot"]
-position = Vector2(576, 64)
-polygon = PackedVector2Array(2, 6, 2, 5, 3, 5, 3, 4, 4, 4, 4, 3, 5, 3, 5, -2, 4, -2, 4, -3, 3, -3, 3, -4, 2, -4, 2, -5, -2, -5, -2, -4, -3, -4, -3, -3, -4, -3, -4, -2, -5, -2, -5, 3, -4, 3, -4, 4, -3, 4, -3, 5, -2, 5, -2, 6)
+position = Vector2(64, 64)
+polygon = PackedVector2Array(4, 4, 4, 3, 5, 3, 5, -3, 4, -3, 4, -4, 3, -4, 3, -5, -3, -5, -3, -4, -4, -4, -4, -3, -5, -3, -5, 3, -4, 3, -4, 4, -3, 4, -3, 5, -2, 5, -2, 6, 2, 6, 2, 5, 3, 5, 3, 4)
 
 [node name="Entree" type="Node2D" parent="."]
 
@@ -457,26 +501,26 @@ tile_set = ExtResource("4_vq2nh")
 
 [node name="TileMapLayer_tapis" type="TileMapLayer" parent="TileMap"]
 z_index = -3
-tile_map_data = PackedByteArray("AAAGAAoABAAFAAQAAGAHAAoABAAGAAQAAGAIAAoABAAFAAQAAFABABoAAAARAAYAAGABACoAAAARAAYAAGAFABgAAAARAAYAAAAFABwAAAARAAYAADAFACgAAAARAAYAAAAFACwAAAARAAYAADAJABgAAAARAAYAAAAJABwAAAARAAYAADAJACgAAAARAAYAAAAJACwAAAARAAYAADAWAAoABAAFAAQAAGAXAAoABAAGAAQAAGAYAAoABAAFAAQAAFAmAAoABAAFAAQAAGAnAAoABAAGAAQAAGAoAAoABAAFAAQAAFAlABwAAAARAAYAADApABwAAAARAAYAADAlABgAAAARAAYAAAApABgAAAARAAYAAAAXABwAAAARAAYAADAlACgAAAARAAYAAAAlACwAAAARAAYAADApACgAAAARAAYAAAApACwAAAARAAYAADAtACoAAAARAAYAAFAtABoAAAARAAYAAFA=")
+tile_map_data = PackedByteArray("AAAGAAoABAAFAAQAAGAHAAoABAAGAAQAAGAIAAoABAAFAAQAAFABABoAAAASAAYAAGABACoAAAASAAYAAGAFABgAAAARAAYAAAAFABwAAAASAAYAADAFACgAAAARAAYAAAAFACwAAAASAAYAADAJABgAAAARAAYAAAAJABwAAAASAAYAADAJACgAAAARAAYAAAAJACwAAAASAAYAADAWAAoABAAFAAQAAGAXAAoABAAGAAQAAGAYAAoABAAFAAQAAFAmAAoABAAFAAQAAGAnAAoABAAGAAQAAGAoAAoABAAFAAQAAFAlABwAAAASAAYAADApABwAAAASAAYAADAlABgAAAARAAYAAAApABgAAAARAAYAAAAXABwAAAASAAYAADAlACgAAAARAAYAAAAlACwAAAASAAYAADApACgAAAARAAYAAAApACwAAAASAAYAADAtACoAAAARAAYAAFAtABoAAAARAAYAAFA=")
 tile_set = ExtResource("4_vq2nh")
 
 [node name="TileMapLayer_mur" type="TileMapLayer" parent="TileMap"]
 z_index = -2
-tile_map_data = PackedByteArray("AAAAAAMAAwAKACoAAAAAAAQAAwAKACsAAAAAAAUAAwAKACwAAAAAAAYAAwAKACwAAAAAAAcAAwAKACwAAAAAAAgAAwAKACwAAAABAAMAAwALACwAAAABAAQAAwALAC0AAAACAAMAAwALACwAAAACAAQAAwALAC0AAAADAAMAAwALACwAAAADAAQAAwALAC0AAAAEAAMAAwALACwAAAAEAAQAAwALAC0AAAAFAAMAAwALACwAAAAFAAQAAwALAC0AAAAGAAMAAwALACwAAAAGAAQAAwALAC0AAAAHAAMAAwALACwAAAAHAAQAAwALAC0AAAAIAAMAAwALACwAAAAIAAQAAwALAC0AAAAJAAMAAwALACwAAAAJAAQAAwALAC0AAAAKAAMAAwALACwAAAAKAAQAAwALAC0AAAALAAMAAwALACwAAAALAAQAAwALAC0AAAAMAAAAAwAKACoAAAAMAAEAAwAKACsAAAAMAAIAAwAKACwAAAAMAAMAAwAKAC0AAAAMAAQAAwAKAC4AAAANAAAAAAAJAAEAAAANAAEAAAAJAAIAAAANAAIAAAAJAAMAAAANAAMAAAAJAAQAAAANAAQAAAAJAAUAAAAOAAAAAAAKAAEAAAAOAAEAAAAKAAIAAAAOAAIAAAAKAAMAAAAOAAMAAAAKAAQAAAAOAAQAAAAKAAUAAAAPAAAAAwAOACsAAAAPAAEAAwAOAC0AAAAPAAIAAwANACwAAAAPAAMAAwANAC0AAAAPAAQAAwANAC4AAAAQAAMAAwALACwAAAAQAAQAAwALAC0AAAARAAMAAwALACwAAAARAAQAAwALAC0AAAASAAMAAwALACwAAAASAAQAAwALAC0AAAAAAAkAAwAKACwAAAAAAAoAAwASAC8AAAABAAoAAwATAC8AAAACAAoAAwALAC8AAAADAAoAAwALAC8AAAAEAAoAAwALAC8AAAAFAAoAAAABAAAAAAAJAAoAAAAAAAAAAAAKAAoAAwALAC8AAAALAAoAAwALAC8AAAAMAAoAAwALAC8AAAANAAoAAwALAC8AAAAOAAoAAwALAC8AAAAPAAoAAwALAC8AAAAQAAoAAwALAC8AAAARAAoAAwALAC8AAAASAAoAAwALAC8AAAAAABYAAwAKACoAAAAAABcAAwAKACsAAAAAABgAAwAKACwAAAAAABsAAwAKACwAAAAAABwAAwAKACwAAAABABYAAwALACwAAAACABYAAwALACwAAAADABYAAwALACwAAAAEABYAAwALACwAAAAGABYAAwALACwAAAAHABYAAwALACwAAAAIABYAAwALACwAAAAKABYAAwALACwAAAALABYAAwALACwAAAAMABMAAwAKACoAAAAMABQAAwAKACsAAAAMABUAAwAKACwAAAAMABYAAwAKAC0AAAAMAB0AAwALAC8AAAANABMAAAAJAAEAAAANABQAAAAJAAIAAAANABUAAAAJAAMAAAANABYAAAAJAAQAAAANAB0AAwALAC8AAAAOABMAAAAKAAEAAAAOABQAAAAKAAIAAAAOABUAAAAKAAMAAAAOABYAAAAKAAQAAAAOAB0AAwALAC8AAAAPABMAAwAOACsAAAAPABQAAwAOAC0AAAAPABUAAwANACwAAAAPAB0AAwALAC8AAAAUABYAAwANAC0AAAAAABkAAwAKACwAAAAAAB0AAwASAC8AAAABABcAAwALAC0AAAABAB0AAwATAC8AAAACABcAAwALAC0AAAACAB0AAwALAC8AAAADABcAAwALAC0AAAADAB0AAwALAC8AAAAEABcAAwALAC0AAAAEAB0AAwALAC8AAAAFAB0AAwALAC8AAAAGABcAAwALAC0AAAAGAB0AAwALAC8AAAAHABcAAwALAC0AAAAHAB0AAwALAC8AAAAIABcAAwALAC0AAAAIAB0AAwALAC8AAAAJAB0AAwALAC8AAAAKABcAAwALAC0AAAAKAB0AAwALAC8AAAALABcAAwALAC0AAAALAB0AAwALAC8AAAAMABcAAwAKAC4AAAANABcAAAAJAAUAAAAOABcAAAAKAAUAAAAPABcAAwANAC4AAAAQAB0AAwALAC8AAAARAB0AAwALAC8AAAASAB0AAwALAC8AAAATAB0AAwALAC8AAAAUABcAAwANAC4AAAAUAB0AAwALAC8AAAAVAB0AAwALAC8AAAAWAB0AAwALAC8AAAAXAB0AAwALAC8AAAAYAB0AAwALAC8AAAAPABYAAwANAC0AAAAUAAMAAwALACwAAAAUAAQAAwALAC0AAAAZAAMAAwALACwAAAAZAAQAAwALAC0AAAAZAAoAAAAAAAAAAAAaAAMAAwALACwAAAAaAAQAAwALAC0AAAAaAAoAAwALAC8AAAATAAMAAwALACwAAAATAAQAAwALAC0AAAATAAoAAwALAC8AAAAYAAMAAwALACwAAAAVAAoAAAABAAAAAAAVAAMAAwALACwAAAAVAAQAAwALAC0AAAAdAAMAAwALACwAAAAdAAQAAwALAC0AAAAdAAoAAwALAC8AAAAeAAMAAwALACwAAAAeAAQAAwALAC0AAAAeAAoAAwALAC8AAAAfAAAAAwAKACoAAAAfAAEAAwAKACsAAAAfAAIAAwAKACwAAAAfAAMAAwAKAC0AAAAfAAQAAwAKAC4AAAAfAAoAAwALAC8AAAAgAAAAAAAJAAEAAAAgAAEAAAAJAAIAAAAgAAIAAAAJAAMAAAAgAAMAAAAJAAQAAAAgAAQAAAAJAAUAAAAgAAoAAwALAC8AAAAhAAAAAAAKAAEAAAAhAAEAAAAKAAIAAAAhAAIAAAAKAAMAAAAhAAMAAAAKAAQAAAAhAAQAAAAKAAUAAAAhAAoAAwALAC8AAAAiAAMAAwANAC0AAAAiAAQAAwANAC4AAAAiAAoAAwALAC8AAAAjAAMAAwALACwAAAAjAAQAAwALAC0AAAAjAAoAAwALAC8AAAAkAAMAAwALACwAAAAkAAQAAwALAC0AAAAkAAoAAwALAC8AAAAlAAMAAwALACwAAAAlAAQAAwALAC0AAAAmAAMAAwALACwAAAAmAAQAAwALAC0AAAAnAAMAAwALACwAAAAnAAQAAwALAC0AAAAoAAMAAwALACwAAAAoAAQAAwALAC0AAAApAAMAAwALACwAAAApAAQAAwALAC0AAAApAAoAAAAAAAAAAAAqAAMAAwALACwAAAAqAAQAAwALAC0AAAAqAAoAAwALAC8AAAArAAMAAwALACwAAAArAAQAAwALAC0AAAArAAoAAwALAC8AAAAsAAMAAwALACwAAAAsAAQAAwALAC0AAAAsAAoAAwALAC8AAAAtAAMAAwALACwAAAAtAAQAAwALAC0AAAAtAAoAAwALAC8AAAAiAAAAAwAOACsAAAAiAAEAAwAOAC0AAAAiAAIAAwANACwAAAAlAAoAAAABAAAAAAAuAAMAAwANACoAAAAuAAQAAwANACsAAAAuAAUAAwANACwAAAAuAAYAAwANACwAAAAuAAcAAwANACwAAAAuAAgAAwANACwAAAAuAAkAAwANACwAAAAuAAoAAwANADYAAAAbAAMAAwALACwAAAAbAAQAAwALAC0AAAAcAAMAAwALACwAAAAcAAQAAwALAC0AAAAcAAoAAwALAC8AAAAbAAoAAwALAC8AAAAUAAoAAwALAC8AAAARABMAAwAKACoAAAARABQAAwAKACsAAAARABUAAwAKACwAAAARABYAAwAKAC0AAAARABcAAwAKAC4AAAASABMAAwALACwAAAASABQAAwALAC0AAAASABUAAAAOAAgAAAASABYAAAAOAAkAAAASABcAAAAOAAoAAAATABMAAwALACwAAAATABQAAwALAC0AAAATABUAAAAPAAgAAAATABYAAAAPAAkAAAATABcAAAAPAAoAAAAUABMAAwAOACsAAAAUABQAAwAOAC0AAAAUABUAAwANACwAAAAQABYAAwALACwAAAAQABcAAwALAC0AAAAVABYAAwALACwAAAAVABcAAwALAC0AAAAaABMAAwAKACoAAAAaABQAAwAKACsAAAAaABUAAwAKACwAAAAaABYAAwAKAC0AAAAaABcAAwAKAC4AAAAaAB0AAwALAC8AAAAbABMAAwALACwAAAAbABQAAwALAC0AAAAbABUAAAAOAAgAAAAbABYAAAAOAAkAAAAbABcAAAAOAAoAAAAbAB0AAwALAC8AAAAcABMAAwALACwAAAAcABQAAwALAC0AAAAcABUAAAAPAAgAAAAcABYAAAAPAAkAAAAcABcAAAAPAAoAAAAcAB0AAwALAC8AAAAdABMAAwAOACsAAAAdABQAAwAOAC0AAAAdABUAAwANACwAAAAdABYAAwANAC0AAAAdABcAAwANAC4AAAAdAB0AAwALAC8AAAAfABMAAwAKACoAAAAfABQAAwAKACsAAAAfABUAAwAKACwAAAAfABYAAwAKAC0AAAAfABcAAwAKAC4AAAAfAB0AAwALAC8AAAAgABMAAAAJAAEAAAAgABQAAAAJAAIAAAAgABUAAAAJAAMAAAAgABYAAAAJAAQAAAAgABcAAAAJAAUAAAAgAB0AAwALAC8AAAAhABMAAAAKAAEAAAAhABQAAAAKAAIAAAAhABUAAAAKAAMAAAAhABYAAAAKAAQAAAAhABcAAAAKAAUAAAAhAB0AAwALAC8AAAAiABYAAwANAC0AAAAiABcAAwANAC4AAAAiAB0AAwALAC8AAAAjABYAAwALACwAAAAjABcAAwALAC0AAAAjAB0AAwALAC8AAAAkAB0AAwALAC8AAAAlAB0AAwALAC8AAAAmABYAAwALACwAAAAmABcAAwALAC0AAAAmAB0AAwALAC8AAAAnABYAAwALACwAAAAnABcAAwALAC0AAAAnAB0AAwALAC8AAAAoAB0AAwALAC8AAAApAB0AAwALAC8AAAAqABYAAwALACwAAAAqABcAAwALAC0AAAAqAB0AAwALAC8AAAArABYAAwALACwAAAArABcAAwALAC0AAAArAB0AAwALAC8AAAAsABYAAwALACwAAAAsABcAAwALAC0AAAAsAB0AAwALAC8AAAAtABYAAwALACwAAAAtABcAAwALAC0AAAAtAB0AAwALAC8AAAAiABMAAwAOACsAAAAiABQAAwAOAC0AAAAiABUAAwANACwAAAAkABYAAwALACwAAAAkABcAAwALAC0AAAAoABYAAwALACwAAAAoABcAAwALAC0AAAAuABYAAwANACoAAAAuABcAAwANACsAAAAuABgAAwANACwAAAAuABkAAwANACwAAAAuABoAAwANACwAAAAuABsAAwANACwAAAAuABwAAwANACwAAAAuAB0AAwANADYAAAAlABYAAwALACwAAAAlABcAAwALAC0AAAAeABYAAwALACwAAAAeABcAAwALAC0AAAAZABYAAwALACwAAAAZABcAAwALAC0AAAApABYAAwALACwAAAApABcAAwALAC0AAAAZAB0AAwALAC8AAAAeAB0AAwALAC8AAAAAACYAAwAKACoAAAAAACcAAwAKACsAAAAAACgAAwAKACwAAAAAACkAAwAKACwAAAAAACsAAwAKACwAAAAAACwAAwAKACwAAAAAAC0AAwASAC8AAAABACYAAwALACwAAAABACcAAwALAC0AAAABAC0AAwATAC8AAAACACYAAwALACwAAAACACcAAwALAC0AAAACAC0AAwALAC8AAAADACYAAwALACwAAAADACcAAwALAC0AAAADAC0AAwALAC8AAAAEACYAAwALACwAAAAEACcAAwALAC0AAAAEAC0AAwALAC8AAAAFAC0AAwALAC8AAAAGACYAAwALACwAAAAGACcAAwALAC0AAAAGAC0AAwALAC8AAAAHACYAAwALACwAAAAHACcAAwALAC0AAAAHAC0AAwALAC8AAAAIACYAAwALACwAAAAIACcAAwALAC0AAAAIAC0AAwALAC8AAAAJAC0AAwALAC8AAAAKACYAAwALACwAAAAKACcAAwALAC0AAAAKAC0AAwALAC8AAAALACYAAwALACwAAAALACcAAwALAC0AAAALAC0AAwALAC8AAAAMAC0AAwALAC8AAAANAC0AAwALAC8AAAAOAC0AAwALAC8AAAAPAC0AAwALAC8AAAAQACYAAwALACwAAAAQACcAAwALAC0AAAAQAC0AAwALAC8AAAARACMAAwAKACoAAAARACQAAwAKACsAAAARACUAAwAKACwAAAARACYAAwAKAC0AAAARACcAAwAKAC4AAAARAC0AAwALAC8AAAASACMAAwALACwAAAASACQAAwALAC0AAAASACUAAAAOAAgAAAASACYAAAAOAAkAAAASACcAAAAOAAoAAAASAC0AAwALAC8AAAATACMAAwALACwAAAATACQAAwALAC0AAAATACUAAAAPAAgAAAATACYAAAAPAAkAAAATACcAAAAPAAoAAAATAC0AAwALAC8AAAAUACMAAwAOACsAAAAUACQAAwAOAC0AAAAUACUAAwANACwAAAAUACYAAwANAC0AAAAUACcAAwANAC4AAAAUAC0AAwALAC8AAAAVACYAAwALACwAAAAVACcAAwALAC0AAAAVAC0AAwALAC8AAAAWAC0AAwALAC8AAAAXAC0AAwALAC8AAAAYAC0AAwALAC8AAAAZACYAAwALACwAAAAZACcAAwALAC0AAAAZAC0AAwALAC8AAAAaACMAAwAKACoAAAAaACQAAwAKACsAAAAaACUAAwAKACwAAAAaACYAAwAKAC0AAAAaACcAAwAKAC4AAAAaAC0AAwALAC8AAAAbACMAAwALACwAAAAbACQAAwALAC0AAAAbACUAAAAOAAgAAAAbACYAAAAOAAkAAAAbACcAAAAOAAoAAAAbAC0AAwALAC8AAAAcACMAAwALACwAAAAcACQAAwALAC0AAAAcACUAAAAPAAgAAAAcACYAAAAPAAkAAAAcACcAAAAPAAoAAAAcAC0AAwALAC8AAAAdACMAAwAOACsAAAAdACQAAwAOAC0AAAAdACUAAwANACwAAAAdACYAAwANAC0AAAAdACcAAwANAC4AAAAdAC0AAwALAC8AAAAeACYAAwALACwAAAAeACcAAwALAC0AAAAeAC0AAwALAC8AAAAfAC0AAwALAC8AAAAgAC0AAwALAC8AAAAhAC0AAwALAC8AAAAiAC0AAwALAC8AAAAjACYAAwALACwAAAAjACcAAwALAC0AAAAjAC0AAwALAC8AAAAkACYAAwALACwAAAAkACcAAwALAC0AAAAkAC0AAwALAC8AAAAlACYAAwALACwAAAAlACcAAwALAC0AAAAlAC0AAwALAC8AAAAmACYAAwALACwAAAAmACcAAwALAC0AAAAmAC0AAwALAC8AAAAnACYAAwALACwAAAAnACcAAwALAC0AAAAnAC0AAwALAC8AAAAoACYAAwALACwAAAAoACcAAwALAC0AAAAoAC0AAwALAC8AAAApACYAAwALACwAAAApACcAAwALAC0AAAApAC0AAwALAC8AAAAqACYAAwALACwAAAAqACcAAwALAC0AAAAqAC0AAwALAC8AAAArACYAAwALACwAAAArACcAAwALAC0AAAArAC0AAwALAC8AAAAsACYAAwALACwAAAAsACcAAwALAC0AAAAsAC0AAwALAC8AAAAtACYAAwALACwAAAAtACcAAwALAC0AAAAtAC0AAwALAC8AAAAuACYAAwANACoAAAAuACcAAwANACsAAAAuACgAAwANACwAAAAuACkAAwANACwAAAAuACoAAwANACwAAAAuACsAAwANACwAAAAuACwAAwANACwAAAAuAC0AAwANADYAAAAPACYAAwALACwAAAAPACcAAwALAC0AAAAMACYAAwALACwAAAAMACcAAwALAC0AAAANACYAAwALACwAAAANACcAAwALAC0AAAAOACYAAwALACwAAAAOACcAAwALAC0AAAAfACYAAwALACwAAAAfACcAAwALAC0AAAAgACYAAwALACwAAAAgACcAAwALAC0AAAAhACYAAwALACwAAAAhACcAAwALAC0AAAAiACYAAwALACwAAAAiACcAAwALAC0AAAA=")
+tile_map_data = PackedByteArray("AAABAAMAAwALACwAAAABAAQAAwALAC0AAAACAAMAAwALACwAAAACAAQAAwALAC0AAAADAAMAAwALACwAAAADAAQAAwALAC0AAAAEAAMAAwALACwAAAAEAAQAAwALAC0AAAAFAAMAAwALACwAAAAFAAQAAwALAC0AAAAGAAMAAwALACwAAAAGAAQAAwALAC0AAAAHAAMAAwALACwAAAAHAAQAAwALAC0AAAAIAAMAAwALACwAAAAIAAQAAwALAC0AAAAJAAMAAwALACwAAAAJAAQAAwALAC0AAAAKAAMAAwALACwAAAAKAAQAAwALAC0AAAALAAMAAwALACwAAAALAAQAAwALAC0AAAAMAAAAAwAKACoAAAAMAAEAAwAKACsAAAAMAAIAAwAKACwAAAAMAAMAAwAKAC0AAAAMAAQAAwAKAC4AAAANAAAAAAAJAAEAAAANAAEAAAAJAAIAAAANAAIAAAAJAAMAAAANAAMAAAAJAAQAAAANAAQAAAAJAAUAAAAOAAAAAAAKAAEAAAAOAAEAAAAKAAIAAAAOAAIAAAAKAAMAAAAOAAMAAAAKAAQAAAAOAAQAAAAKAAUAAAAPAAAAAwAOACsAAAAPAAEAAwAOAC0AAAAPAAIAAwANACwAAAAPAAMAAwANAC0AAAAPAAQAAwANAC4AAAAQAAMAAwALACwAAAAQAAQAAwALAC0AAAARAAMAAwALACwAAAARAAQAAwALAC0AAAASAAMAAwALACwAAAASAAQAAwALAC0AAAAAABYABwALAAYAAAAAABcABwALAAcAAAAAABgABwALAAcAAAAAABsABwALAAcAAAAAABwABwALAAcAAAABABYAAwALACwAAAACABYAAwALACwAAAADABYAAwALACwAAAAEABYAAwALACwAAAAGABYAAwALACwAAAAHABYAAwALACwAAAAIABYAAwALACwAAAAKABYAAwALACwAAAALABYAAwALACwAAAAMABMAAwAKACoAAAAMABQAAwAKACsAAAAMABUAAwAKACwAAAAMABYAAwAKAC0AAAANABMAAAAJAAEAAAANABQAAAAJAAIAAAANABUAAAAJAAMAAAANABYAAAAJAAQAAAAOABMAAAAKAAEAAAAOABQAAAAKAAIAAAAOABUAAAAKAAMAAAAOABYAAAAKAAQAAAAPABMAAwAOACsAAAAPABQAAwAOAC0AAAAPABUAAwANACwAAAAUABYAAwANAC0AAAAAABkABwALAAcAAAABABcAAwALAC0AAAACABcAAwALAC0AAAADABcAAwALAC0AAAAEABcAAwALAC0AAAAGABcAAwALAC0AAAAHABcAAwALAC0AAAAIABcAAwALAC0AAAAKABcAAwALAC0AAAALABcAAwALAC0AAAAMABcAAwAKAC4AAAANABcAAAAJAAUAAAAOABcAAAAKAAUAAAAPABcAAwANAC4AAAAUABcAAwANAC4AAAAPABYAAwANAC0AAAAUAAMAAwALACwAAAAUAAQAAwALAC0AAAAZAAMAAwALACwAAAAZAAQAAwALAC0AAAAaAAMAAwALACwAAAAaAAQAAwALAC0AAAATAAMAAwALACwAAAATAAQAAwALAC0AAAAYAAMAAwALACwAAAAVAAMAAwALACwAAAAVAAQAAwALAC0AAAAdAAMAAwALACwAAAAdAAQAAwALAC0AAAAeAAMAAwALACwAAAAeAAQAAwALAC0AAAAfAAAAAwAKACoAAAAfAAEAAwAKACsAAAAfAAIAAwAKACwAAAAfAAMAAwAKAC0AAAAfAAQAAwAKAC4AAAAgAAAAAAAJAAEAAAAgAAEAAAAJAAIAAAAgAAIAAAAJAAMAAAAgAAMAAAAJAAQAAAAgAAQAAAAJAAUAAAAhAAAAAAAKAAEAAAAhAAEAAAAKAAIAAAAhAAIAAAAKAAMAAAAhAAMAAAAKAAQAAAAhAAQAAAAKAAUAAAAiAAMAAwANAC0AAAAiAAQAAwANAC4AAAAjAAMAAwALACwAAAAjAAQAAwALAC0AAAAkAAMAAwALACwAAAAkAAQAAwALAC0AAAAlAAMAAwALACwAAAAlAAQAAwALAC0AAAAmAAMAAwALACwAAAAmAAQAAwALAC0AAAAnAAMAAwALACwAAAAnAAQAAwALAC0AAAAoAAMAAwALACwAAAAoAAQAAwALAC0AAAApAAMAAwALACwAAAApAAQAAwALAC0AAAAqAAMAAwALACwAAAAqAAQAAwALAC0AAAArAAMAAwALACwAAAArAAQAAwALAC0AAAAsAAMAAwALACwAAAAsAAQAAwALAC0AAAAtAAMAAwALACwAAAAtAAQAAwALAC0AAAAiAAAAAwAOACsAAAAiAAEAAwAOAC0AAAAiAAIAAwANACwAAAAuAAMABwANAAYAAAAuAAQABwANAAcAAAAuAAUABwANAAcAAAAuAAYABwANAAcAAAAuAAcABwANAAcAAAAuAAgABwANAAcAAAAuAAkABwANAAcAAAAbAAMAAwALACwAAAAbAAQAAwALAC0AAAAcAAMAAwALACwAAAAcAAQAAwALAC0AAAARABMAAwAKACoAAAARABQAAwAKACsAAAARABUAAwAKACwAAAARABYAAwAKAC0AAAARABcAAwAKAC4AAAASABMAAwALACwAAAASABQAAwALAC0AAAASABUAAAAOAAgAAAASABYAAAAOAAkAAAASABcAAAAOAAoAAAATABMAAwALACwAAAATABQAAwALAC0AAAATABUAAAAPAAgAAAATABYAAAAPAAkAAAATABcAAAAPAAoAAAAUABMAAwAOACsAAAAUABQAAwAOAC0AAAAUABUAAwANACwAAAAQABYAAwALACwAAAAQABcAAwALAC0AAAAVABYAAwALACwAAAAVABcAAwALAC0AAAAaABMAAwAKACoAAAAaABQAAwAKACsAAAAaABUAAwAKACwAAAAaABYAAwAKAC0AAAAaABcAAwAKAC4AAAAbABMAAwALACwAAAAbABQAAwALAC0AAAAbABUAAAAOAAgAAAAbABYAAAAOAAkAAAAbABcAAAAOAAoAAAAcABMAAwALACwAAAAcABQAAwALAC0AAAAcABUAAAAPAAgAAAAcABYAAAAPAAkAAAAcABcAAAAPAAoAAAAdABMAAwAOACsAAAAdABQAAwAOAC0AAAAdABUAAwANACwAAAAdABYAAwANAC0AAAAdABcAAwANAC4AAAAfABMAAwAKACoAAAAfABQAAwAKACsAAAAfABUAAwAKACwAAAAfABYAAwAKAC0AAAAfABcAAwAKAC4AAAAgABMAAAAJAAEAAAAgABQAAAAJAAIAAAAgABUAAAAJAAMAAAAgABYAAAAJAAQAAAAgABcAAAAJAAUAAAAhABMAAAAKAAEAAAAhABQAAAAKAAIAAAAhABUAAAAKAAMAAAAhABYAAAAKAAQAAAAhABcAAAAKAAUAAAAiABYAAwANAC0AAAAiABcAAwANAC4AAAAjABYAAwALACwAAAAjABcAAwALAC0AAAAmABYAAwALACwAAAAmABcAAwALAC0AAAAnABYAAwALACwAAAAnABcAAwALAC0AAAAqABYAAwALACwAAAAqABcAAwALAC0AAAArABYAAwALACwAAAArABcAAwALAC0AAAAsABYAAwALACwAAAAsABcAAwALAC0AAAAtABYAAwALACwAAAAtABcAAwALAC0AAAAiABMAAwAOACsAAAAiABQAAwAOAC0AAAAiABUAAwANACwAAAAkABYAAwALACwAAAAkABcAAwALAC0AAAAoABYAAwALACwAAAAoABcAAwALAC0AAAAuABYABwANAAYAAAAuABcABwANAAcAAAAuABgABwANAAcAAAAuABkABwANAAcAAAAuABoABwANAAcAAAAuABsABwANAAcAAAAuABwABwANAAcAAAAlABYAAwALACwAAAAlABcAAwALAC0AAAAeABYAAwALACwAAAAeABcAAwALAC0AAAAZABYAAwALACwAAAAZABcAAwALAC0AAAApABYAAwALACwAAAApABcAAwALAC0AAAABACYAAwALACwAAAABACcAAwALAC0AAAACACYAAwALACwAAAACACcAAwALAC0AAAADACYAAwALACwAAAADACcAAwALAC0AAAAEACYAAwALACwAAAAEACcAAwALAC0AAAAGACYAAwALACwAAAAGACcAAwALAC0AAAAHACYAAwALACwAAAAHACcAAwALAC0AAAAIACYAAwALACwAAAAIACcAAwALAC0AAAAKACYAAwALACwAAAAKACcAAwALAC0AAAALACYAAwALACwAAAALACcAAwALAC0AAAAQACYAAwALACwAAAAQACcAAwALAC0AAAARACMAAwAKACoAAAARACQAAwAKACsAAAARACUAAwAKACwAAAARACYAAwAKAC0AAAARACcAAwAKAC4AAAASACMAAwALACwAAAASACQAAwALAC0AAAASACUAAAAOAAgAAAASACYAAAAOAAkAAAASACcAAAAOAAoAAAATACMAAwALACwAAAATACQAAwALAC0AAAATACUAAAAPAAgAAAATACYAAAAPAAkAAAATACcAAAAPAAoAAAAUACMAAwAOACsAAAAUACQAAwAOAC0AAAAUACUAAwANACwAAAAUACYAAwANAC0AAAAUACcAAwANAC4AAAAVACYAAwALACwAAAAVACcAAwALAC0AAAAZACYAAwALACwAAAAZACcAAwALAC0AAAAaACMAAwAKACoAAAAaACQAAwAKACsAAAAaACUAAwAKACwAAAAaACYAAwAKAC0AAAAaACcAAwAKAC4AAAAbACMAAwALACwAAAAbACQAAwALAC0AAAAbACUAAAAOAAgAAAAbACYAAAAOAAkAAAAbACcAAAAOAAoAAAAcACMAAwALACwAAAAcACQAAwALAC0AAAAcACUAAAAPAAgAAAAcACYAAAAPAAkAAAAcACcAAAAPAAoAAAAdACMAAwAOACsAAAAdACQAAwAOAC0AAAAdACUAAwANACwAAAAdACYAAwANAC0AAAAdACcAAwANAC4AAAAeACYAAwALACwAAAAeACcAAwALAC0AAAAjACYAAwALACwAAAAjACcAAwALAC0AAAAkACYAAwALACwAAAAkACcAAwALAC0AAAAlACYAAwALACwAAAAlACcAAwALAC0AAAAmACYAAwALACwAAAAmACcAAwALAC0AAAAnACYAAwALACwAAAAnACcAAwALAC0AAAAoACYAAwALACwAAAAoACcAAwALAC0AAAApACYAAwALACwAAAApACcAAwALAC0AAAAqACYAAwALACwAAAAqACcAAwALAC0AAAArACYAAwALACwAAAArACcAAwALAC0AAAAsACYAAwALACwAAAAsACcAAwALAC0AAAAtACYAAwALACwAAAAtACcAAwALAC0AAAAPACYAAwALACwAAAAPACcAAwALAC0AAAAMACYAAwALACwAAAAMACcAAwALAC0AAAANACYAAwALACwAAAANACcAAwALAC0AAAAOACYAAwALACwAAAAOACcAAwALAC0AAAAfACYAAwALACwAAAAfACcAAwALAC0AAAAgACYAAwALACwAAAAgACcAAwALAC0AAAAhACYAAwALACwAAAAhACcAAwALAC0AAAAiACYAAwALACwAAAAiACcAAwALAC0AAAAAAAkABwALAAcAAAAAAAgABwALAAcAAAAAAAcABwALAAcAAAAAAAYABwALAAcAAAAAAAUABwALAAcAAAAAAAQABwALAAcAAAAAAAMABwALAAYAAAAAABoABwALAAcAAAAAACYABwALAAYAAAAAACcABwALAAcAAAAAACgABwALAAcAAAAAACkABwALAAcAAAAAACoABwALAAcAAAAAACsABwALAAcAAAAAACwABwALAAcAAAAuACYABwANAAYAAAAuACcABwANAAcAAAAuACgABwANAAcAAAAuACkABwANAAcAAAAuACoABwANAAcAAAAuACsABwANAAcAAAAuACwABwANAAcAAAA=")
 tile_set = ExtResource("4_vq2nh")
 
 [node name="TileMapLayer_surmur" type="TileMapLayer" parent="TileMap"]
 z_index = -1
-tile_map_data = PackedByteArray("AAALAAQAAAAPAAYAAAAMAAQAAAAQAAYAAAAAABkAAAAWAAMAAAAAACkAAAAWAAMAAAABABkAAAAXAAMAAAABACkAAAAXAAMAAAAAABoAAAAWAAQAAAAAABsAAAAWAAUAAAAAACoAAAAWAAQAAAAAACsAAAAWAAUAAAABABoAAAAXAAQAAAABABsAAAAXAAUAAAABACoAAAAXAAQAAAABACsAAAAXAAUAAAAEABYAAAASAAQAAAAEABcAAAASAAUAAAAEAB0AAAAVAAIAAAAEACYAAAASAAQAAAAEACcAAAASAAUAAAAEAC0AAAAVAAIAAAAFABYAAAATAAQAAAAFABcAAAATAAUAAAAFAB0AAAAWAAIAAAAFACYAAAATAAQAAAAFACcAAAATAAUAAAAFAC0AAAAWAAIAAAAGABYAAAAUAAQAAAAGABcAAAAUAAUAAAAGAB0AAAAXAAIAAAAGACYAAAAUAAQAAAAGACcAAAAUAAUAAAAGAC0AAAAXAAIAAAAIABYAAAASAAQAAAAIABcAAAASAAUAAAAIAB0AAAAVAAIAAAAIACYAAAASAAQAAAAIACcAAAASAAUAAAAIAC0AAAAVAAIAAAAJABYAAAATAAQAAAAJABcAAAATAAUAAAAJAB0AAAAWAAIAAAAJACYAAAATAAQAAAAJACcAAAATAAUAAAAJAC0AAAAWAAIAAAAKABYAAAAUAAQAAAAKABcAAAAUAAUAAAAKAB0AAAAXAAIAAAAKACYAAAAUAAQAAAAKACcAAAAUAAUAAAAKAC0AAAAXAAIAAAALABcAAAAPAAYAAAAMABcAAAAQAAYAAAAZAAQAAAASAAMAAAAiAAQAAAAPAAYAAAAjAAQAAAAQAAYAAAAmAB0AAAAXAAIAAAAoAB0AAAAVAAIAAAAWAB0AAAAVAAIAAAAXAB0AAAAWAAIAAAAYAB0AAAAXAAIAAAAkAB0AAAAVAAIAAAAlAB0AAAAWAAIAAAApAB0AAAAWAAIAAAAqAB0AAAAXAAIAAAAkABYAAAASAAQAAAAkABcAAAASAAUAAAAmABYAAAAUAAQAAAAmABcAAAAUAAUAAAAoABYAAAASAAQAAAAoABcAAAASAAUAAAAlABYAAAATAAQAAAAlABcAAAATAAUAAAApABYAAAATAAQAAAApABcAAAATAAUAAAAqABYAAAAUAAQAAAAqABcAAAAUAAUAAAAiABcAAAAPAAYAAAAjABcAAAAQAAYAAAAkACYAAAASAAQAAAAkACcAAAASAAUAAAAkAC0AAAAVAAIAAAAlACYAAAATAAQAAAAlACcAAAATAAUAAAAlAC0AAAAWAAIAAAAoACYAAAASAAQAAAAoACcAAAASAAUAAAAoAC0AAAAVAAIAAAApACYAAAATAAQAAAApACcAAAATAAUAAAApAC0AAAAWAAIAAAAtACkAAAAXAAUAADAtACoAAAAXAAQAADAtACsAAAAXAAMAADAmACYAAAAUAAQAAAAmACcAAAAUAAUAAAAmAC0AAAAXAAIAAAAqACYAAAAUAAQAAAAqACcAAAAUAAUAAAAqAC0AAAAXAAIAAAAuACkAAAAWAAUAADAuACoAAAAWAAQAADAuACsAAAAWAAMAADAtABkAAAAXAAUAADAtABoAAAAXAAQAADAtABsAAAAXAAMAADAuABkAAAAWAAUAADAuABoAAAAWAAQAADAuABsAAAAWAAMAADA=")
+tile_map_data = PackedByteArray("AAALAAQAAAAPAAYAAAAMAAQAAAAQAAYAAAAAABkAAAAVAAIAAFAAACkAAAAVAAIAAFAAABoAAAAWAAIAAFAAABsAAAAXAAIAAFAAACoAAAAWAAIAAFAAACsAAAAXAAIAAFAEABYAAAASAAQAAAAEABcAAAASAAUAAAAEACYAAAASAAQAAAAEACcAAAASAAUAAAAEAC0AAAAVAAIAAAAFABYAAAATAAQAAAAFABcAAAATAAUAAAAFACYAAAATAAQAAAAFACcAAAATAAUAAAAFAC0AAAAWAAIAAAAGABYAAAAUAAQAAAAGABcAAAAUAAUAAAAGACYAAAAUAAQAAAAGACcAAAAUAAUAAAAGAC0AAAAXAAIAAAAIABYAAAASAAQAAAAIABcAAAASAAUAAAAIACYAAAASAAQAAAAIACcAAAASAAUAAAAIAC0AAAAVAAIAAAAJABYAAAATAAQAAAAJABcAAAATAAUAAAAJACYAAAATAAQAAAAJACcAAAATAAUAAAAJAC0AAAAWAAIAAAAKABYAAAAUAAQAAAAKABcAAAAUAAUAAAAKACYAAAAUAAQAAAAKACcAAAAUAAUAAAAKAC0AAAAXAAIAAAALABcAAAAPAAYAAAAMABcAAAAQAAYAAAAZAAQAAAASAAMAAAAiAAQAAAAPAAYAAAAjAAQAAAAQAAYAAAAkABYAAAASAAQAAAAkABcAAAASAAUAAAAmABYAAAAUAAQAAAAmABcAAAAUAAUAAAAoABYAAAASAAQAAAAoABcAAAASAAUAAAAlABYAAAATAAQAAAAlABcAAAATAAUAAAApABYAAAATAAQAAAApABcAAAATAAUAAAAqABYAAAAUAAQAAAAqABcAAAAUAAUAAAAiABcAAAAPAAYAAAAjABcAAAAQAAYAAAAkACYAAAASAAQAAAAkACcAAAASAAUAAAAkAC0AAAAVAAIAAAAlACYAAAATAAQAAAAlACcAAAATAAUAAAAlAC0AAAAWAAIAAAAoACYAAAASAAQAAAAoACcAAAASAAUAAAAoAC0AAAAVAAIAAAApACYAAAATAAQAAAApACcAAAATAAUAAAApAC0AAAAWAAIAAAAmACYAAAAUAAQAAAAmACcAAAAUAAUAAAAmAC0AAAAXAAIAAAAqACYAAAAUAAQAAAAqACcAAAAUAAUAAAAqAC0AAAAXAAIAAAAuACkAAAAXAAEAAGAuACoAAAAWAAEAAGAuACsAAAAVAAEAAGAuABkAAAAXAAEAAGAuABoAAAAWAAEAAGAuABsAAAAVAAEAAGA=")
 tile_set = ExtResource("4_vq2nh")
 
 [node name="TileMapLayer_objets" type="TileMapLayer" parent="TileMap"]
-tile_map_data = PackedByteArray("AAADAAQAAAAMAAEAAAADAAUAAAAMAAIAAAAEAAQAAAANAAEAAAAEAAUAAAANAAIAAAAFAAQAAAAMAAEAAAAFAAUAAAAMAAIAAAAGAAQAAAANAAEAAAAGAAUAAAANAAIAAAAHAAQAAAAMAAEAAAAHAAUAAAAMAAIAAAAIAAQAAAANAAEAAAAIAAUAAAANAAIAAAAJAAQAAAAMAAEAAAAJAAUAAAAMAAIAAAAKAAQAAAANAAEAAAAKAAUAAAANAAIAAAABAAQAAAAMAAEAAAABAAUAAAAMAAIAAAACAAQAAAANAAEAAAACAAUAAAANAAIAAAAAABkAAAAMAAUAADAAACkAAAAMAAUAADADABcAAAAHAAYAAAADABgAAAAHAAcAAAADABwAAAAHAAcAAAADACcAAAAHAAYAAAADACgAAAAHAAcAAAADACwAAAAHAAcAAAAEABcAAAALAAUAAAAEACcAAAALAAUAAAAGACcAAAAEAAYAAAAGACgAAAAEAAcAAAAHABcAAAAHAAYAAAAHABgAAAAHAAcAAAAHABwAAAAHAAcAAAAHACcAAAAHAAYAAAAHACgAAAAHAAcAAAAHACwAAAAHAAcAAAAIABcAAAALAAUAAAAIACcAAAALAAUAAAAKABcAAAAEAAYAAAAKABgAAAAEAAcAAAALABcAAAAHAAYAAAALABgAAAAHAAcAAAALABwAAAAHAAcAAAALACcAAAAHAAYAAAALACgAAAAHAAcAAAALACwAAAAHAAcAAAAQACcAAAAHAAYAAAAQACgAAAAHAAcAAAAQACwAAAAHAAcAAAARACcAAAALAAUAAAAkAAQAAAAMAAEAAAAkAAUAAAAMAAIAAAAlAAQAAAANAAEAAAAlAAUAAAANAAIAAAAmAAQAAAAMAAEAAAAmAAUAAAAMAAIAAAAnAAQAAAANAAEAAAAnAAUAAAANAAIAAAAoAAQAAAAMAAEAAAAoAAUAAAAMAAIAAAApAAQAAAANAAEAAAApAAUAAAANAAIAAAAqAAQAAAAMAAEAAAAqAAUAAAAMAAIAAAArAAQAAAANAAEAAAArAAUAAAANAAIAAAAsAAQAAAAMAAEAAAAsAAUAAAAMAAIAAAAtAAQAAAANAAEAAAAtAAUAAAANAAIAAAAVABcAAAAHAAYAAAAVABgAAAAHAAcAAAAVABwAAAAHAAcAAAAZABcAAAAHAAYAAAAZABgAAAAHAAcAAAAZABwAAAAHAAcAAAAeABwAAAAHAAcAAAAjABwAAAAHAAcAAAAnABwAAAAHAAcAAAArABwAAAAHAAcAAAAtABsAAAADAAcAAFAuABkAAAAMAAUAAAAoABcAAAALAAUAAAArABcAAAAHAAYAAAArABgAAAAHAAcAAAAjABcAAAAHAAYAAAAjABgAAAAHAAcAAAAQABwAAAAHAAcAAAAQABcAAAAHAAYAAAAQABgAAAAHAAcAAAAeABcAAAAHAAYAAAAeABgAAAAHAAcAAAAZACcAAAAHAAYAAAAVACcAAAAHAAYAAAAVACgAAAAHAAcAAAAVACwAAAAHAAcAAAAZACgAAAAHAAcAAAAZACwAAAAHAAcAAAAaACcAAAALAAUAAAAjACcAAAAHAAYAAAAnACcAAAAHAAYAAAAtACkAAAAXAAUAADAeACcAAAAHAAYAAAAeACgAAAAHAAcAAAAeACwAAAAHAAcAAAAjACgAAAAHAAcAAAAjACwAAAAHAAcAAAAkACcAAAALAAUAAAAnACgAAAAHAAcAAAAnACwAAAAHAAcAAAAoACcAAAALAAUAAAArACcAAAAHAAYAAAArACgAAAAHAAcAAAArACwAAAAHAAcAAAAtACoAAAAXAAQAADAtACsAAAAXAAMAADAuACkAAAAMAAUAAAA=")
+tile_map_data = PackedByteArray("AAADAAQAAAAMAAEAAAADAAUAAAAMAAIAAAAEAAQAAAANAAEAAAAEAAUAAAANAAIAAAAFAAQAAAAMAAEAAAAFAAUAAAAMAAIAAAAGAAQAAAANAAEAAAAGAAUAAAANAAIAAAAHAAQAAAAMAAEAAAAHAAUAAAAMAAIAAAAIAAQAAAANAAEAAAAIAAUAAAANAAIAAAAJAAQAAAAMAAEAAAAJAAUAAAAMAAIAAAAKAAQAAAANAAEAAAAKAAUAAAANAAIAAAABAAQAAAAMAAEAAAABAAUAAAAMAAIAAAACAAQAAAANAAEAAAACAAUAAAANAAIAAAADABcAAAAHAAYAAAADABgAAAAHAAcAAAADACcAAAAHAAYAAAADACgAAAAHAAcAAAAEABcAAAALAAUAAAAEACcAAAALAAUAAAAGACcAAAAEAAYAAAAGACgAAAAEAAcAAAAHABcAAAAHAAYAAAAHABgAAAAHAAcAAAAHACcAAAAHAAYAAAAHACgAAAAHAAcAAAAIABcAAAALAAUAAAAIACcAAAALAAUAAAAKABcAAAAEAAYAAAAKABgAAAAEAAcAAAALABcAAAAHAAYAAAALABgAAAAHAAcAAAALACcAAAAHAAYAAAALACgAAAAHAAcAAAAQACcAAAAHAAYAAAAQACgAAAAHAAcAAAARACcAAAALAAUAAAAkAAQAAAAMAAEAAAAkAAUAAAAMAAIAAAAlAAQAAAANAAEAAAAlAAUAAAANAAIAAAAmAAQAAAAMAAEAAAAmAAUAAAAMAAIAAAAnAAQAAAANAAEAAAAnAAUAAAANAAIAAAAoAAQAAAAMAAEAAAAoAAUAAAAMAAIAAAApAAQAAAANAAEAAAApAAUAAAANAAIAAAAqAAQAAAAMAAEAAAAqAAUAAAAMAAIAAAArAAQAAAANAAEAAAArAAUAAAANAAIAAAAsAAQAAAAMAAEAAAAsAAUAAAAMAAIAAAAtAAQAAAANAAEAAAAtAAUAAAANAAIAAAAVABcAAAAHAAYAAAAVABgAAAAHAAcAAAAZABcAAAAHAAYAAAAZABgAAAAHAAcAAAAtABsAAAADAAcAAFAoABcAAAALAAUAAAArABcAAAAHAAYAAAArABgAAAAHAAcAAAAjABcAAAAHAAYAAAAjABgAAAAHAAcAAAAQABcAAAAHAAYAAAAQABgAAAAHAAcAAAAeABcAAAAHAAYAAAAeABgAAAAHAAcAAAAZACcAAAAHAAYAAAAVACcAAAAHAAYAAAAVACgAAAAHAAcAAAAZACgAAAAHAAcAAAAaACcAAAALAAUAAAAjACcAAAAHAAYAAAAnACcAAAAHAAYAAAAeACcAAAAHAAYAAAAeACgAAAAHAAcAAAAjACgAAAAHAAcAAAAkACcAAAALAAUAAAAnACgAAAAHAAcAAAAoACcAAAALAAUAAAArACcAAAAHAAYAAAArACgAAAAHAAcAAAAtACoAAAAXAAQAADAtACsAAAAXAAMAADABAB0AAwATAC8AAAACAB0AAwALAC8AAAADAB0AAwALAC8AAAAEAB0AAwALAC8AAAAFAB0AAwALAC8AAAAGAB0AAwALAC8AAAAHAB0AAwALAC8AAAAIAB0AAwALAC8AAAAJAB0AAwALAC8AAAAKAB0AAwALAC8AAAALAB0AAwALAC8AAAAMAB0AAwALAC8AAAANAB0AAwALAC8AAAAOAB0AAwALAC8AAAAPAB0AAwALAC8AAAAQAB0AAwALAC8AAAARAB0AAwALAC8AAAASAB0AAwALAC8AAAATAB0AAwALAC8AAAAUAB0AAwALAC8AAAAVAB0AAwALAC8AAAAWAB0AAwALAC8AAAAXAB0AAwALAC8AAAAYAB0AAwALAC8AAAAZAB0AAwALAC8AAAAaAB0AAwALAC8AAAAbAB0AAwALAC8AAAAcAB0AAwALAC8AAAAdAB0AAwALAC8AAAAeAB0AAwALAC8AAAAfAB0AAwALAC8AAAAgAB0AAwALAC8AAAAhAB0AAwALAC8AAAAiAB0AAwALAC8AAAAjAB0AAwALAC8AAAAkAB0AAwALAC8AAAAlAB0AAwALAC8AAAAmAB0AAwALAC8AAAAnAB0AAwALAC8AAAAoAB0AAwALAC8AAAApAB0AAwALAC8AAAAqAB0AAwALAC8AAAArAB0AAwALAC8AAAAsAB0AAwALAC8AAAAtAB0AAwALAC8AAAAuAB0ABwANAAgAAAAAAC0ABwALAAgAAAABAC0AAwATAC8AAAACAC0AAwALAC8AAAADAC0AAwALAC8AAAAEAC0AAwALAC8AAAAFAC0AAwALAC8AAAAGAC0AAwALAC8AAAAHAC0AAwALAC8AAAAIAC0AAwALAC8AAAAJAC0AAwALAC8AAAAKAC0AAwALAC8AAAALAC0AAwALAC8AAAAMAC0AAwALAC8AAAANAC0AAwALAC8AAAAOAC0AAwALAC8AAAAPAC0AAwALAC8AAAAQAC0AAwALAC8AAAARAC0AAwALAC8AAAASAC0AAwALAC8AAAATAC0AAwALAC8AAAAUAC0AAwALAC8AAAAVAC0AAwALAC8AAAAWAC0AAwALAC8AAAAXAC0AAwALAC8AAAAYAC0AAwALAC8AAAAZAC0AAwALAC8AAAAaAC0AAwALAC8AAAAbAC0AAwALAC8AAAAcAC0AAwALAC8AAAAdAC0AAwALAC8AAAAeAC0AAwALAC8AAAAfAC0AAwALAC8AAAAgAC0AAwALAC8AAAAhAC0AAwALAC8AAAAiAC0AAwALAC8AAAAjAC0AAwALAC8AAAAkAC0AAwALAC8AAAAlAC0AAwALAC8AAAAmAC0AAwALAC8AAAAnAC0AAwALAC8AAAAoAC0AAwALAC8AAAApAC0AAwALAC8AAAAqAC0AAwALAC8AAAArAC0AAwALAC8AAAAsAC0AAwALAC8AAAAtAC0AAwALAC8AAAAuAC0ABwANAAgAAAAAAB0ABwALAAgAAAAkABcAAAALAAUAAAA=")
 tile_set = ExtResource("4_vq2nh")
 
 [node name="TileMapLayer_surobjet" type="TileMapLayer" parent="TileMap"]
 z_index = 40
-tile_map_data = PackedByteArray("AAADACsAAAAHAAYAAAAHACsAAAAHAAYAAAALACsAAAAHAAYAAAAQACsAAAAHAAYAAAADABsAAAAHAAYAAAAHABsAAAAHAAYAAAALABsAAAAHAAYAAAAVABsAAAAHAAYAAAAZABsAAAAHAAYAAAAeABsAAAAHAAYAAAAjABsAAAAHAAYAAAAnABsAAAAHAAYAAAArABsAAAAHAAYAAAAQABsAAAAHAAYAAAAVACsAAAAHAAYAAAAZACsAAAAHAAYAAAAeACsAAAAHAAYAAAAjACsAAAAHAAYAAAAnACsAAAAHAAYAAAArACsAAAAHAAYAAAA=")
+tile_map_data = PackedByteArray("AAADACsAAAAHAAYAAAAHACsAAAAHAAYAAAALACsAAAAHAAYAAAAQACsAAAAHAAYAAAADABsAAAAHAAYAAAAHABsAAAAHAAYAAAALABsAAAAHAAYAAAAVABsAAAAHAAYAAAAZABsAAAAHAAYAAAAeABsAAAAHAAYAAAAjABsAAAAHAAYAAAAnABsAAAAHAAYAAAArABsAAAAHAAYAAAAQABsAAAAHAAYAAAAVACsAAAAHAAYAAAAZACsAAAAHAAYAAAAeACsAAAAHAAYAAAAjACsAAAAHAAYAAAAnACsAAAAHAAYAAAArACsAAAAHAAYAAAAAAAoABwALAAgAAAABAAoAAwATAC8AAAACAAoAAwALAC8AAAADAAoAAwALAC8AAAAEAAoAAwALAC8AAAAFAAoAAAABAAAAAAAJAAoAAAAAAAAAAAAKAAoAAwALAC8AAAALAAoAAwALAC8AAAAMAAoAAwALAC8AAAANAAoAAwALAC8AAAAOAAoAAwALAC8AAAAPAAoAAwALAC8AAAAQAAoAAwALAC8AAAARAAoAAwALAC8AAAASAAoAAwALAC8AAAATAAoAAwALAC8AAAAUAAoAAwALAC8AAAAVAAoAAAABAAAAAAAZAAoAAAAAAAAAAAAaAAoAAwALAC8AAAAbAAoAAwALAC8AAAAcAAoAAwALAC8AAAAdAAoAAwALAC8AAAAeAAoAAwALAC8AAAAfAAoAAwALAC8AAAAgAAoAAwALAC8AAAAhAAoAAwALAC8AAAAiAAoAAwALAC8AAAAjAAoAAwALAC8AAAAkAAoAAwALAC8AAAAlAAoAAAABAAAAAAApAAoAAAAAAAAAAAAqAAoAAwALAC8AAAArAAoAAwALAC8AAAAsAAoAAwALAC8AAAAtAAoAAwALAC8AAAAuAAoABwANAAgAAAAEAC0AAAAVAAIAAAAFAC0AAAAWAAIAAAAGAC0AAAAXAAIAAAAIAC0AAAAVAAIAAAAJAC0AAAAWAAIAAAAKAC0AAAAXAAIAAAAkAC0AAAAVAAIAAAAlAC0AAAAWAAIAAAAmAC0AAAAXAAIAAAAoAC0AAAAVAAIAAAApAC0AAAAWAAIAAAAqAC0AAAAXAAIAAAAoAB0AAAAVAAIAAAApAB0AAAAWAAIAAAAqAB0AAAAXAAIAAAAkAB0AAAAVAAIAAAAlAB0AAAAWAAIAAAAmAB0AAAAXAAIAAAAWAB0AAAAVAAIAAAAXAB0AAAAWAAIAAAAYAB0AAAAXAAIAAAAIAB0AAAAVAAIAAAAJAB0AAAAWAAIAAAAKAB0AAAAXAAIAAAAEAB0AAAAVAAIAAAAFAB0AAAAWAAIAAAAGAB0AAAAXAAIAAAADACwAAAAHAAcAAAAHACwAAAAHAAcAAAALACwAAAAHAAcAAAAQACwAAAAHAAcAAAAVACwAAAAHAAcAAAAZACwAAAAHAAcAAAAeACwAAAAHAAcAAAAjACwAAAAHAAcAAAAnACwAAAAHAAcAAAArACwAAAAHAAcAAAADABwAAAAHAAcAAAAHABwAAAAHAAcAAAALABwAAAAHAAcAAAAQABwAAAAHAAcAAAAVABwAAAAHAAcAAAAZABwAAAAHAAcAAAAeABwAAAAHAAcAAAAjABwAAAAHAAcAAAAnABwAAAAHAAcAAAArABwAAAAHAAcAAAA=")
 tile_set = ExtResource("4_vq2nh")
 
 [node name="Elevators" type="Node2D" parent="."]
@@ -503,6 +547,72 @@ rez_marker = NodePath("../../StartPoints/rez_marker")
 etage1_marker = NodePath("../../StartPoints/etage1_marker")
 etage2_marker = NodePath("../../StartPoints/etage2_marker")
 
+[node name="Props" type="Node2D" parent="."]
+
+[node name="Mission_dechet_bas" type="Node2D" parent="Props"]
+script = ExtResource("7_cta4j")
+
+[node name="Dechet_campus" parent="Props/Mission_dechet_bas" instance=ExtResource("8_182is")]
+position = Vector2(185, 112)
+script = ExtResource("9_182is")
+sfx_pick_up = ExtResource("10_wwiox")
+give_item = "Trash_bas1"
+timeline = "prop_trash"
+
+[node name="PropSprite" parent="Props/Mission_dechet_bas/Dechet_campus" index="0"]
+material = SubResource("ShaderMaterial_2w0xk")
+position = Vector2(4.155, 8)
+scale = Vector2(0.4, 0.4)
+texture = SubResource("AtlasTexture_3kohw")
+
+[node name="CollisionShape2D" parent="Props/Mission_dechet_bas/Dechet_campus/StaticBody2D" index="0"]
+position = Vector2(7, 10)
+
+[node name="Dechet_campus2" parent="Props/Mission_dechet_bas" instance=ExtResource("8_182is")]
+position = Vector2(152, 113)
+script = ExtResource("9_182is")
+sfx_pick_up = ExtResource("10_wwiox")
+give_item = "Trash_bas3"
+timeline = "prop_trash"
+
+[node name="PropSprite" parent="Props/Mission_dechet_bas/Dechet_campus2" index="0"]
+material = SubResource("ShaderMaterial_etl6w")
+position = Vector2(4.69, 8)
+scale = Vector2(0.37, 0.37)
+texture = SubResource("AtlasTexture_cta4j")
+
+[node name="CollisionShape2D" parent="Props/Mission_dechet_bas/Dechet_campus2/StaticBody2D" index="0"]
+position = Vector2(7.5, 11)
+
+[node name="Dechet_campus3" parent="Props/Mission_dechet_bas" instance=ExtResource("8_182is")]
+position = Vector2(239, 114)
+script = ExtResource("9_182is")
+sfx_pick_up = ExtResource("10_wwiox")
+give_item = "Trash_bas2"
+timeline = "prop_trash"
+
+[node name="PropSprite" parent="Props/Mission_dechet_bas/Dechet_campus3" index="0"]
+material = SubResource("ShaderMaterial_psy6p")
+position = Vector2(5, 11)
+scale = Vector2(0.195, 0.195)
+texture = SubResource("AtlasTexture_182is")
+
+[node name="CollisionShape2D" parent="Props/Mission_dechet_bas/Dechet_campus3/StaticBody2D" index="0"]
+position = Vector2(7.5, 11.375)
+
+[node name="Dechet_campus4" parent="Props/Mission_dechet_bas" instance=ExtResource("8_182is")]
+position = Vector2(117, 111)
+script = ExtResource("9_182is")
+sfx_pick_up = ExtResource("10_wwiox")
+give_item = "Trash_bas4"
+timeline = "prop_trash"
+
+[node name="PropSprite" parent="Props/Mission_dechet_bas/Dechet_campus4" index="0"]
+material = SubResource("ShaderMaterial_85exe")
+position = Vector2(3.685, 10.33)
+scale = Vector2(0.325, 0.325)
+texture = SubResource("AtlasTexture_wwiox")
+
 [connection signal="body_entered" from="Entree/Residence_interior_1" to="Entree/Residence_interior_1" method="_on_body_entered"]
 [connection signal="body_entered" from="Entree/Residence_interior_2" to="Entree/Residence_interior_2" method="_on_body_entered"]
 [connection signal="body_entered" from="Entree/Residence_interior_3" to="Entree/Residence_interior_3" method="_on_body_entered"]
@@ -514,3 +624,16 @@ etage2_marker = NodePath("../../StartPoints/etage2_marker")
 [connection signal="body_entered" from="Escalier/Haut/Escalier_haut_2" to="Escalier/Haut/Escalier_haut_2" method="_on_body_entered"]
 [connection signal="body_entered" from="Escalier/Haut/Escalier_haut_3" to="Escalier/Haut/Escalier_haut_3" method="_on_body_entered"]
 [connection signal="body_entered" from="Escalier/Haut/Escalier_haut_4" to="Escalier/Haut/Escalier_haut_4" method="_on_body_entered"]
+[connection signal="body_entered" from="Props/Mission_dechet_bas/Dechet_campus/Area2D" to="Props/Mission_dechet_bas/Dechet_campus" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Props/Mission_dechet_bas/Dechet_campus/Area2D" to="Props/Mission_dechet_bas/Dechet_campus" method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="Props/Mission_dechet_bas/Dechet_campus2/Area2D" to="Props/Mission_dechet_bas/Dechet_campus2" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Props/Mission_dechet_bas/Dechet_campus2/Area2D" to="Props/Mission_dechet_bas/Dechet_campus2" method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="Props/Mission_dechet_bas/Dechet_campus3/Area2D" to="Props/Mission_dechet_bas/Dechet_campus3" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Props/Mission_dechet_bas/Dechet_campus3/Area2D" to="Props/Mission_dechet_bas/Dechet_campus3" method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="Props/Mission_dechet_bas/Dechet_campus4/Area2D" to="Props/Mission_dechet_bas/Dechet_campus4" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Props/Mission_dechet_bas/Dechet_campus4/Area2D" to="Props/Mission_dechet_bas/Dechet_campus4" method="_on_area_2d_body_exited"]
+
+[editable path="Props/Mission_dechet_bas/Dechet_campus"]
+[editable path="Props/Mission_dechet_bas/Dechet_campus2"]
+[editable path="Props/Mission_dechet_bas/Dechet_campus3"]
+[editable path="Props/Mission_dechet_bas/Dechet_campus4"]

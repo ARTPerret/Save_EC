@@ -95,5 +95,6 @@ func _on_bouchon_pressed(toggled_on: bool) -> void:
 	
 	if toggled_on:
 		bouchon_button.position = pos_bouch.position
+		print(bouchon_button.position)
 	else:
 		bouchon_button.position = pos_debouch.position

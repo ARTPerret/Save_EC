@@ -1,0 +1,12 @@
+label  book1
+	Il y a des déchets jetés par terre dans les résidences, essayons de recupérer tout ça.
+[end_timeline]
+label book2
+	Les deux résidences sont maintenant propre ! Allons tout jeter dans les poubelles dehors !
+[end_timeline]
+label book3
+	La résidence du haut est maintenant propre! Nous pouvons aussi nettoyer la résidence du bas !
+[end_timeline]
+label book4
+	La résidence du bas est maintenant propre! Nous pouvons aussi nettoyer la résidence du haut !
+[end_timeline]

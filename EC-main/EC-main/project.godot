@@ -11,10 +11,11 @@ config_version=5
 [application]
 
 config/name="EcoCampus"
-config/version="040625-14"
+config/version="130625-15"
 run/main_scene="res://Scenes/game.tscn"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
+<<<<<<<HEADconfig/version="030625-10"
 
 [autoload]
 
@@ -103,6 +104,7 @@ directories/dtl_directory={
 "plan_cafe": "res://Dialogues/Campus/plan_cafe.dtl",
 "plan_entree": "res://Dialogues/Campus/plan_entree.dtl",
 "player_velo": "res://Dialogues/PeriphOuest/player_velo.dtl",
+"playercar_campus": "res://Dialogues/Campus/playercar_campus.dtl",
 "playercar_centre": "res://Dialogues/CentreVille/playercar_centre.dtl",
 "playercar_periph": "res://Dialogues/PeriphOuest/playercar_periph.dtl",
 "pnj_antoine": "res://Dialogues/Campus/pnj_antoine.dtl",
@@ -150,12 +152,17 @@ directories/dtl_directory={
 "porte_hardware": "res://Dialogues/PeriphOuest/porte_hardware.dtl",
 "porte_journal": "res://Dialogues/CentreVille/porte_journal.dtl",
 "porte_tcc": "res://Dialogues/CentreVille/porte_tcc.dtl",
+"poubelles_campus": "res://Dialogues/Campus/poubelles_campus.dtl",
 "prop_elevator": "res://Dialogues/Campus/Residences/prop_elevator.dtl",
+"prop_elevator_labo": "res://Dialogues/Campus/Residences/prop_elevator_labo.dtl",
 "prop_journal": "res://Dialogues/CentreVille/prop_journal.dtl",
+"prop_trash": "res://Dialogues/Campus/Residences/prop_trash.dtl",
 "quest_plante": "res://Dialogues/CentreVille/quest_plante.dtl",
+"quest_poubellecampus": "res://Dialogues/Campus/quest_poubellecampus.dtl",
 "quest_poubelles": "res://Dialogues/PeriphOuest/quest_poubelles.dtl",
 "quest_poubellesplage": "res://Dialogues/CentreVille/quest_poubellesplage.dtl",
 "quest_trashplage": "res://Dialogues/CentreVille/quest_trashplage.dtl",
+"quest_trees": "res://Dialogues/Campus/quest_trees.dtl",
 "sac_poubelle": "res://Dialogues/PeriphOuest/sac_poubelle.dtl",
 "transition_campus": "res://Dialogues/CentreVille/transition_campus.dtl"
 }

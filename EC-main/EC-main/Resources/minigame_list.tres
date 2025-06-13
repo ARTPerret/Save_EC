@@ -6,8 +6,10 @@
 script = ExtResource("1_yfh3e")
 dictionnary_minigame = Dictionary[String, String]({
 "baignoire": "uid://dgpu4hmb3vlfw",
+"peche": "uid://dj5rgg1j1ox2m",
 "television": "uid://bsnubr52gfqvq",
 "tridechet": "uid://cp4xg7covqurw",
 "tridechet3PB": "uid://3fypm3dg8d42",
+"tridechet4PB": "uid://bcbfm5kmhvjdo",
 "velo": "uid://cysq8n807qxk6"
 })

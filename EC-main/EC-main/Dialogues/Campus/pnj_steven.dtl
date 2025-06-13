@@ -14,6 +14,7 @@ elif SaveManager.getElement("Quests", "Q_steven") == "searching":
 	Steven: [i](Il vous regarde avec des yeux écarquillés)[/i]
 elif SaveManager.getElement("Quests", "Q_steven") == "found":
 	if {SaveManager.getElement("Player", "inventory").has("Ingredients_lessive")} == true
+		Steven: Alors?
 		- Heu, j'ai trouvé ça.
 		Steven: Cristaux de soude.... Bicarbonate....
 		Steven: Oui, ça fera l'affaire.

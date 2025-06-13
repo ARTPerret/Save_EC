@@ -1,10 +1,11 @@
-[gd_resource type="TileSet" load_steps=37 format=3 uid="uid://c4cih28217htv"]
+[gd_resource type="TileSet" load_steps=41 format=3 uid="uid://c4cih28217htv"]
 
 [ext_resource type="Texture2D" uid="uid://b6ryuh7ypvje4" path="res://Graphics/Tilesets/Tileset_Ville.png" id="1_5yjib"]
 [ext_resource type="Texture2D" uid="uid://c5qmuh16xb5rk" path="res://Graphics/TEMP/1_Terrains_and_Fences_16x16.png" id="2_h886u"]
 [ext_resource type="Texture2D" uid="uid://ckcd7g671cfl7" path="res://Graphics/TEMP/10_Vehicles_16x16.png" id="3_pkh6o"]
 [ext_resource type="Texture2D" uid="uid://y7xxsv6iimta" path="res://Graphics/TEMP/11_Camping_16x16.png" id="4_etq7i"]
 [ext_resource type="Texture2D" uid="uid://bajvthw4d6bts" path="res://Graphics/TEMP/12_Hotel_and_Hospital_16x16.png" id="5_66ehc"]
+[ext_resource type="Texture2D" uid="uid://cqrnkxw45kyrs" path="res://Graphics/TEMP/Campus.png" id="6_rfmce"]
 [ext_resource type="Texture2D" uid="uid://dwuht0qra2bdp" path="res://Graphics/TEMP/15_Police_Station_16x16.png" id="8_wgc7t"]
 [ext_resource type="Texture2D" uid="uid://qwp2ysqeem5t" path="res://Graphics/TEMP/16_Office_16x16.png" id="9_8quqc"]
 [ext_resource type="Texture2D" uid="uid://b0a3x560dl8fa" path="res://Graphics/TEMP/17_Garden_16x16.png" id="10_c45rp"]
@@ -13,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://cmuw2men7vvve" path="res://Graphics/TEMP/21_Beach_16x16.png" id="15_15824"]
 [ext_resource type="Texture2D" uid="uid://b4v48kl1p7ruk" path="res://Graphics/TEMP/22_Post_Office_16x16.png" id="16_4gy56"]
 [ext_resource type="Texture2D" uid="uid://blx1pc7oid5d3" path="res://Graphics/TEMP/3_City_Props_16x16.png" id="17_62248"]
+[ext_resource type="Texture2D" uid="uid://lrlqtao0w0ca" path="res://Graphics/TEMP/Grass_Details.png" id="17_d48bi"]
 [ext_resource type="Texture2D" uid="uid://ktp4m8y533f4" path="res://Graphics/TEMP/4_Generic_Buildings_16x16.png" id="18_a6mr2"]
 [ext_resource type="Texture2D" uid="uid://bcmg3hj34el6b" path="res://Graphics/TEMP/5_Floor_Modular_Buildings_16x16.png" id="19_oih40"]
 [ext_resource type="Texture2D" uid="uid://dtpqe007ydyg2" path="res://Graphics/TEMP/6_Garage_Sales_16x16.png" id="20_4d7kx"]
@@ -1800,6 +1802,10 @@ texture = ExtResource("5_66ehc")
 30:38/0 = 0
 30:41/0 = 0
 29:41/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7phij"]
+texture = ExtResource("6_rfmce")
+9:24/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ckfwv"]
 texture = ExtResource("8_wgc7t")
@@ -7884,6 +7890,104 @@ texture = ExtResource("20_4d7kx")
 1:33/0 = 0
 0:33/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rfmce"]
+texture = ExtResource("17_d48bi")
+7:0/0 = 0
+8:0/0 = 0
+8:1/0 = 0
+8:2/0 = 0
+9:2/0 = 0
+10:3/0 = 0
+11:3/0 = 0
+11:4/0 = 0
+11:2/0 = 0
+10:1/0 = 0
+10:0/0 = 0
+9:0/0 = 0
+10:2/0 = 0
+11:1/0 = 0
+9:1/0 = 0
+11:0/0 = 0
+9:3/0 = 0
+9:4/0 = 0
+8:4/0 = 0
+8:3/0 = 0
+7:2/0 = 0
+7:1/0 = 0
+7:3/0 = 0
+7:4/0 = 0
+10:4/0 = 0
+4:8/0 = 0
+3:8/0 = 0
+2:8/0 = 0
+2:9/0 = 0
+3:9/0 = 0
+3:10/0 = 0
+4:10/0 = 0
+4:9/0 = 0
+2:10/0 = 0
+7:7/0 = 0
+7:8/0 = 0
+8:8/0 = 0
+8:7/0 = 0
+8:6/0 = 0
+8:5/0 = 0
+7:5/0 = 0
+7:6/0 = 0
+1:8/0 = 0
+1:9/0 = 0
+0:9/0 = 0
+0:8/0 = 0
+9:7/0 = 0
+10:7/0 = 0
+11:7/0 = 0
+2:7/0 = 0
+1:7/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+2:5/0 = 0
+1:5/0 = 0
+0:6/0 = 0
+0:7/0 = 0
+0:5/0 = 0
+3:11/0 = 0
+2:11/0 = 0
+1:11/0 = 0
+0:11/0 = 0
+0:12/0 = 0
+1:12/0 = 0
+2:12/0 = 0
+3:12/0 = 0
+3:13/0 = 0
+3:14/0 = 0
+2:14/0 = 0
+2:13/0 = 0
+4:11/0 = 0
+5:11/0 = 0
+5:12/0 = 0
+5:13/0 = 0
+4:13/0 = 0
+4:14/0 = 0
+5:14/0 = 0
+4:12/0 = 0
+3:5/0 = 0
+3:6/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+5:6/0 = 0
+5:5/0 = 0
+4:5/0 = 0
+4:6/0 = 0
+6:8/0 = 0
+5:8/0 = 0
+6:9/0 = 0
+5:9/0 = 0
+6:11/0 = 0
+7:11/0 = 0
+7:12/0 = 0
+6:12/0 = 0
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rf0iy"]
 texture = ExtResource("22_bin3s")
 21:0/0 = 0
@@ -8359,3 +8463,5 @@ sources/17 = SubResource("TileSetAtlasSource_pwo55")
 sources/18 = SubResource("TileSetAtlasSource_e25h5")
 sources/21 = SubResource("TileSetAtlasSource_15p0w")
 sources/22 = SubResource("TileSetAtlasSource_5m737")
+sources/7 = SubResource("TileSetAtlasSource_rfmce")
+sources/13 = SubResource("TileSetAtlasSource_7phij")

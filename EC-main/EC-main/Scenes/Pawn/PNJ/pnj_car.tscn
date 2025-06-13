@@ -855,12 +855,12 @@ shape = ExtResource("8_sfww7")
 path_desired_distance = 4.0
 path_postprocessing = 1
 radius = 2.0
+max_speed = 0.01
 
 [node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="."]
 radius = 4.0
 avoidance_enabled = false
 
-[connection signal="area_entered" from="Detecteur_Car" to="." method="_on_detecteur_car_area_entered"]
 [connection signal="body_entered" from="Detecteur_Car" to="." method="_on_detecteur_car_body_entered"]
 [connection signal="body_exited" from="Detecteur_Car" to="." method="_on_detecteur_car_body_exited"]
 [connection signal="navigation_finished" from="NavigationAgent2D" to="." method="_on_navigation_agent_2d_navigation_finished"]

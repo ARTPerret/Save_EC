@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://wrsox72avo62"]
+[gd_scene load_steps=40 format=3 uid="uid://wrsox72avo62"]
 
 [ext_resource type="Script" uid="uid://cudjjhnq77mhl" path="res://Scripts/Pawn/Types/PNJ/pnj.gd" id="1_xybwu"]
 [ext_resource type="Script" uid="uid://bxfl65rn1pqqw" path="res://Scripts/Pawn/state_machine.gd" id="1_y7sa2"]
@@ -6,12 +6,12 @@
 [ext_resource type="Script" uid="uid://b3126vbix628p" path="res://Scripts/Pawn/player_anim.gd" id="3_0woi1"]
 [ext_resource type="Script" uid="uid://cntkcubtfb3kf" path="res://Scripts/Pawn/Types/PNJ/state_regular.gd" id="3_xybwu"]
 [ext_resource type="Script" uid="uid://dduy3rp133is8" path="res://Scripts/Pawn/state_pathfinding.gd" id="4_x2a3f"]
-[ext_resource type="Shader" uid="uid://c2ug5tlxurkwa" path="res://Shaders/outline.gdshader" id="4_xybwu"]
+[ext_resource type="Shader" path="res://Shaders/outline_for_npc.gdshader" id="5_mdncn"]
 [ext_resource type="Texture2D" uid="uid://d0u7jqiyj23cm" path="res://Graphics/Other/char_shadow.png" id="8_mdncn"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_x2a3f"]
 resource_local_to_scene = true
-shader = ExtResource("4_xybwu")
+shader = ExtResource("5_mdncn")
 shader_parameter/line_color = Color(1, 1, 0.196078, 1)
 shader_parameter/width = 0.0
 
@@ -98,6 +98,21 @@ tracks/0/keys = {
 "values": [62, 63, 64, 65, 66]
 }
 
+[sub_resource type="Animation" id="Animation_mdncn"]
+resource_name = "sit"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 1,
+"values": []
+}
+
 [sub_resource type="Animation" id="Animation_lxcha"]
 resource_name = "walk_down"
 length = 1.2
@@ -177,6 +192,7 @@ _data = {
 &"idle_left": SubResource("Animation_m726e"),
 &"idle_right": SubResource("Animation_7ds6b"),
 &"idle_up": SubResource("Animation_udx5w"),
+&"sit": SubResource("Animation_mdncn"),
 &"walk_down": SubResource("Animation_lxcha"),
 &"walk_left": SubResource("Animation_5bwc2"),
 &"walk_right": SubResource("Animation_1q2ow"),
@@ -264,6 +280,7 @@ states/Start/position = Vector2(319.333, 175.333)
 states/Walk/node = SubResource("AnimationNodeBlendSpace2D_3astp")
 states/Walk/position = Vector2(515.333, 118)
 transitions = ["Start", "Walk", SubResource("AnimationNodeStateMachineTransition_hyw4k")]
+graph_offset = Vector2(-7, -106)
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_faol6"]
 graph_offset = Vector2(-456.667, 26)

@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_awsan")
-type = 0
+type = 1
 name = "Questionner les étudiants pour François responsable de la restauration du crous"
 desc = ""
 metadata/_custom_type_script = "uid://b33ppoek3j2kg"

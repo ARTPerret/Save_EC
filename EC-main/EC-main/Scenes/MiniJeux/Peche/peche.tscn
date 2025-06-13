@@ -1,0 +1,439 @@
+[gd_scene load_steps=57 format=3 uid="uid://dj5rgg1j1ox2m"]
+
+[ext_resource type="Script" uid="uid://ct1x7fmfatr5r" path="res://Scripts/MiniJeux/Jeux/Peche/peche.gd" id="1_5n6gm"]
+[ext_resource type="Texture2D" uid="uid://bqyci55ykd76h" path="res://Graphics/Minigames/Peche/BG_Peche.png" id="1_e4x33"]
+[ext_resource type="Script" uid="uid://dia0ley3to101" path="res://Scripts/MiniJeux/minigame_setup.gd" id="1_n3dm1"]
+[ext_resource type="Texture2D" uid="uid://cy3v8lrxk6s88" path="res://Graphics/Minigames/Peche/color_poisson.png" id="3_mxg2i"]
+[ext_resource type="Texture2D" uid="uid://blbl1tple5xvd" path="res://Graphics/Minigames/Peche/skeleton_poisson.png" id="4_e6aw1"]
+[ext_resource type="Script" uid="uid://d06bmgdyvpbqt" path="res://Scripts/MiniJeux/Jeux/Peche/dechets.gd" id="4_vr0wv"]
+[ext_resource type="Texture2D" uid="uid://catmf2ta1xvfl" path="res://Graphics/Minigames/Peche/aimant.png" id="5_e6aw1"]
+[ext_resource type="Script" path="res://Scripts/MiniJeux/Jeux/Peche/aimant.gd" id="6_2tdtf"]
+[ext_resource type="Texture2D" uid="uid://bxmepbnneiek8" path="res://Graphics/Minigames/Peche/animation aimant.png" id="6_a5cra"]
+[ext_resource type="Texture2D" uid="uid://c0x0b8isea2dy" path="res://Graphics/Minigames/Peche/skeleton_dead.png" id="9_0ul8r"]
+[ext_resource type="Texture2D" uid="uid://bo35jg08i8mq2" path="res://Graphics/Minigames/Peche/Cola.png" id="9_mpskf"]
+[ext_resource type="Texture2D" uid="uid://dwdio7ct74r81" path="res://Graphics/Minigames/Peche/CouleurVelo.png" id="10_dm7am"]
+[ext_resource type="Texture2D" uid="uid://dugfuyqhqwvvq" path="res://Graphics/Minigames/Peche/SqueletteVelo.png" id="11_8lgo2"]
+[ext_resource type="Texture2D" uid="uid://dcn5v0rrpysrp" path="res://Graphics/Minigames/Peche/Short.png" id="12_esvn7"]
+[ext_resource type="Texture2D" uid="uid://csu47ut8jhfa2" path="res://Graphics/Minigames/Peche/Peps.png" id="13_0ul8r"]
+[ext_resource type="Texture2D" uid="uid://bucu3ljkfu716" path="res://Graphics/Minigames/Peche/nuages_0.png" id="16_1wfir"]
+[ext_resource type="Texture2D" uid="uid://d3o4gry5dsdfl" path="res://Graphics/Minigames/Peche/nuages_1.png" id="17_n3dm1"]
+[ext_resource type="Texture2D" uid="uid://cf7j51b1p3uex" path="res://Graphics/Minigames/Peche/nuages_2.png" id="18_4t34y"]
+[ext_resource type="Texture2D" uid="uid://33jb0iihjlm4" path="res://Graphics/Minigames/Peche/nuages_3.png" id="19_vf0sx"]
+[ext_resource type="Texture2D" uid="uid://bp3dac4ee8u2q" path="res://Graphics/Minigames/Peche/nuages_4.png" id="20_oh0rd"]
+[ext_resource type="Texture2D" uid="uid://ds1x0e030quen" path="res://Graphics/Minigames/Peche/nuages_5.png" id="21_tpyo2"]
+[ext_resource type="Texture2D" uid="uid://0i2thua7hgtl" path="res://Graphics/Minigames/Peche/nuages_6.png" id="22_a5rdw"]
+[ext_resource type="Texture2D" uid="uid://blj4ysrm0dqtj" path="res://Graphics/Minigames/Peche/Bateau_animated.png" id="24_4t34y"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vf0sx"]
+atlas = ExtResource("24_4t34y")
+region = Rect2(0, 0, 97, 73)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oh0rd"]
+atlas = ExtResource("24_4t34y")
+region = Rect2(97, 0, 97, 73)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tpyo2"]
+atlas = ExtResource("24_4t34y")
+region = Rect2(194, 0, 97, 73)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a5rdw"]
+atlas = ExtResource("24_4t34y")
+region = Rect2(291, 0, 97, 73)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p8ara"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vf0sx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oh0rd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tpyo2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a5rdw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1wfir"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n3dm1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4t34y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vf0sx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oh0rd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tpyo2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a5rdw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2tdtf"]
+size = Vector2(32, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_17dd4"]
+size = Vector2(32, 3)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_17dd4"]
+atlas = ExtResource("6_a5cra")
+region = Rect2(0, 0, 32, 4)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mwk1x"]
+atlas = ExtResource("6_a5cra")
+region = Rect2(0, 4, 32, 4)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3f88s"]
+atlas = ExtResource("6_a5cra")
+region = Rect2(0, 8, 32, 4)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dnrct"]
+atlas = ExtResource("6_a5cra")
+region = Rect2(0, 12, 32, 4)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nh14x"]
+atlas = ExtResource("6_a5cra")
+region = Rect2(0, 16, 32, 4)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dnavm"]
+atlas = ExtResource("6_a5cra")
+region = Rect2(0, 20, 32, 4)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1wfir"]
+atlas = ExtResource("6_a5cra")
+region = Rect2(0, 24, 32, 4)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n3dm1"]
+atlas = ExtResource("6_a5cra")
+region = Rect2(0, 28, 32, 4)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4t34y"]
+atlas = ExtResource("6_a5cra")
+region = Rect2(0, 32, 32, 4)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vf0sx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_17dd4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mwk1x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3f88s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dnrct")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nh14x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dnavm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1wfir")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n3dm1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4t34y")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5n6gm"]
+size = Vector2(1941, 59)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vr0wv"]
+size = Vector2(20, 381)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xrklc"]
+size = Vector2(30, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_esvn7"]
+size = Vector2(40, 23)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a5cra"]
+size = Vector2(16, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mpskf"]
+size = Vector2(70.6667, 25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p8ara"]
+size = Vector2(20, 331)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0ul8r"]
+size = Vector2(30, 24)
+
+[sub_resource type="LabelSettings" id="LabelSettings_1wfir"]
+font_size = 48
+
+[node name="Peche" type="Node2D"]
+script = ExtResource("1_n3dm1")
+end_timeline = "pnj_leon"
+bookmark = 3
+
+[node name="WindowSize" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1916.0
+offset_bottom = 1073.0
+script = ExtResource("1_5n6gm")
+
+[node name="TextureRect" type="TextureRect" parent="WindowSize"]
+layout_mode = 0
+offset_right = 1917.0
+offset_bottom = 1078.0
+texture = ExtResource("1_e4x33")
+
+[node name="Bateau" type="AnimatedSprite2D" parent="WindowSize"]
+z_index = 1
+position = Vector2(366, 339)
+scale = Vector2(4.29452, 4.29452)
+sprite_frames = SubResource("SpriteFrames_p8ara")
+autoplay = "default"
+
+[node name="CloudSpawnable" type="Node2D" parent="WindowSize"]
+visible = false
+
+[node name="Cloud1" type="CharacterBody2D" parent="WindowSize/CloudSpawnable"]
+visible = false
+script = ExtResource("4_vr0wv")
+
+[node name="Sprite" type="Sprite2D" parent="WindowSize/CloudSpawnable/Cloud1"]
+scale = Vector2(10, 10)
+texture = ExtResource("16_1wfir")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WindowSize/CloudSpawnable/Cloud1"]
+shape = SubResource("RectangleShape2D_1wfir")
+
+[node name="Cloud2" type="CharacterBody2D" parent="WindowSize/CloudSpawnable"]
+visible = false
+script = ExtResource("4_vr0wv")
+
+[node name="Sprite" type="Sprite2D" parent="WindowSize/CloudSpawnable/Cloud2"]
+scale = Vector2(12, 12)
+texture = ExtResource("17_n3dm1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WindowSize/CloudSpawnable/Cloud2"]
+shape = SubResource("RectangleShape2D_n3dm1")
+
+[node name="Cloud3" type="CharacterBody2D" parent="WindowSize/CloudSpawnable"]
+visible = false
+script = ExtResource("4_vr0wv")
+
+[node name="Sprite" type="Sprite2D" parent="WindowSize/CloudSpawnable/Cloud3"]
+scale = Vector2(10, 10)
+texture = ExtResource("18_4t34y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WindowSize/CloudSpawnable/Cloud3"]
+shape = SubResource("RectangleShape2D_4t34y")
+
+[node name="Cloud4" type="CharacterBody2D" parent="WindowSize/CloudSpawnable"]
+visible = false
+script = ExtResource("4_vr0wv")
+
+[node name="Sprite" type="Sprite2D" parent="WindowSize/CloudSpawnable/Cloud4"]
+scale = Vector2(10, 10)
+texture = ExtResource("19_vf0sx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WindowSize/CloudSpawnable/Cloud4"]
+shape = SubResource("RectangleShape2D_vf0sx")
+
+[node name="Cloud5" type="CharacterBody2D" parent="WindowSize/CloudSpawnable"]
+visible = false
+script = ExtResource("4_vr0wv")
+
+[node name="Sprite" type="Sprite2D" parent="WindowSize/CloudSpawnable/Cloud5"]
+scale = Vector2(10, 10)
+texture = ExtResource("20_oh0rd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WindowSize/CloudSpawnable/Cloud5"]
+shape = SubResource("RectangleShape2D_oh0rd")
+
+[node name="Cloud6" type="CharacterBody2D" parent="WindowSize/CloudSpawnable"]
+visible = false
+script = ExtResource("4_vr0wv")
+
+[node name="Sprite" type="Sprite2D" parent="WindowSize/CloudSpawnable/Cloud6"]
+scale = Vector2(10, 10)
+texture = ExtResource("21_tpyo2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WindowSize/CloudSpawnable/Cloud6"]
+shape = SubResource("RectangleShape2D_tpyo2")
+
+[node name="Cloud7" type="CharacterBody2D" parent="WindowSize/CloudSpawnable"]
+visible = false
+script = ExtResource("4_vr0wv")
+
+[node name="Sprite" type="Sprite2D" parent="WindowSize/CloudSpawnable/Cloud7"]
+scale = Vector2(10, 10)
+texture = ExtResource("22_a5rdw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WindowSize/CloudSpawnable/Cloud7"]
+shape = SubResource("RectangleShape2D_a5rdw")
+
+[node name="Line2D" type="Line2D" parent="WindowSize"]
+position = Vector2(0, 1)
+points = PackedVector2Array(572, 361, 572, 379)
+width = 4.0
+
+[node name="Aimant" type="CharacterBody2D" parent="WindowSize"]
+position = Vector2(572, 428)
+scale = Vector2(3, 3)
+collision_mask = 20
+script = ExtResource("6_2tdtf")
+
+[node name="Sprite" type="Sprite2D" parent="WindowSize/Aimant"]
+texture = ExtResource("5_e6aw1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WindowSize/Aimant"]
+shape = SubResource("RectangleShape2D_2tdtf")
+
+[node name="Area2D" type="Area2D" parent="WindowSize/Aimant"]
+position = Vector2(0, 19)
+collision_layer = 8
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WindowSize/Aimant/Area2D"]
+position = Vector2(0, -1.5)
+shape = SubResource("RectangleShape2D_17dd4")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="WindowSize/Aimant/Area2D"]
+sprite_frames = SubResource("SpriteFrames_vf0sx")
+autoplay = "default"
+frame_progress = 0.0032832
+
+[node name="CollisionSol" type="StaticBody2D" parent="WindowSize"]
+visible = false
+position = Vector2(389, 1040)
+collision_layer = 4
+collision_mask = 39
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WindowSize/CollisionSol"]
+position = Vector2(575.5, 19.5)
+shape = SubResource("RectangleShape2D_5n6gm")
+
+[node name="SpawnArea" type="CollisionShape2D" parent="WindowSize"]
+position = Vector2(2289, 783.5)
+shape = SubResource("RectangleShape2D_vr0wv")
+disabled = true
+
+[node name="Spawnables" type="Node2D" parent="WindowSize"]
+
+[node name="Dechets" type="Node2D" parent="WindowSize/Spawnables"]
+visible = false
+
+[node name="Cola" type="CharacterBody2D" parent="WindowSize/Spawnables/Dechets"]
+visible = false
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("4_vr0wv")
+
+[node name="Sprite" type="Sprite2D" parent="WindowSize/Spawnables/Dechets/Cola"]
+texture = ExtResource("9_mpskf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WindowSize/Spawnables/Dechets/Cola"]
+shape = SubResource("RectangleShape2D_xrklc")
+
+[node name="Velo" type="CharacterBody2D" parent="WindowSize/Spawnables/Dechets"]
+visible = false
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("4_vr0wv")
+
+[node name="Couleur" type="Sprite2D" parent="WindowSize/Spawnables/Dechets/Velo"]
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("10_dm7am")
+flip_h = true
+
+[node name="Squelette" type="Sprite2D" parent="WindowSize/Spawnables/Dechets/Velo"]
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("11_8lgo2")
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WindowSize/Spawnables/Dechets/Velo"]
+position = Vector2(0, 2.5)
+scale = Vector2(3.5, 3.5)
+shape = SubResource("RectangleShape2D_esvn7")
+
+[node name="Peps" type="CharacterBody2D" parent="WindowSize/Spawnables/Dechets"]
+visible = false
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("4_vr0wv")
+
+[node name="Sprite" type="Sprite2D" parent="WindowSize/Spawnables/Dechets/Peps"]
+texture = ExtResource("13_0ul8r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WindowSize/Spawnables/Dechets/Peps"]
+shape = SubResource("RectangleShape2D_a5cra")
+
+[node name="Poisson" type="CharacterBody2D" parent="WindowSize/Spawnables"]
+visible = false
+scale = Vector2(1.5, 1.5)
+collision_layer = 16
+collision_mask = 0
+script = ExtResource("4_vr0wv")
+
+[node name="Couleur" type="Sprite2D" parent="WindowSize/Spawnables/Poisson"]
+texture = ExtResource("3_mxg2i")
+
+[node name="Squelette" type="Sprite2D" parent="WindowSize/Spawnables/Poisson"]
+texture = ExtResource("4_e6aw1")
+
+[node name="SqueletteMort" type="Sprite2D" parent="WindowSize/Spawnables/Poisson"]
+visible = false
+texture = ExtResource("9_0ul8r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WindowSize/Spawnables/Poisson"]
+position = Vector2(0, 1.5)
+shape = SubResource("RectangleShape2D_mpskf")
+
+[node name="CloudSpawnArea" type="CollisionShape2D" parent="WindowSize"]
+position = Vector2(2289, 188)
+shape = SubResource("RectangleShape2D_p8ara")
+disabled = true
+
+[node name="Short" type="CharacterBody2D" parent="WindowSize"]
+visible = false
+scale = Vector2(2.5, 2.5)
+collision_layer = 2
+collision_mask = 5
+script = ExtResource("4_vr0wv")
+
+[node name="Sprite" type="Sprite2D" parent="WindowSize/Short"]
+texture = ExtResource("12_esvn7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WindowSize/Short"]
+shape = SubResource("RectangleShape2D_0ul8r")
+
+[node name="Label" type="Label" parent="WindowSize"]
+z_index = 4
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Score : 0"
+label_settings = SubResource("LabelSettings_1wfir")
+
+[node name="Label2" type="Label" parent="WindowSize"]
+z_index = 4
+layout_mode = 0
+offset_left = 1380.0
+offset_right = 1905.0
+offset_bottom = 67.0
+text = "Temps restant : 2:00"
+label_settings = SubResource("LabelSettings_1wfir")
+horizontal_alignment = 2
+
+[connection signal="body_entered" from="WindowSize/Aimant/Area2D" to="WindowSize/Aimant" method="_on_area_2d_body_entered"]

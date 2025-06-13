@@ -15,6 +15,7 @@ script = ExtResource("1_46l0g")
 type = 2
 
 [node name="Sprite" type="Sprite2D" parent="."]
+z_index = 1
 scale = Vector2(5, 5)
 texture = SubResource("AtlasTexture_8ia3q")
 

@@ -11,3 +11,7 @@ func get_window_size() -> Vector2:
 
 func quit_minigame() -> void:
 	minigame_manager.erase_minigame(end_timeline, bookmark)
+
+
+func _on_text_button_pressed() -> void:
+	$WindowSize/Container_text.visible =  !$WindowSize/Container_text.visible

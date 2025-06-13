@@ -16,7 +16,7 @@ if SaveManager.getElement("Quests", "3_eboueur") == true:
 		do EventBus.emit_signal("set_quest_state", "2_transport")
 		do EventBus.emit_signal("set_quest_state", "2-1_voiture")
 		do SaveManager.setElement("Misc", {"Car": "Campus"})
-		do ThreadLoad.load_scene("Campus", 0)
+		do ThreadLoad.load_scene("Campus", 13)
 	[end_timeline]
 else:
 	Vous ne pouvez pas conduire votre voiture : la route vers le centre-ville est bloquée !

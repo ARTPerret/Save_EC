@@ -4,12 +4,11 @@
 [ext_resource type="Shader" uid="uid://c2ug5tlxurkwa" path="res://Shaders/outline.gdshader" id="2_0v8tn"]
 [ext_resource type="Texture2D" uid="uid://sm0i5714jmm7" path="res://Graphics/TEMP/TEMP_Trash.png" id="2_gbcub"]
 
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aeplx"]
 size = Vector2(168, 208)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7cc60"]
-size = Vector2(168, 13)
+size = Vector2(168, 35)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_fsei3"]
 resource_local_to_scene = true
@@ -41,7 +40,7 @@ collision_mask = 2
 monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hole"]
-position = Vector2(84, 6.5)
+position = Vector2(84, 83.5)
 shape = SubResource("RectangleShape2D_7cc60")
 debug_color = Color(1, 0, 0, 0.419608)
 

@@ -14,7 +14,9 @@ func _on_tv_eteint() -> void:
 	$Meuble/SpriteTV.play("stop")
 	await get_tree().create_timer(2.5).timeout
 	get_parent().quit_minigame()
+	
 
+	
 func _on_pousser_meuble_pressed() -> void:
 	if count <= 16:
 		sprites_tv.position.x += -5
@@ -26,3 +28,7 @@ func _on_pousser_meuble_pressed() -> void:
 func _on_update_score(score: float):
 	EventBus.emit_signal("set_empreinte", score)
 	SaveManager.setElement("Points", {"S_television": score})
+
+
+func _on_prise_pressed() -> void:
+	$SpritePrise.texture = load("res://Graphics/Minigames/Multiprise_Off.png")

@@ -3,6 +3,7 @@ extends Control
 var actions_needed: int = 0
 var actions_completed: int = 0
 
+
 func _ready() -> void:
 	_initialize_anchors()
 	_initialize_panels()

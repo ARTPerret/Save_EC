@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_825dg")
-type = 0
+type = 1
 name = "Récupère les déchets autour de l'université"
 desc = ""
 metadata/_custom_type_script = "uid://b33ppoek3j2kg"

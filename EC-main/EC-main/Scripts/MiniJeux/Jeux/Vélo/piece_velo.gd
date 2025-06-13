@@ -13,6 +13,9 @@ var minigame_window: Control
 
 func initialize_piece() -> void:
 	screen_limit = minigame_window.size - size
+	#global_position = position_item
+	position_item.x = self.position.x + $"..".position.x
+	position_item.y = self.position.y + $"..".position.y
 	global_position = position_item
 
 func _physics_process(_delta: float) -> void:
@@ -37,10 +40,11 @@ func _on_collision_area_area_exited(_area: Area2D) -> void:
 
 func _on_button_up() -> void:
 	# Quand on relache la pièce,si elle est sur le bon ancre, elle s'attache, sinon elle revient à sa position d'origine
-	if item_above_target:
+	if item_above_target && !area_reference.piece_is_on:
 		AudioManager.play_sfx(sfx_metal_sound)
 		position_item = new_position
 		self.disabled = true
 		area_reference.piece_is_on = true
 		minigame_window.add_action()
+		$"../../Velo_sprite".texture = load("res://Graphics/Minigames/Velo_avec_chaine.png")
 	global_position = position_item
