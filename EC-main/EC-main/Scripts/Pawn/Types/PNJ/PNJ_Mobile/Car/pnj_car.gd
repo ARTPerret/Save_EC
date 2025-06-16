@@ -18,6 +18,7 @@ var exited_spawn: bool = false
 var id_in_queue:int = 0
 var already_stopped:bool = false
 var path: Node2D
+var stop_at_parking: bool = false
 
 
 
@@ -46,7 +47,9 @@ func initialize_pawn() -> void:
 func stop_car() -> void:
 	if already_stopped == false:
 		state_machine.change_state("Regular")
-		await get_tree().create_timer(5.0).timeout 
+		stop_at_parking = true
+		await get_tree().create_timer(40.0).timeout 
+		stop_at_parking = false
 		state_machine.change_state("Pathfinding")
 		already_stopped = true
 
@@ -78,8 +81,9 @@ func _on_detecteur_car_body_entered(body: Node2D) -> void:
 		state_machine.change_state("Regular")
 
 func _on_detecteur_car_body_exited(body: Node2D) -> void:
-	if body is PNJCar:
-		return
-	
-	if body is Pawn:
-		state_machine.change_state("Pathfinding")
+	if stop_at_parking == false :
+		if body is PNJCar:
+			return
+		
+		if body is Pawn:
+			state_machine.change_state("Pathfinding")
