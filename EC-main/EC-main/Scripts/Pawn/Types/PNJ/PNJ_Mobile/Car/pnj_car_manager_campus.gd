@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var car_quantity: int = 0
+@export var car_quantity: int = 0 #Ne doit pas dépasser le nombre de Paths sur la map
 
 @onready var car_asset: PackedScene = preload("uid://crwrfx45qslht")
 @onready var car_skins: Resource = preload("uid://cc1gmfwqkcxxn")
@@ -25,13 +25,14 @@ func initialize_pnj() -> void:
 	randomize()
 	var pnj_instance: CharacterBody2D = car_asset.instantiate()
 	pnj_instance.manager = self
-	
 	var rand_path = path_array[randi_range(0, path_array.size() - 1)]
+	pnj_instance.path = rand_path
 	
 	target_array = rand_path.get_children()
 	pnj_instance.position = target_array[0].position
 	pnj_instance.spawn_point = pnj_instance.position
 	pnj_instance.target_array = target_array
 	pnj_instance.skin_texture = car_skins.sprites[randi_range(0, car_skins.sprites.size() - 1)]
+	path_array.erase(rand_path)
 	
 	get_parent().call_deferred("add_child", pnj_instance)

@@ -1682,58 +1682,53 @@ start_position = Vector2(288, 1213)
 end_position = Vector2(288, 1267)
 
 [node name="Stop" type="Area2D" parent="Circuit"]
-position = Vector2(566, 1151)
+position = Vector2(565, 1151)
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("41_l04ck")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Circuit/Stop"]
-position = Vector2(-7.5, 0)
 shape = SubResource("RectangleShape2D_ol5h7")
 
 [node name="Stop1" type="Area2D" parent="Circuit"]
-position = Vector2(566, 1058)
+position = Vector2(565, 1058)
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("41_l04ck")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Circuit/Stop1"]
-position = Vector2(-7.5, 0)
 shape = SubResource("RectangleShape2D_ol5h7")
 
 [node name="Stop2" type="Area2D" parent="Circuit"]
-position = Vector2(289, 1041)
+position = Vector2(289, 1031)
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("41_l04ck")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Circuit/Stop2"]
-position = Vector2(0, 3)
 shape = SubResource("RectangleShape2D_l04ck")
 
 [node name="Stop3" type="Area2D" parent="Circuit"]
-position = Vector2(224, 1041)
+position = Vector2(224, 1031)
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("41_l04ck")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Circuit/Stop3"]
-position = Vector2(0, 3)
 shape = SubResource("RectangleShape2D_l04ck")
 
 [node name="Stop4" type="Area2D" parent="Circuit"]
-position = Vector2(288, 1294)
+position = Vector2(288, 1298)
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("41_l04ck")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Circuit/Stop4"]
-position = Vector2(0, -5)
 shape = SubResource("RectangleShape2D_l04ck")
 
 [node name="Circuit_Voiture" type="Node2D" parent="."]
 script = ExtResource("42_l04ck")
-car_quantity = 1
+car_quantity = 3
 
 [node name="Path0" type="Node2D" parent="Circuit_Voiture"]
 
@@ -1865,10 +1860,10 @@ position = Vector2(300, 1138)
 position = Vector2(288, 1131)
 
 [node name="Target_9" type="Marker2D" parent="Circuit_Voiture/Path2"]
-position = Vector2(288, 1084)
+position = Vector2(288, 1080)
 
 [node name="Target_10" type="Marker2D" parent="Circuit_Voiture/Path2"]
-position = Vector2(288, 1084)
+position = Vector2(288, 1080)
 
 [node name="Target_11" type="Marker2D" parent="Circuit_Voiture/Path2"]
 position = Vector2(288, 1182)
@@ -1927,10 +1922,10 @@ position = Vector2(237, 1138)
 position = Vector2(225, 1131)
 
 [node name="Target_9" type="Marker2D" parent="Circuit_Voiture/Path3"]
-position = Vector2(225, 1084)
+position = Vector2(225, 1080)
 
 [node name="Target_10" type="Marker2D" parent="Circuit_Voiture/Path3"]
-position = Vector2(225, 1084)
+position = Vector2(225, 1080)
 
 [node name="Target_11" type="Marker2D" parent="Circuit_Voiture/Path3"]
 position = Vector2(225, 1182)

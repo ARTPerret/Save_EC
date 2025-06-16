@@ -17,6 +17,7 @@ var target_array: Array
 var exited_spawn: bool = false
 var id_in_queue:int = 0
 var already_stopped:bool = false
+var path: Node2D
 
 
 
@@ -53,6 +54,7 @@ func _on_navigation_agent_2d_navigation_finished() -> void:
 	current_target += 1
 	if current_target >= target_array.size() - 1:
 		queue_free()
+		manager.path_array.append(path)
 		manager.initialize_pnj()
 		
 	else :
