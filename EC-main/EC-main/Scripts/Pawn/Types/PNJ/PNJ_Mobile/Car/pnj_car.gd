@@ -48,7 +48,7 @@ func stop_car() -> void:
 	if already_stopped == false:
 		state_machine.change_state("Regular")
 		stop_at_parking = true
-		await get_tree().create_timer(40.0).timeout 
+		await get_tree().create_timer(60.0).timeout 
 		stop_at_parking = false
 		state_machine.change_state("Pathfinding")
 		already_stopped = true

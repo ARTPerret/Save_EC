@@ -1,0 +1,293 @@
+[gd_scene load_steps=2 format=3 uid="uid://cfflqk3aenbkf"]
+
+[ext_resource type="Script" uid="uid://deti5bksvyd8d" path="res://Scripts/Pawn/Types/PNJ/PNJ_Mobile/Car/pnj_car_manager_campus.gd" id="1_25jgx"]
+
+[node name="Circuit_Voiture" type="Node2D"]
+script = ExtResource("1_25jgx")
+car_quantity = 3
+
+[node name="Path0" type="Node2D" parent="."]
+
+[node name="Start" type="Marker2D" parent="Path0"]
+position = Vector2(2105, 1504)
+
+[node name="Target_1" type="Marker2D" parent="Path0"]
+position = Vector2(2105, 1343)
+
+[node name="Target_2" type="Marker2D" parent="Path0"]
+position = Vector2(2085, 1323)
+
+[node name="Target_3" type="Marker2D" parent="Path0"]
+position = Vector2(465, 1323)
+
+[node name="Target_4" type="Marker2D" parent="Path0"]
+position = Vector2(448, 1303)
+
+[node name="Target_5" type="Marker2D" parent="Path0"]
+position = Vector2(448, 1162)
+
+[node name="Target_6" type="Marker2D" parent="Path0"]
+position = Vector2(461, 1156)
+
+[node name="Target_7" type="Marker2D" parent="Path0"]
+position = Vector2(522, 1156)
+
+[node name="Target_8" type="Marker2D" parent="Path0"]
+position = Vector2(522, 1156)
+
+[node name="Target_9" type="Marker2D" parent="Path0"]
+position = Vector2(427, 1156)
+
+[node name="Target_10" type="Marker2D" parent="Path0"]
+position = Vector2(413, 1162)
+
+[node name="Target_11" type="Marker2D" parent="Path0"]
+position = Vector2(413, 1350)
+
+[node name="Target_12" type="Marker2D" parent="Path0"]
+position = Vector2(426, 1360)
+
+[node name="Target_13" type="Marker2D" parent="Path0"]
+position = Vector2(2051, 1360)
+
+[node name="Target_14" type="Marker2D" parent="Path0"]
+position = Vector2(2069, 1370)
+
+[node name="End" type="Marker2D" parent="Path0"]
+position = Vector2(2069, 1505)
+
+[node name="Path1" type="Node2D" parent="."]
+
+[node name="Start" type="Marker2D" parent="Path1"]
+position = Vector2(2105, 1504)
+
+[node name="Target_1" type="Marker2D" parent="Path1"]
+position = Vector2(2105, 1343)
+
+[node name="Target_2" type="Marker2D" parent="Path1"]
+position = Vector2(2085, 1323)
+
+[node name="Target_3" type="Marker2D" parent="Path1"]
+position = Vector2(465, 1323)
+
+[node name="Target_4" type="Marker2D" parent="Path1"]
+position = Vector2(448, 1303)
+
+[node name="Target_5" type="Marker2D" parent="Path1"]
+position = Vector2(448, 1065)
+
+[node name="Target_6" type="Marker2D" parent="Path1"]
+position = Vector2(461, 1059)
+
+[node name="Target_7" type="Marker2D" parent="Path1"]
+position = Vector2(522, 1059)
+
+[node name="Target_8" type="Marker2D" parent="Path1"]
+position = Vector2(522, 1059)
+
+[node name="Target_9" type="Marker2D" parent="Path1"]
+position = Vector2(427, 1060)
+
+[node name="Target_10" type="Marker2D" parent="Path1"]
+position = Vector2(413, 1066)
+
+[node name="Target_11" type="Marker2D" parent="Path1"]
+position = Vector2(413, 1350)
+
+[node name="Target_12" type="Marker2D" parent="Path1"]
+position = Vector2(426, 1360)
+
+[node name="Target_13" type="Marker2D" parent="Path1"]
+position = Vector2(2051, 1360)
+
+[node name="Target_14" type="Marker2D" parent="Path1"]
+position = Vector2(2069, 1370)
+
+[node name="End" type="Marker2D" parent="Path1"]
+position = Vector2(2069, 1505)
+
+[node name="Path2" type="Node2D" parent="."]
+
+[node name="Start" type="Marker2D" parent="Path2"]
+position = Vector2(2105, 1504)
+
+[node name="Target_1" type="Marker2D" parent="Path2"]
+position = Vector2(2105, 1343)
+
+[node name="Target_2" type="Marker2D" parent="Path2"]
+position = Vector2(2085, 1323)
+
+[node name="Target_3" type="Marker2D" parent="Path2"]
+position = Vector2(465, 1323)
+
+[node name="Target_4" type="Marker2D" parent="Path2"]
+position = Vector2(448, 1303)
+
+[node name="Target_5" type="Marker2D" parent="Path2"]
+position = Vector2(448, 1144)
+
+[node name="Target_6" type="Marker2D" parent="Path2"]
+position = Vector2(435, 1138)
+
+[node name="Target_7" type="Marker2D" parent="Path2"]
+position = Vector2(300, 1138)
+
+[node name="Target_8" type="Marker2D" parent="Path2"]
+position = Vector2(288, 1131)
+
+[node name="Target_9" type="Marker2D" parent="Path2"]
+position = Vector2(288, 1080)
+
+[node name="Target_10" type="Marker2D" parent="Path2"]
+position = Vector2(288, 1080)
+
+[node name="Target_11" type="Marker2D" parent="Path2"]
+position = Vector2(288, 1182)
+
+[node name="Target_12" type="Marker2D" parent="Path2"]
+position = Vector2(298, 1198)
+
+[node name="Target_13" type="Marker2D" parent="Path2"]
+position = Vector2(404, 1198)
+
+[node name="Target_14" type="Marker2D" parent="Path2"]
+position = Vector2(413, 1208)
+
+[node name="Target_15" type="Marker2D" parent="Path2"]
+position = Vector2(413, 1350)
+
+[node name="Target_16" type="Marker2D" parent="Path2"]
+position = Vector2(426, 1360)
+
+[node name="Target_17" type="Marker2D" parent="Path2"]
+position = Vector2(2051, 1360)
+
+[node name="Target_18" type="Marker2D" parent="Path2"]
+position = Vector2(2069, 1370)
+
+[node name="End" type="Marker2D" parent="Path2"]
+position = Vector2(2069, 1505)
+
+[node name="Path3" type="Node2D" parent="."]
+
+[node name="Start" type="Marker2D" parent="Path3"]
+position = Vector2(2105, 1504)
+
+[node name="Target_1" type="Marker2D" parent="Path3"]
+position = Vector2(2105, 1343)
+
+[node name="Target_2" type="Marker2D" parent="Path3"]
+position = Vector2(2085, 1323)
+
+[node name="Target_3" type="Marker2D" parent="Path3"]
+position = Vector2(465, 1323)
+
+[node name="Target_4" type="Marker2D" parent="Path3"]
+position = Vector2(448, 1303)
+
+[node name="Target_5" type="Marker2D" parent="Path3"]
+position = Vector2(448, 1144)
+
+[node name="Target_6" type="Marker2D" parent="Path3"]
+position = Vector2(435, 1138)
+
+[node name="Target_7" type="Marker2D" parent="Path3"]
+position = Vector2(237, 1138)
+
+[node name="Target_8" type="Marker2D" parent="Path3"]
+position = Vector2(225, 1131)
+
+[node name="Target_9" type="Marker2D" parent="Path3"]
+position = Vector2(225, 1080)
+
+[node name="Target_10" type="Marker2D" parent="Path3"]
+position = Vector2(225, 1080)
+
+[node name="Target_11" type="Marker2D" parent="Path3"]
+position = Vector2(225, 1182)
+
+[node name="Target_12" type="Marker2D" parent="Path3"]
+position = Vector2(235, 1198)
+
+[node name="Target_13" type="Marker2D" parent="Path3"]
+position = Vector2(404, 1198)
+
+[node name="Target_14" type="Marker2D" parent="Path3"]
+position = Vector2(413, 1208)
+
+[node name="Target_15" type="Marker2D" parent="Path3"]
+position = Vector2(413, 1350)
+
+[node name="Target_16" type="Marker2D" parent="Path3"]
+position = Vector2(426, 1360)
+
+[node name="Target_17" type="Marker2D" parent="Path3"]
+position = Vector2(2051, 1360)
+
+[node name="Target_18" type="Marker2D" parent="Path3"]
+position = Vector2(2069, 1370)
+
+[node name="End" type="Marker2D" parent="Path3"]
+position = Vector2(2069, 1505)
+
+[node name="Path4" type="Node2D" parent="."]
+
+[node name="Start" type="Marker2D" parent="Path4"]
+position = Vector2(2105, 1504)
+
+[node name="Target_1" type="Marker2D" parent="Path4"]
+position = Vector2(2105, 1343)
+
+[node name="Target_2" type="Marker2D" parent="Path4"]
+position = Vector2(2085, 1323)
+
+[node name="Target_3" type="Marker2D" parent="Path4"]
+position = Vector2(465, 1323)
+
+[node name="Target_4" type="Marker2D" parent="Path4"]
+position = Vector2(448, 1303)
+
+[node name="Target_5" type="Marker2D" parent="Path4"]
+position = Vector2(448, 1144)
+
+[node name="Target_6" type="Marker2D" parent="Path4"]
+position = Vector2(435, 1138)
+
+[node name="Target_7" type="Marker2D" parent="Path4"]
+position = Vector2(300, 1138)
+
+[node name="Target_8" type="Marker2D" parent="Path4"]
+position = Vector2(288, 1144)
+
+[node name="Target_9" type="Marker2D" parent="Path4"]
+position = Vector2(288, 1261)
+
+[node name="Target_10" type="Marker2D" parent="Path4"]
+position = Vector2(288, 1261)
+
+[node name="Target_11" type="Marker2D" parent="Path4"]
+position = Vector2(288, 1207)
+
+[node name="Target_12" type="Marker2D" parent="Path4"]
+position = Vector2(298, 1198)
+
+[node name="Target_13" type="Marker2D" parent="Path4"]
+position = Vector2(404, 1198)
+
+[node name="Target_14" type="Marker2D" parent="Path4"]
+position = Vector2(413, 1208)
+
+[node name="Target_15" type="Marker2D" parent="Path4"]
+position = Vector2(413, 1350)
+
+[node name="Target_16" type="Marker2D" parent="Path4"]
+position = Vector2(426, 1360)
+
+[node name="Target_17" type="Marker2D" parent="Path4"]
+position = Vector2(2051, 1360)
+
+[node name="Target_18" type="Marker2D" parent="Path4"]
+position = Vector2(2069, 1370)
+
+[node name="End" type="Marker2D" parent="Path4"]
+position = Vector2(2069, 1505)
