@@ -456,7 +456,7 @@ nodes/walk/position = Vector2(-20, 60)
 node_connections = [&"TimeScale", 0, &"Transition", &"Transition", 0, &"idle", &"Transition", 1, &"walk", &"Transition", 2, &"sit", &"Transition", 3, &"phone_start", &"Transition", 4, &"phone_idle", &"Transition", 5, &"phone_end", &"output", 0, &"TimeScale"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pl6pu"]
-size = Vector2(12, 9)
+size = Vector2(12, 9.5)
 
 [node name="Player" type="CharacterBody2D"]
 y_sort_enabled = true
@@ -515,6 +515,7 @@ parameters/sit/Sit/blend_position = Vector2(-0.000351489, -0.00270271)
 parameters/walk/Walk/blend_position = Vector2(0, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.25)
 shape = SubResource("RectangleShape2D_pl6pu")
 debug_color = Color(1, 0, 0, 0.419608)
 
