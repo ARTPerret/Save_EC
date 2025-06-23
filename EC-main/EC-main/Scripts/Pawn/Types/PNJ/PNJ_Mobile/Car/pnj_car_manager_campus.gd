@@ -2,7 +2,7 @@ extends Node2D
 
 @export var car_quantity: int = 0 #Ne doit pas dépasser le nombre de Paths sur la map
 
-@onready var car_asset: PackedScene = preload("uid://bxun16hu41l8g")
+@onready var car_asset: PackedScene = preload("uid://crwrfx45qslht")
 @onready var car_skins: Resource = preload("uid://cc1gmfwqkcxxn")
 
 var end_target_array: Array[Marker2D]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://bxun16hu41l8g"]
+[gd_scene load_steps=47 format=3 uid="uid://bdp6lsqa1pg6w"]
 
 [ext_resource type="Script" uid="uid://ckmxkfe8t32rh" path="res://Scripts/Pawn/Types/PNJ/PNJ_Mobile/Car/pnj_car.gd" id="1_laq26"]
 [ext_resource type="Script" uid="uid://bxfl65rn1pqqw" path="res://Scripts/Pawn/state_machine.gd" id="2_k3ck5"]
