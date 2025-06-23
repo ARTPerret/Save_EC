@@ -58,6 +58,7 @@ func _on_navigation_agent_2d_navigation_finished() -> void:
 	if current_target >= target_array.size() - 1:
 		queue_free()
 		manager.initialize_pnj()
+		manager.path_array.append(path) 
 		
 	else :
 		current_target += 1
